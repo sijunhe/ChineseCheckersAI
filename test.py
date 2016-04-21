@@ -1,4 +1,4 @@
 from boardState import *
 
-x = boardState()
+x = boardState(options = 'fullGame')
 x.printBoard()

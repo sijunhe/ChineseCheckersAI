@@ -15,14 +15,20 @@ class boardState:
 	## mid_length = 4      mid_length = 9
 
 	'''
-	Constructor
+	Constructor for a small or a full game
+	default is small game
 	'''
 	def __init__(self, options = 'smallGame'):
 		if options == 'smallGame':
 			self.height = 7
-
+			self.starting = 2
+			midElement = 3
+			
 		if options == 'fullGame':
 			self.height = 17
+			self.starting = 4
+			midElement = 8
+
 		
 		self.mid_width = (self.height + 1) / 2
 
@@ -35,39 +41,18 @@ class boardState:
 		self.board = np.ndarray((self.height, self.mid_width_max), dtype = np.int32)
 		self.board.fill(-1)
 
-		if options == 'smallGame':
-			
-			## initialize available space 
-			for i in range(self.height):
-				if i == 0 or i == 6:
-					self.board[i, 3] = 0
 
-				elif i == 1 or i== 5:
-					for j in range(2, 5, 2):
-						self.board[i, j] = 0
+		for i in range(self.height):
+			numPiece = min(self.height - i, i - (-1))
+			for j in range(midElement - numPiece+1, midElement+numPiece, 2):
+				if i < self.starting:
+					self.board[i, j] = 1
+				elif i >= self.height - self.starting:
+					self.board[i, j] = 2
+				else:
+					self.board[i, j] = 0
+		
 				
-				elif i == 2 or i== 4:
-					for j in range(1, 6, 2):
-						self.board[i, j] = 0
-
-				elif i == 3:
-					for j in range(0, 7, 2):
-						self.board[i, j] = 0
-
-			## initialize player pieces
-			## player1 = 1
-			## player2 = 2
-			self.board[0,3] = 1
-			self.board[1,2] = self.board[1,4] = 1
-
-			self.board[6,3] = 2
-			self.board[5,2] = self.board[5,4] = 2
-
-		if options == 'fullGame':
-			## need to implement this
-			pass
-
-	
 	'''
 	print the current board
     '''
