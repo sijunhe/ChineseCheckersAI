@@ -21,7 +21,9 @@ class boardState:
 	def __init__(self, options = 'smallGame'):
 		#number of features
 		self.numFeature = 7
-		self.weights = np.ones((7,1))
+		self.weights = np.ones((self.numFeature,1))
+		self.myPosition = []
+		self.opponentPosition = []
 		if options == 'smallGame':
 			self.height = 7
 			self.starting = 2
@@ -50,8 +52,10 @@ class boardState:
 			for j in range(midElement - numPiece+1, midElement+numPiece, 2):
 				if i < self.starting:
 					self.board[i, j] = 1
+					self.myPosition.append((i,j))
 				elif i >= self.height - self.starting:
 					self.board[i, j] = 2
+					self.opponentPosition.append((i,j))
 				else:
 					self.board[i, j] = 0
 		
@@ -100,6 +104,17 @@ class boardState:
 	returns a double
     '''
 	def computeFuncApprox():
+
+
+	def computeLegalMove():
+		returnBoard = []
+		
+
+
+
+
+
+
 		
 
 
