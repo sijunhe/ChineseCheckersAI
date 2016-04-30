@@ -19,6 +19,9 @@ class boardState:
 	default is small game
 	'''
 	def __init__(self, options = 'smallGame'):
+		#number of features
+		self.numFeature = 7
+		self.weights = np.ones((7,1))
 		if options == 'smallGame':
 			self.height = 7
 			self.starting = 2
@@ -68,4 +71,38 @@ class boardState:
 				else:
 					print " ",
 			print "\n"
+	
+
+	'''
+	check if the game has ended
+    '''
+	def isEnd():
+
+
+	'''
+	compute the feature values of current board
+    '''
+	def computeFeature():
+		self.features = np.zeros(self.weights.shape)
+		### Compute every feature
+
+
+	'''
+	recursively compute the minimax tree
+	returns a board
+    '''
+	def computeMiniMax(depth):
+
+
+	'''
+	recursively compute board value according to the weights and feature value
+	called by computeMiniMax for the leaves of the tree
+	returns a double
+    '''
+	def computeFuncApprox():
 		
+
+
+
+
+
