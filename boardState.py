@@ -29,13 +29,13 @@ class boardState:
 			self.numPieces = 3
 			self.height = 7
 			self.starting = 2
-			midElement = 3
+			self.midElement = 3
 			
 		if options == 'fullGame':
 			self.numPieces = 10
 			self.height = 17
 			self.starting = 4
-			midElement = 8
+			self.midElement = 8
 
 		
 		self.mid_width = (self.height + 1) / 2
@@ -50,7 +50,7 @@ class boardState:
 			self.board.fill(-1)
 			for i in range(self.height):
 				numPiece = min(self.height - i, i - (-1))
-				for j in range(midElement - numPiece+1, midElement+numPiece, 2):
+				for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
 					if i < self.starting:
 						self.board[i, j] = 1
 						self.myPosition.append((i,j))
@@ -92,9 +92,35 @@ class boardState:
 	'''
 	compute the feature values of current board
     '''
-	def computeFeature():
+	def computeFeature(self):
 		self.features = np.zeros(self.weights.shape)
 		### Compute every feature
+
+		# my position - distance to the end
+		for (i,j) in self.myPosition:
+			self.features[0] += (self.height - 1 - i)**2
+		# opponent positin - distance to the end
+		for (i,j) in self.opponentPosition:
+			self.features[1] += i**2
+
+		# my position - distance to the center
+		for (i,j) in self.myPosition:
+			self.features[2] += (j-self.midElement)**2
+		# opponent positin - distance to the center
+		for (i,j) in self.opponentPosition:
+			self.features[3] += (j-self.midElement)**2
+
+		#my position - variance of pieces distribution
+		for (i,j) in self.myPosition:
+			for (k,l) in self.myPosition:
+					self.features[4] += (i-k)**2 + (j-l)**2
+		#opponent position - variance of pieces distribution
+		for (i,j) in self.opponentPosition:
+			for (k,l) in self.opponentPosition:
+					self.features[5] += (i-k)**2 + (j-l)**2
+
+
+		print self.features
 
 	'''
 	recursively compute the minimax tree
