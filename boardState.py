@@ -21,7 +21,7 @@ class boardState:
 	'''
 	def __init__(self, options = 'smallGame', inputBoard = None):
 		#number of features
-		self.numFeature = 7
+		self.numFeature = 8
 		self.weights = np.ones((self.numFeature,1))
 		self.myPosition = []
 		self.opponentPosition = []
@@ -98,8 +98,23 @@ class boardState:
 	Public
 	check if the game has ended
     '''
-	def isEnd():
-		print 'TBD'
+	def isEnd(self):
+		my_endPiece = 0
+		opponent_endPiece = 0
+		for i in range(self.height):
+			numPiece = min(self.height - i, i - (-1))	
+			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
+				if i < self.starting:
+					if self.board[i,j] == 2:
+						opponent_endPiece += 1
+				elif i >= self.height - self.starting:
+					if self.board[i,j] == 1:
+						my_endPiece += 1
+		if 	(opponent_endPiece == self.numPieces) or (my_endPiece == self.numPieces):
+			return True
+		else:
+			return False
+
 
 
 	'''
@@ -134,7 +149,7 @@ class boardState:
 					self.features[5] += (i-k)**2 + (j-l)**2
 
 
-		print self.features
+		return self.features
 
 
 	'''
