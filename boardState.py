@@ -19,12 +19,13 @@ class boardState:
 	Constructor for a small or a full game
 	default is small game
 	'''
-	def __init__(self, options = 'smallGame', inputBoard = None):
+	def __init__(self, options = 'smallGame', inputBoard = None, player = 1):
 		#number of features
 		self.numFeature = 8
 		self.weights = np.ones((self.numFeature,1))
 		self.myPosition = []
 		self.opponentPosition = []
+		self.player = player
 		if options == 'smallGame':
 			self.fullGame = 0
 			self.numPieces = 3
@@ -54,11 +55,11 @@ class boardState:
 				numPiece = min(self.height - i, i - (-1))
 				for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
 					if i < self.starting:
-						self.board[i, j] = 1
+						self.board[i, j] = self.player
 						self.myPosition.append((i,j))
 
 					elif i >= self.height - self.starting:
-						self.board[i, j] = 2
+						self.board[i, j] = 3 - self.player
 						self.opponentPosition.append((i,j))
 					else:
 						self.board[i, j] = 0
@@ -68,13 +69,11 @@ class boardState:
 			self.board = inputBoard
 			for i in range(self.height):
 				for j in range(self.mid_width_max):
-					if self.board[i,j] == 1:
+					if self.board[i,j] == self.player:
 						self.myPosition.append((i,j))
-					if self.board[i,j] == 2:
+					if self.board[i,j] == (3-self.player):
 						self.opponentPosition.append((i,j))
 			self.allPosition = self.myPosition + self.opponentPosition
-
-
 				
 	'''
 	Public
@@ -85,10 +84,10 @@ class boardState:
 			for j in range(self.mid_width_max):
 				if self.board[i,j] == 0:
 					print "o",
-				elif self.board[i,j] == 1:
-					print "1",
-				elif self.board[i,j] == 2:
-					print "2",
+				elif self.board[i,j] == self.player:
+					print self.player,
+				elif self.board[i,j] == (3-self.player):
+					print 3-self.player,
 				else:
 					print " ",
 			print "\n"
@@ -114,8 +113,6 @@ class boardState:
 			return True
 		else:
 			return False
-
-
 
 	'''
 	Public
@@ -151,7 +148,6 @@ class boardState:
 
 		return self.features
 
-
 	'''
 	Public Method
 	Find all legal moves, including 1 roll and repetitive hops
@@ -177,9 +173,9 @@ class boardState:
 		newBoard[oldi][oldj] = 0
 		newBoard[newi][newj] = 1
 		if self.fullGame == 1:
-			newBoardState = boardState(options = 'fullGame', inputBoard = newBoard)
+			newBoardState = boardState(options = 'fullGame', inputBoard = newBoard, player = 3 - self.player)
 		else:
-			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard)
+			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard, player = 3 - self.player)
 		return newBoardState
 
 	'''
@@ -231,9 +227,9 @@ class boardState:
 					futureBoard[nexti][nextj] = 1	
 					possibleMoveBoard.append(((hopi,hopj),(nexti, nextj)))
 					if self.fullGame == 0:
-						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
+						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard, player = self.player)
 					else:
-						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard)
+						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard, player = self.player)
 					futureBoardState.computeRepetitiveHopRecursion(hopi, hopj, nexti, nextj, pastPosition, possibleMoveBoard)
 		
 		return possibleMoveBoard
@@ -258,9 +254,9 @@ class boardState:
 					futureBoard[nexti][nextj] = 1
 					possibleMoveBoard.append(((origini, originj),(nexti, nextj)))	
 					if self.fullGame == 0:
-						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
+						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard, player = self.player)
 					else:
-						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard)
+						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard, player = self.player)
 					#futureBoardState.printBoard()
 					futureBoardState.computeRepetitiveHopRecursion(origini, originj, nexti, nextj, pastPosition, possibleMoveBoard)
 
@@ -275,11 +271,11 @@ class boardState:
 			diffj = basej - hopj
 			nexti = basei + diffi
 			nextj = basej + diffj
-			if self.board[nexti][nextj] == 0:
-				hopMove = (nexti, nextj)
+			if nexti < self.height and nextj < self.mid_width_max:
+				if self.board[nexti][nextj] == 0:
+					hopMove = (nexti, nextj)
 				
-
-		return hopMove;
+		return hopMove
 
 	'''
 	Private

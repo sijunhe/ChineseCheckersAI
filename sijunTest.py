@@ -17,7 +17,7 @@ for move in possibleMoveBoard:
 
 print possibleMoveBoard[2]
 ((oldi, oldj),(newi, newj)) = possibleMoveBoard[2]
-test = x.takeMove(oldi, newi, oldj, newj)
+test = x.takeMove(oldi, oldj, newi, newj)
 test.printBoard()
 twoSteps = test.computeLegalMove()
 for twoStep in twoSteps:
