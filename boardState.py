@@ -21,7 +21,7 @@ class boardState:
 	'''
 	def __init__(self, options = 'smallGame', inputBoard = None):
 		#number of features
-		self.numFeature = 7
+		self.numFeature = 8
 		self.weights = np.ones((self.numFeature,1))
 		self.myPosition = []
 		self.opponentPosition = []
