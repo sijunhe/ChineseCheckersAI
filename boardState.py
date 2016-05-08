@@ -73,7 +73,12 @@ class boardState:
 					if self.board[i,j] == 2:
 						self.opponentPosition.append((i,j))
 			self.allPosition = self.myPosition + self.opponentPosition
+       
+		self.features = self.computeFeatures()
+		self.scoreRaw = np.dot(self.features.transpose(), self.weights)
+		
 
+  
 
 				
 	'''
@@ -118,35 +123,34 @@ class boardState:
 	'''
 	compute the feature values of current board
     '''
-	def computeFeature(self):
-		self.features = np.zeros(self.weights.shape)
+	def computeFeatures(self):
+		features = np.zeros(self.weights.shape)
 		### Compute every feature
 
 		# my position - distance to the end
 		for (i,j) in self.myPosition:
-			self.features[0] += (self.height - 1 - i)**2
+			features[0] += (self.height - 1 - i)**2
 		# opponent positin - distance to the end
 		for (i,j) in self.opponentPosition:
-			self.features[1] += i**2
+			features[1] += i**2
 
 		# my position - distance to the center
 		for (i,j) in self.myPosition:
-			self.features[2] += (j-self.midElement)**2
+			features[2] += (j-self.midElement)**2
 		# opponent positin - distance to the center
 		for (i,j) in self.opponentPosition:
-			self.features[3] += (j-self.midElement)**2
+			features[3] += (j-self.midElement)**2
 
 		#my position - variance of pieces distribution
 		for (i,j) in self.myPosition:
 			for (k,l) in self.myPosition:
-					self.features[4] += (i-k)**2 + (j-l)**2
+					features[4] += (i-k)**2 + (j-l)**2
 		#opponent position - variance of pieces distribution
 		for (i,j) in self.opponentPosition:
 			for (k,l) in self.opponentPosition:
-					self.features[5] += (i-k)**2 + (j-l)**2
+					features[5] += (i-k)**2 + (j-l)**2
 
-
-		return self.features
+		return features
 
 
 	'''
