@@ -82,6 +82,7 @@ class boardState:
 
 				
 	'''
+	Public
 	print the current board
     '''
 	def printBoard(self):
@@ -99,6 +100,7 @@ class boardState:
 	
 
 	'''
+	Public
 	check if the game has ended
     '''
 	def isEnd(self):
@@ -121,6 +123,7 @@ class boardState:
 
 
 	'''
+	Public
 	compute the feature values of current board
     '''
 	def computeFeatures(self):
@@ -213,7 +216,7 @@ class boardState:
 		return rollMoves
 	
 	'''
-	Public Method computeRepetitiveHop
+	Private Method computeRepetitiveHop
 	Compute repetitive hop for a piece, given the coordinate hopi and hopj
 	Calls computeRepetitiveHopRecursion
     '''	
@@ -242,6 +245,7 @@ class boardState:
 
 
 	'''
+	Private
 	Compute repetitive hop for a piece, given the coordinate hopi and hopj
 	Find a legal hop moves, given the cooridnate of a piece and the base
     '''	
@@ -265,7 +269,7 @@ class boardState:
 					futureBoardState.computeRepetitiveHopRecursion(origini, originj, nexti, nextj, pastPosition, possibleMoveBoard)
 
 	'''
-	Private method for computeRepetitiveHop
+	Private
 	Find a legal hop moves, given the cooridnate of a piece and the base
     '''	
 	def findLegalHop(self, hopi, hopj, basei, basej):
@@ -282,6 +286,7 @@ class boardState:
 		return hopMove;
 
 	'''
+	Private
 	Return if two pieces are next to each other
     '''	
 	def isAdjacent(self, Ai, Aj, Bi, Bj):
