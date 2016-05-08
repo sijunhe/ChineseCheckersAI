@@ -26,12 +26,14 @@ class boardState:
 		self.myPosition = []
 		self.opponentPosition = []
 		if options == 'smallGame':
+			self.fullGame = 0
 			self.numPieces = 3
 			self.height = 7
 			self.starting = 2
 			self.midElement = 3
 			
 		if options == 'fullGame':
+			self.fullGame = 1
 			self.numPieces = 10
 			self.height = 17
 			self.starting = 4
@@ -59,7 +61,8 @@ class boardState:
 						self.board[i, j] = 2
 						self.opponentPosition.append((i,j))
 					else:
-						self.board[i, j] = 0	
+						self.board[i, j] = 0
+			self.allPosition = self.myPosition + self.opponentPosition	
 		## initialize with input board
 		else:
 			self.board = inputBoard
@@ -69,6 +72,7 @@ class boardState:
 						self.myPosition.append((i,j))
 					if self.board[i,j] == 2:
 						self.opponentPosition.append((i,j))
+			self.allPosition = self.myPosition + self.opponentPosition
 
 
 				
@@ -81,9 +85,9 @@ class boardState:
 				if self.board[i,j] == 0:
 					print "o",
 				elif self.board[i,j] == 1:
-					print "*",
+					print "1",
 				elif self.board[i,j] == 2:
-					print "x",
+					print "2",
 				else:
 					print " ",
 			print "\n"
@@ -129,22 +133,6 @@ class boardState:
 
 		print self.features
 
-	'''
-	recursively compute the minimax tree
-	returns a board
-    '''
-	def computeMiniMax(depth):
-		print 'TBD'
-
-
-	'''
-	recursively compute board value according to the weights and feature value
-	called by computeMiniMax for the leaves of the tree
-	returns a double
-    '''
-	def computeFuncApprox():
-		print 'TBD'
-
 
 	'''
 	Public Method
@@ -156,14 +144,25 @@ class boardState:
 			## current piece x and y position
 			rollMoves = self.findLegalRoll(i,j)
 			for (nexti, nextj) in rollMoves:
-				futureBoard = copy.deepcopy(self.board)
-				futureBoard[i][j] = 0
-				futureBoard[nexti][nextj] = 1	
-				possibleMoveBoard.append(boardState(options = 'smallGame', inputBoard = futureBoard))
-
+				possibleMoveBoard.append(((i,j),(nexti, nextj)))
 			possibleMoveBoard += self.computeRepetitiveHop(i,j)
 
 		return possibleMoveBoard
+
+	'''
+	Public Method
+	Go! 
+	Given current board, move piece from original to next position, create new board
+    '''
+	def takeMove(self, oldi, oldj, newi, newj):
+		newBoard = copy.deepcopy(self.board)
+		newBoard[oldi][oldj] = 0
+		newBoard[newi][newj] = 1
+		if self.fullGame == 1:
+			newBoardState = boardState(options = 'fullGame', inputBoard = newBoard)
+		else:
+			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard)
+		return newBoardState
 
 	'''
 	Private Method
@@ -203,21 +202,21 @@ class boardState:
 		possibleMoveBoard = []
 		pastPosition = {}
 		pastPosition[(hopi, hopj)] = 1
-		for (basei, basej) in self.myPosition:
+		for (basei, basej) in self.allPosition:
 			hopMove= self.findLegalHop(hopi, hopj, basei, basej)
 			if hopMove is not None:
 				(nexti, nextj) = hopMove
 				if (nexti, nextj) not in pastPosition:
-					#print "piece " + str(hopi) + " " + str(hopj) + " going " + str(nexti) + " " + str(nextj)
 					pastPosition[(nexti, nextj)] = 1
 					futureBoard = copy.deepcopy(self.board)
 					futureBoard[hopi][hopj] = 0
 					futureBoard[nexti][nextj] = 1	
-					futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
-					#futureBoardState.printBoard()
-					possibleMoveBoard.append(futureBoardState)
-					#print len(possibleMoveBoard)
-					futureBoardState.computeRepetitiveHopRecursion(nexti, nextj, pastPosition, possibleMoveBoard)
+					possibleMoveBoard.append(((hopi,hopj),(nexti, nextj)))
+					if self.fullGame == 0:
+						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
+					else:
+						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard)
+					futureBoardState.computeRepetitiveHopRecursion(hopi, hopj, nexti, nextj, pastPosition, possibleMoveBoard)
 		
 		return possibleMoveBoard
 
@@ -227,8 +226,8 @@ class boardState:
 	Compute repetitive hop for a piece, given the coordinate hopi and hopj
 	Find a legal hop moves, given the cooridnate of a piece and the base
     '''	
-	def computeRepetitiveHopRecursion(self, hopi, hopj, pastPosition, possibleMoveBoard):
-		for (basei, basej) in self.myPosition:
+	def computeRepetitiveHopRecursion(self, origini, originj, hopi, hopj, pastPosition, possibleMoveBoard):
+		for (basei, basej) in self.allPosition:
 			hopMove= self.findLegalHop(hopi, hopj, basei, basej)
 			if hopMove is not None:
 				(nexti, nextj) = hopMove
@@ -237,11 +236,14 @@ class boardState:
 					pastPosition[(nexti, nextj)] = 1
 					futureBoard = copy.deepcopy(self.board)
 					futureBoard[hopi][hopj] = 0
-					futureBoard[nexti][nextj] = 1	
-					futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
+					futureBoard[nexti][nextj] = 1
+					possibleMoveBoard.append(((origini, originj),(nexti, nextj)))	
+					if self.fullGame == 0:
+						futureBoardState = boardState(options = 'smallGame', inputBoard = futureBoard)
+					else:
+						futureBoardState = boardState(options = 'fullGame', inputBoard = futureBoard)
 					#futureBoardState.printBoard()
-					possibleMoveBoard.append(futureBoardState)
-					futureBoardState.computeRepetitiveHopRecursion(nexti, nextj, pastPosition, possibleMoveBoard)
+					futureBoardState.computeRepetitiveHopRecursion(origini, originj, nexti, nextj, pastPosition, possibleMoveBoard)
 
 	'''
 	Private method for computeRepetitiveHop
