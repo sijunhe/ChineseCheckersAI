@@ -125,7 +125,6 @@ class boardState:
 	def computeFeatures(self):
 		features = np.zeros(self.weights.shape)
 		### Compute every feature
-
 		# my position - distance to the end
 		for (i,j) in self.myPosition:
 			features[0] += (self.height - 1 - i)**2
