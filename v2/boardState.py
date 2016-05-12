@@ -91,22 +91,25 @@ class boardState:
 	check if the game has ended
     '''
 	def isEnd(self):
-		my_endPiece = 0
-		opponent_endPiece = 0
+		endPieceOne = 0
+		endPieceTwo = 0	
 		for i in range(self.height):
 			numPiece = min(self.height - i, i - (-1))	
 			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
 				if i < self.starting:
 					if self.board[i,j] == 2:
-						opponent_endPiece += 1
+						endPieceTwo += 1
 				elif i >= self.height - self.starting:
 					if self.board[i,j] == 1:
-						my_endPiece += 1
-		if 	(opponent_endPiece == self.numPieces) or (my_endPiece == self.numPieces):
-			return True
+						endPieceOne += 1
+		# print 'endPieceOne {}'.format(endPieceOne)
+		# print 'endPieceTwo {}'.format(endPieceTwo)
+		if 	endPieceOne == self.numPieces:
+			return 1
+		elif endPieceTwo == self.numPieces:
+			return 2
 		else:
-			return False
-
+			return 0
 	'''
 	Public Method
 	Go! 
