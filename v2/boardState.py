@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 '''
 Class: boardState
 Represents the current board boardState
@@ -47,25 +48,24 @@ class boardState:
 				numPiece = min(self.height - i, i - (-1))
 				for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
 					if i < self.starting:
-						self.board[i, j] = self.player
+						self.board[i, j] = 1
 						self.PositionOne.append((i,j))
 
 					elif i >= self.height - self.starting:
-						self.board[i, j] = 3 - self.player
+						self.board[i, j] = 2
 						self.PositionTwo.append((i,j))
 					else:
 						self.board[i, j] = 0
-			self.allPosition = self.myPosition + self.opponentPosition	
 		## initialize with input board
 		else:
 			self.board = inputBoard
 			for i in range(self.height):
 				for j in range(self.mid_width_max):
-					if self.board[i,j] == self.player:
-						self.myPosition.append((i,j))
-					if self.board[i,j] == (3-self.player):
-						self.opponentPosition.append((i,j))
-			self.allPosition = self.myPosition + self.opponentPosition
+					if self.board[i,j] == 1:
+						self.PositionOne.append((i,j))
+					if self.board[i,j] == 2:
+						self.PositionTwo.append((i,j))
+		self.allPosition = self.PositionOne + self.PositionTwo
 
 
 	'''
@@ -106,4 +106,19 @@ class boardState:
 			return True
 		else:
 			return False
+
+	'''
+	Public Method
+	Go! 
+	Given current board, move piece from original to next position, create new board
+    '''
+	def takeMove(self, oldi, oldj, newi, newj):
+		newBoard = copy.deepcopy(self.board)
+		newBoard[oldi][oldj] = 0
+		newBoard[newi][newj] = 1
+		if self.fullGame == 1:
+			newBoardState = boardState(options = 'fullGame', inputBoard = newBoard)
+		else:
+			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard)
+		return newBoardState
        
