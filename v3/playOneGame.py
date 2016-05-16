@@ -28,7 +28,7 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, depth)
 	features = computeFeatures(boardNow)
 	scoreRaw = np.inner(features, weights)
-	weights = weights - (scoreMiniMax - scoreRaw) * stplength * features
+	weights = weights - (scoreRaw - scoreMiniMax) * stplength / np.linalg.norm(features) * features
 	move = moveList[0]
 	print('turn = {}'.format(turn))
 	print('player = {}'.format(player))
