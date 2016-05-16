@@ -4,7 +4,7 @@ import numpy as np
 
 def computeFeatures(board):
 	numFeature = 9
-	features = np.zeros((numFeature))
+	features = np.ones((numFeature))
 	### Compute every feature
 
 	'''distance to the end - position_1'''
