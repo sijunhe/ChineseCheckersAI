@@ -12,8 +12,8 @@ weights = np.ones(9)
 weights[1] = 10
 weights[2] = 10
 depth = 4
-stplength = 0.1
-
+stplength = 0.01
+weights = weights / np.linalg.norm(weights)
 
 boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 print "Orginal Board"
@@ -28,7 +28,8 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, depth)
 	features = computeFeatures(boardNow)
 	scoreRaw = np.inner(features, weights)
-	# weights = weights - (scoreRaw - scoreMiniMax) * stplength / np.linalg.norm(features) * features ## weights update
+	weights = weights - (scoreRaw - scoreMiniMax) * stplength * features ## weights update
+	weights = weights / np.linalg.norm(weights) 
 	move = moveList[0]
 	print('turn = {}'.format(turn))
 	print('player = {}'.format(player))

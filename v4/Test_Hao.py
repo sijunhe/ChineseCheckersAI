@@ -18,53 +18,55 @@ import time
 weights = np.ones(9)
 weights[1] = 10
 weights[2] = 10
+weights = weights / np.linalg.norm(weights)
 depth = 4
-stplength = 1
+stplength = 0.1
 
 
-boardStart = boardState(options = 'smallGame') # fullGame, smallGame
+boardStart = boardState(options = 'fullGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 
 
 #### The whole game
-boardNow = boardStart
-player = 1
-turn = 0
-while ((not boardNow.isEnd()) and turn < 100) :
-	turn = turn + 1
-	(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, depth)
-	features = computeFeatures(boardNow)
-	scoreRaw = np.inner(features, weights)
-	weights = weights - (scoreRaw - scoreMiniMax) * stplength / np.linalg.norm(features) * features
-	move = moveList[0]
-	print('turn = {}'.format(turn))
-	print('player = {}'.format(player))
-	print('move = {}'.format(move))
-	print('error = {}'.format(scoreMiniMax - scoreRaw))
-	print('weights = {}'.format(weights))
-	boardNow = boardNow.takeMove(move)
-	boardNow.printBoard()
-	player = 3 - player
+# boardNow = boardStart
+# player = 1
+# turn = 0
+# while ((not boardNow.isEnd()) and turn < 100) :
+# 	turn = turn + 1
+# 	(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, depth)
+# 	features = computeFeaturesFull(boardNow)
+# 	scoreRaw = np.inner(features, weights)
+# 	weights = weights - (scoreRaw - scoreMiniMax) * stplength * features
+# 	weights = weights / np.linalg.norm(weights)
+# 	move = moveList[0]
+# 	print('turn = {}'.format(turn))
+# 	print('player = {}'.format(player))
+# 	print('move = {}'.format(move))
+# 	print('error = {}'.format(scoreMiniMax - scoreRaw))
+# 	print('weights = {}'.format(weights))
+# 	boardNow = boardNow.takeMove(move)
+# 	boardNow.printBoard()
+# 	player = 3 - player
 
 
 
 #### To test the code computeMinimax()
-# print('\n\n')
-# depth = 4
-# timeStart = time.time()
-# (scoreMiniMax, moveList, recursions) = computeMinimax(boardStart, 2, weights, depth)
-# timeEnd = time.time()
-# timeUsed = timeEnd - timeStart
-# print('scoreMiniMax = {}'.format(scoreMiniMax))
-# print('moveList = {}'.format(moveList))
-# print('recursions = {}'.format(recursions))
-# print('time used = {}'.format(timeUsed))
+print('\n\n')
+depth = 4
+timeStart = time.time()
+(scoreMiniMax, moveList, recursions) = computeMinimax(boardStart, 1, weights, depth)
+timeEnd = time.time()
+timeUsed = timeEnd - timeStart
+print('scoreMiniMax = {}'.format(scoreMiniMax))
+print('moveList = {}'.format(moveList))
+print('recursions = {}'.format(recursions))
+print('time used = {}'.format(timeUsed))
 
-# board2 = copy.deepcopy(boardStart)
-# for move in moveList :
-# 	board2 = board2.takeMove(move)
-# 	board2.printBoard()
+board2 = copy.deepcopy(boardStart)
+for move in moveList :
+	board2 = board2.takeMove(move)
+# board2.printBoard()
 
 
 
