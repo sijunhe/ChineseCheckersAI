@@ -62,22 +62,22 @@ def computeRepetitiveHop(board, hopi, hopj):
 	possibleMoveBoard = []
 	pastPosition = {}
 	pastPosition[(hopi, hopj)] = 1
-	for (basei, basej) in board.allPosition:
-		hopMove= findLegalHop(board, hopi, hopj, basei, basej)
-		if hopMove is not None:
+	hopMoves= findLegalHop(board, hopi, hopj)
+	if hopMoves is not None:
+		for hopMove in hopMoves:
 			(nexti, nextj) = hopMove
 			if (nexti, nextj) not in pastPosition:
+				#print "piece " + str(hopi) + " " + str(hopj) + " going " + str(nexti) + " " + str(nextj)
 				pastPosition[(nexti, nextj)] = 1
 				futureBoard = copy.deepcopy(board.board)
 				futureBoard[hopi][hopj] = 0
-				futureBoard[nexti][nextj] = 1	
-				possibleMoveBoard.append(((hopi,hopj),(nexti, nextj)))
+				futureBoard[nexti][nextj] = 1
+				possibleMoveBoard.append(((hopi, hopj),(nexti, nextj)))	
 				if board.fullGame == 0:
 					futureboard = boardState(options = 'smallGame', inputBoard = futureBoard)
 				else:
 					futureboard = boardState(options = 'fullGame', inputBoard = futureBoard)
 				computeRepetitiveHopRecursion(board, hopi, hopj, nexti, nextj, pastPosition, possibleMoveBoard)
-	
 	return possibleMoveBoard
 
 
@@ -88,9 +88,9 @@ Compute repetitive hop for a piece, given the coordinate hopi and hopj
 Find a legal hop moves, given the cooridnate of a piece and the base
 '''	
 def computeRepetitiveHopRecursion(board, origini, originj, hopi, hopj, pastPosition, possibleMoveBoard):
-	for (basei, basej) in board.allPosition:
-		hopMove= findLegalHop(board, hopi, hopj, basei, basej)
-		if hopMove is not None:
+	hopMoves= findLegalHop(board, hopi, hopj)
+	if hopMoves is not None:
+		for hopMove in hopMoves:
 			(nexti, nextj) = hopMove
 			if (nexti, nextj) not in pastPosition:
 				#print "piece " + str(hopi) + " " + str(hopj) + " going " + str(nexti) + " " + str(nextj)
@@ -110,30 +110,129 @@ def computeRepetitiveHopRecursion(board, origini, originj, hopi, hopj, pastPosit
 Private
 Find a legal hop moves, given the cooridnate of a piece and the base
 '''	
-def findLegalHop(board, hopi, hopj, basei, basej):
-	hopMove = None
-	if isAdjacent(hopi, hopj, basei, basej):
-		diffi = basei - hopi
-		diffj = basej - hopj
-		nexti = basei + diffi
-		nextj = basej + diffj
-		if nexti < board.height and nextj < board.mid_width_max:
-			if board.board[nexti][nextj] == 0:
-				hopMove = (nexti, nextj)
-			
+def findLegalHop(board, hopi, hopj):
+	hopMove = []
+	for i in range(1,7):
+		move = isMoveable(board, hopi, hopj, i, maxDistance = 1)
+		if move is not None:
+			hopMove.append(move)
 	return hopMove
 
 '''
 Private
-Return if two pieces are next to each other
+Return the possible move of going 1 direction
 '''	
-def isAdjacent(Ai, Aj, Bi, Bj):
-	if abs(Ai - Bi) == 1:
-		if abs(Aj - Bj) == 1:
-			return True
+def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
+	if direction == 1:
+		## move down right
+		distance = 1
+		nexti = Ai - 1
+		nextj = Aj + 1
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nexti -= 1
+			nextj += 1
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti - distance
+			targetj = nextj + distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
+	if direction == 2:
+		## move right
+		distance = 1
+		nexti = Ai
+		nextj = Aj + 2
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nextj += 2
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti
+			targetj = nextj + 2 * distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
+	if direction == 3:
+		## move down right
+		distance = 1
+		nexti = Ai + 1
+		nextj = Aj + 1
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nexti += 1
+			nextj += 1
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti + distance
+			targetj = nextj + distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
+	if direction == 4:
+		## move down right
+		distance = 1
+		nexti = Ai + 1
+		nextj = Aj - 1
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nexti += 1
+			nextj -= 1
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti + distance
+			targetj = nextj - distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
+	if direction == 5:
+		## move left
+		distance = 1
+		nexti = Ai
+		nextj = Aj - 2
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nextj -= 2
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti
+			targetj = nextj - 2 * distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
+	if direction == 6:
+		## move top left
+		distance = 1
+		nexti = Ai - 1
+		nextj = Aj - 1
+		while isInBound(board, nexti, nextj) and board.board[nexti][nextj] == 0 and distance < maxDistance:
+			distance += 1
+			nexti -= 1
+			nextj -= 1
+		if not isInBound(board, nexti, nextj):
+			return None
+		if board.board[nexti][nextj] == 1 or board.board[nexti][nextj] == 2:
+			targeti = nexti - distance
+			targetj = nextj - distance
+			if isInBound(board, targeti, targetj):
+				if board.board[targeti][targetj] == 0:
+					return (targeti, targetj)
 
-	elif abs(Ai - Bi) == 0:
-		if abs(Aj - Bj) == 2:
-			return True
-	else:
-		return False
+'''
+Private
+Return the possible move of going 1 direction
+'''	
+def isInBound(board, Ai, Aj):
+	if Ai < board.height and Ai >= 0 and Aj < board.mid_width_max and Aj >= 0:
+		return True
+	return False
+
+
+
+	
