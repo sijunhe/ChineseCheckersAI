@@ -139,6 +139,11 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj + distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nexti -= 1
+						nextj += 1
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 	if direction == 2:
 		## move right
@@ -155,6 +160,10 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj + 2 * distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nextj += 2
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 	if direction == 3:
 		## move down right
@@ -172,6 +181,11 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj + distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nexti += 1
+						nextj += 1
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 	if direction == 4:
 		## move down right
@@ -189,6 +203,11 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj - distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nexti += 1
+						nextj -= 1
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 	if direction == 5:
 		## move left
@@ -205,6 +224,10 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj - 2 * distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nextj -= 2
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 	if direction == 6:
 		## move top left
@@ -222,6 +245,11 @@ def isMoveable(board, Ai, Aj, direction, maxDistance = 10000):
 			targetj = nextj - distance
 			if isInBound(board, targeti, targetj):
 				if board.board[targeti][targetj] == 0:
+					while nexti != targeti and nextj != targetj:
+						nexti -= 1
+						nextj -= 1
+						if board.board[nexti][nextj] != 0:
+							return None
 					return (targeti, targetj)
 
 '''
