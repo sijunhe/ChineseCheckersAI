@@ -38,7 +38,7 @@ def computeFeatures(board):
 
 
 def computeFeaturesFull(board):
-	numFeature = 9
+	numFeature = 10
 	features = np.ones((numFeature))
 	### Compute every feature
 

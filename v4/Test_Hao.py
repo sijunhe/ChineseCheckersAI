@@ -15,9 +15,10 @@ import numpy as np
 import copy
 import time
 
-weights = np.ones(9)
+weights = np.ones(10)
 weights[1] = 10
 weights[2] = 10
+weights[9] = 10 ** 5
 weights = weights / np.linalg.norm(weights)
 depth = 4
 stplength = 0.1
