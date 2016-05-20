@@ -110,6 +110,8 @@ class boardState:
 						endPieceOne += 1
 					if self.board[i][j] == 2:
 						endPieceOne += 2
+		if endPieceOne > self.numPieces:
+			return -1
 		for i in range(self.height - self.starting, self.height):
 			numPiece = min(self.height - i, i - (-1))
 			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
@@ -119,8 +121,6 @@ class boardState:
 					endPieceTwo += 2
 				if self.board[i][j] == 2:
 					endPieceTwo += 1
-		if endPieceOne > self.numPieces:
-			return -1
 		if endPieceTwo > self.numPieces:
 			return 1
 		if endPieceOne == self.numPieces or endPieceTwo == self.numPieces:
