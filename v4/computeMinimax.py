@@ -45,6 +45,7 @@ def computeMinimax_Helper1(board, player, weights, depth, bound):
 				if (scoreNext > score) :
 					score = scoreNext
 					moveList = [move]
+		
 		else:
 			score = 10 ** 10
 			allPossibleMoves = computeLegalMove(board, player)
@@ -118,7 +119,6 @@ def computeMinimax_Helper(board, player, weights, depth, bound):
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
 		score = np.inner(features, weights)
-		# score = computeScoreRaw(board, weights)
 		moveList = []
 		recursions = 1
 	else :
@@ -128,6 +128,11 @@ def computeMinimax_Helper(board, player, weights, depth, bound):
 			PQofMoves = Queue.PriorityQueue()
 			for move in allPossibleMoves :
 				boardNext = board.takeMove(move)
+				if (boardNext.isEnd() == 1) :
+					score = 10 ** 5
+					moveList = [move]
+					recursions = 1
+					return (score, moveList, recursions)
 				features = computeFeatures(boardNext)
 				scoreRaw = np.inner(features, weights)
 				PQofMoves.put((-scoreRaw, move))
@@ -151,6 +156,11 @@ def computeMinimax_Helper(board, player, weights, depth, bound):
 			PQofMoves = Queue.PriorityQueue()
 			for move in allPossibleMoves :
 				boardNext = board.takeMove(move)
+				if (boardNext.isEnd() == -1) :
+					score = - 10 ** 5
+					moveList = [move]
+					recursions = 1
+					return (score, moveList, recursions)
 				features = computeFeatures(boardNext)
 				scoreRaw = np.inner(features, weights)
 				PQofMoves.put((scoreRaw, move))
