@@ -66,7 +66,16 @@ class boardState:
 					if self.board[i,j] == 2:
 						self.PositionTwo.append((i,j))
 		self.allPosition = self.PositionOne + self.PositionTwo
+	
 
+	'''
+	Public
+	print the current board
+    '''
+	def __eq__(self, other):
+		if np.array_equal(self.board, other.board):
+			return True
+		return False
 
 	'''
 	Public
@@ -107,7 +116,7 @@ class boardState:
 		if 	endPieceOne == self.numPieces:
 			return 1
 		elif endPieceTwo == self.numPieces:
-			return 2
+			return -1
 		else:
 			return 0
 
@@ -126,4 +135,6 @@ class boardState:
 		else:
 			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard)
 		return newBoardState
+
+
        
