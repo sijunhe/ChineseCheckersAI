@@ -27,6 +27,8 @@ player = 1
 turn = 0
 weights1 = weights
 weights2 = weights
+cantGo1 = []
+cantGo2 = []
 while ((not boardNow.isEnd()) and turn < 100) :
 	turn = turn + 1
 	timeStart = time.time()
@@ -34,19 +36,28 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	
 	if (player == 1) :
 		scoreRaw = np.inner(features, weights1)
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights1, 4)
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights1, 4, cantGo1)
 		error = (scoreRaw - scoreMiniMax) / scoreMiniMax
 		weights1 = weights1 - error * stplength / np.linalg.norm(features) * features ## weights update
 		weights1[:9] = weights1[:9] / np.linalg.norm(weights1[:9])
+		move = moveList[0]
+		cantGo1.append(move)
+		if (len(cantGo1) >= 5) :
+			cantGo1.pop(0)
 	else :
 		scoreRaw = np.inner(features, weights2)
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights2, 4)
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights2, 4, cantGo2)
 		error = (scoreRaw - scoreMiniMax) / scoreMiniMax
 		weights2 = weights2 - error * stplength / np.linalg.norm(features) * features ## weights update
-		weights2 = weights2 / np.linalg.norm(weights2)
 		weights2[:9] = weights2[:9] / np.linalg.norm(weights2[:9])
+		move = moveList[0]
+		cantGo2.append(move)
+		if (len(cantGo2) >= 5) :
+			cantGo2.pop(0)
+
 	timeEnd = time.time()	
-	move = moveList[0]
+	
+
 	error = abs(error)
 	errors.append(error)
 	print('turn = {}'.format(turn))
