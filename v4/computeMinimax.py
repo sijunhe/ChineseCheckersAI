@@ -12,13 +12,13 @@ Find Minimax score without using alpha-beta pruning;
 Inputs: board, player, weights, depth;
 Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
 '''	
-def computeMinimax(board, player, weights, depth):
+def computeMinimax(board, player, weights, depth, cantGo):
 	if (player == 1) :
 		bound = 10 ** 10
 	else :
 		bound = - 10 ** 10
 
-	return computeMinimax_Helper(board, player, weights, depth, bound)
+	return computeMinimax_Helper(board, player, weights, depth, bound, cantGo)
 
 
 '''
@@ -27,94 +27,94 @@ Inputs: board, player, weights, depth, bound(if one branch is below/above this b
 Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
 
 '''
-def computeMinimax_Helper1(board, player, weights, depth, bound):
-	recursions = 0;
-	if (depth <= 1) :
-		if (player == 1) :
-			score = - 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			for move in allPossibleMoves :
-				recursions = recursions + 1
-				boardNext = board.takeMove(move)
-				features = computeFeaturesFull(boardNext)
-				scoreNext = np.inner(features, weights)
-				if (scoreNext >= bound) :
-					score = scoreNext
-					moveList = [move]
-					return (score, moveList, recursions)
-				if (scoreNext > score) :
-					score = scoreNext
-					moveList = [move]
+# def computeMinimax_Helper1(board, player, weights, depth, bound):
+# 	recursions = 0;
+# 	if (depth <= 1) :
+# 		if (player == 1) :
+# 			score = - 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			for move in allPossibleMoves :
+# 				recursions = recursions + 1
+# 				boardNext = board.takeMove(move)
+# 				features = computeFeaturesFull(boardNext)
+# 				scoreNext = np.inner(features, weights)
+# 				if (scoreNext >= bound) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					return (score, moveList, recursions)
+# 				if (scoreNext > score) :
+# 					score = scoreNext
+# 					moveList = [move]
 		
-		else:
-			score = 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			for move in allPossibleMoves :
-				recursions = recursions + 1
-				boardNext = board.takeMove(move)
-				features = computeFeaturesFull(boardNext)
-				scoreNext = np.inner(features, weights)
-				if (scoreNext <= bound) :
-					score = scoreNext
-					moveList = [move]
-					return (score, moveList, recursions)
-				if (scoreNext < score) :
-					score = scoreNext
-					moveList = [move]
+# 		else:
+# 			score = 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			for move in allPossibleMoves :
+# 				recursions = recursions + 1
+# 				boardNext = board.takeMove(move)
+# 				features = computeFeaturesFull(boardNext)
+# 				scoreNext = np.inner(features, weights)
+# 				if (scoreNext <= bound) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					return (score, moveList, recursions)
+# 				if (scoreNext < score) :
+# 					score = scoreNext
+# 					moveList = [move]
 		
-	else :
-		if (player == 1) :
-			score = - 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			PQofMoves = Queue.PriorityQueue()
-			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				features = computeFeatures(boardNext)
-				scoreRaw = np.inner(features, weights)
-				PQofMoves.put((-scoreRaw, move))
-			while (not PQofMoves.empty()) :
-				(scoreRaw, move) = PQofMoves.get()
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
-				recursions = recursions + recursionsNext
-				if (scoreNext >= bound) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-					return (score, moveList, recursions)
-				if (scoreNext > score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-		else :
-			score = 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			PQofMoves = Queue.PriorityQueue()
-			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				features = computeFeatures(boardNext)
-				scoreRaw = np.inner(features, weights)
-				PQofMoves.put((scoreRaw, move))
-			while (not PQofMoves.empty()) :
-				(scoreRaw, move) = PQofMoves.get()
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
-				recursions = recursions + recursionsNext
-				if (scoreNext <= bound) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-					return (score, moveList, recursions)
-				if (scoreNext < score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+# 	else :
+# 		if (player == 1) :
+# 			score = - 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			PQofMoves = Queue.PriorityQueue()
+# 			for move in allPossibleMoves :
+# 				boardNext = board.takeMove(move)
+# 				features = computeFeatures(boardNext)
+# 				scoreRaw = np.inner(features, weights)
+# 				PQofMoves.put((-scoreRaw, move))
+# 			while (not PQofMoves.empty()) :
+# 				(scoreRaw, move) = PQofMoves.get()
+# 				boardNext = board.takeMove(move)
+# 				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
+# 				recursions = recursions + recursionsNext
+# 				if (scoreNext >= bound) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
+# 					return (score, moveList, recursions)
+# 				if (scoreNext > score) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
+# 		else :
+# 			score = 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			PQofMoves = Queue.PriorityQueue()
+# 			for move in allPossibleMoves :
+# 				boardNext = board.takeMove(move)
+# 				features = computeFeatures(boardNext)
+# 				scoreRaw = np.inner(features, weights)
+# 				PQofMoves.put((scoreRaw, move))
+# 			while (not PQofMoves.empty()) :
+# 				(scoreRaw, move) = PQofMoves.get()
+# 				boardNext = board.takeMove(move)
+# 				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
+# 				recursions = recursions + recursionsNext
+# 				if (scoreNext <= bound) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
+# 					return (score, moveList, recursions)
+# 				if (scoreNext < score) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
 
-	return (score, moveList, recursions)
+# 	return (score, moveList, recursions)
 
 
 
-def computeMinimax_Helper(board, player, weights, depth, bound):
+def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 	recursions = 0;
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
@@ -133,13 +133,14 @@ def computeMinimax_Helper(board, player, weights, depth, bound):
 					moveList = [move]
 					recursions = 1
 					return (score, moveList, recursions)
-				features = computeFeatures(boardNext)
-				scoreRaw = np.inner(features, weights)
-				PQofMoves.put((-scoreRaw, move))
+				if (move not in cantGo) :
+					features = computeFeatures(boardNext)
+					scoreRaw = np.inner(features, weights)
+					PQofMoves.put((-scoreRaw, move))
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
 				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
+				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
 				recursions = recursions + recursionsNext
 				if (scoreNext >= bound) :
 					score = scoreNext
@@ -161,13 +162,14 @@ def computeMinimax_Helper(board, player, weights, depth, bound):
 					moveList = [move]
 					recursions = 1
 					return (score, moveList, recursions)
-				features = computeFeatures(boardNext)
-				scoreRaw = np.inner(features, weights)
-				PQofMoves.put((scoreRaw, move))
+				if (move not in cantGo) :
+					features = computeFeatures(boardNext)
+					scoreRaw = np.inner(features, weights)
+					PQofMoves.put((scoreRaw, move))
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
 				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score)
+				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
 				recursions = recursions + recursionsNext
 				if (scoreNext <= bound) :
 					score = scoreNext
