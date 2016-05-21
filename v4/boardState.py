@@ -99,35 +99,53 @@ class boardState:
 	check if the game has ended
     '''
 	def isEnd(self):
-		endPieceOne = 0
-		endPieceTwo = 0	
-		for i in range(self.starting):
-			numPiece = min(self.height - i, i - (-1))
-			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
-					if self.board[i][j] == 0:
-						return 0
-					if self.board[i][j] == 1:
-						endPieceOne += 1
-					if self.board[i][j] == 2:
-						endPieceOne += 2
-		if endPieceOne > self.numPieces:
+		print self.isEndTwo()
+		print self.isEndOne()
+		if self.isEndTwo():
 			return -1
-		for i in range(self.height - self.starting, self.height):
+		if self.isEndOne():
+			return 1
+		return 0
+
+	'''
+	Private
+	check if player two has won
+    '''
+	def isEndTwo(self):
+		endPieceOne = 0
+		for i in range(self.starting):
 			numPiece = min(self.height - i, i - (-1))
 			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
 				if self.board[i][j] == 0:
 					return 0
 				if self.board[i][j] == 1:
-					endPieceTwo += 2
+					endPieceOne += 1
 				if self.board[i][j] == 2:
-					endPieceTwo += 1
+					endPieceOne += 2
+		if endPieceOne > self.numPieces:
+			return 1
+		if endPieceOne == self.numPieces:
+			return 0
+	
+	'''
+	Private
+	check if player one has won
+    '''
+	def isEndOne(self):
+		endPieceTwo = 0
+		for i in range(self.height - self.starting, self.height):
+			numPiece = min(self.height - i, i - (-1))
+			for j in range(self.midElement - numPiece+1, self.midElement+numPiece, 2):
+					if self.board[i][j] == 0:
+						return 0
+					if self.board[i][j] == 1:
+						endPieceTwo += 2
+					if self.board[i][j] == 2:
+						endPieceTwo += 1
 		if endPieceTwo > self.numPieces:
 			return 1
-		if endPieceOne == self.numPieces or endPieceTwo == self.numPieces:
+		if endPieceTwo == self.numPieces:
 			return 0
-
-
-
 	'''
 	Public Method
 	Go! 
