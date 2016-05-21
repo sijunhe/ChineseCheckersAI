@@ -8,11 +8,10 @@ import numpy as np
 import copy
 import time
 
-weights = np.ones(10)
+weights = np.ones(9)
 weights[1] = 10
 weights[2] = 10
-weights[9] = 100000
-weights[:9] = weights[:9] / np.linalg.norm(weights[:9])
+weights = weights / np.linalg.norm(weights)
 depth = 2
 stplength = 1
 
@@ -66,7 +65,10 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	print('recursions = {}'.format(recursions))
 	print('error = {}'.format(error))
 	print 'time used = ' + str(timeEnd - timeStart)
-	print('weights = {}'.format(weights))
+	if player == 1:
+		print('weights1 = {}'.format(weights1))
+	else:
+		print('weights2 = {}'.format(weights2))
 	boardNow = boardNow.takeMove(move)
 	boardNow.printBoard()
 	player = 3 - player
