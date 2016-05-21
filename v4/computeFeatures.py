@@ -3,7 +3,7 @@ from computeLegalMove import *
 import numpy as np
 
 def computeFeatures(board):
-	numFeature = 10
+	numFeature = 9
 	features = np.ones((numFeature))
 	### Compute every feature
 
@@ -30,15 +30,12 @@ def computeFeatures(board):
 		for (k,l) in board.PositionTwo:
 				features[6] += (i-k)**2 + (j-l)**2
 
-	# whether the board is a winning board
-	features[9] = board.isEnd()
-
 	return features
 
 
 
 def computeFeaturesFull(board):
-	numFeature = 10
+	numFeature = 9
 	features = np.ones((numFeature))
 	### Compute every feature
 
@@ -84,7 +81,5 @@ def computeFeaturesFull(board):
 			best_move = i1 - i2
 	features[8] = best_move
 
-	# whether the board is a winning board
-	features[9] = board.isEnd()
 
 	return features
