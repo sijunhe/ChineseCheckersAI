@@ -93,17 +93,11 @@ class boardState:
 				else:
 					print " ",
 			print "\n"
-<<<<<<< HEAD
 
 		print "  ",
 		for j in range(self.mid_width_max):
 			print j%10,
-<<<<<<< HEAD
 		print "\n"
-=======
->>>>>>> parent of b74086b... new printBoard
-=======
->>>>>>> parent of 9576a72... fixed minor bug in print board
 	
 	'''
 	Public
