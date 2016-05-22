@@ -9,14 +9,14 @@ def computeFeatures(board, player):
 		### player1 weights
 		'''distance to the end - position_1'''
 		for (i,j) in board.PositionOne:
-			features[1] -= (board.height - 1 - i)**2
+			features[1] += (board.height - 1 - i)**2
 		'''distance to the center - position_1'''
 		for (i,j) in board.PositionOne:
-			features[2] -= (j-board.midElement)**2
+			features[2] += (j-board.midElement)**2
 		'''variance of pieces distribution - position_1'''
 		for (i,j) in board.PositionOne:
 			for (k,l) in board.PositionOne:
-					features[3] -= (i-k)**2 + (j-l)**2
+					features[3] += (i-k)**2 + (j-l)**2
 		### skipping features[4]
 
 		### player2 weights
@@ -53,14 +53,14 @@ def computeFeatures(board, player):
 		### player1 weights
 		'''distance to the end - position_1'''
 		for (i,j) in board.PositionOne:
-			features[5] -= (board.height - 1 - i)**2
+			features[5] += (board.height - 1 - i)**2
 		'''distance to the center - position_1'''
 		for (i,j) in board.PositionOne:
-			features[6] -= (j-board.midElement)**2
+			features[6] += (j-board.midElement)**2
 		'''variance of pieces distribution - position_1'''
 		for (i,j) in board.PositionOne:
 			for (k,l) in board.PositionOne:
-					features[7] -= (i-k)**2 + (j-l)**2
+					features[7] += (i-k)**2 + (j-l)**2
 		### skipping features[8]
 
 	return features
@@ -75,14 +75,14 @@ def computeFeaturesFull(board, player):
 		### player1 weights
 		'''distance to the end - position_1'''
 		for (i,j) in board.PositionOne:
-			features[1] -= (board.height - 1 - i)**2
+			features[1] += (board.height - 1 - i)**2
 		'''distance to the center - position_1'''
 		for (i,j) in board.PositionOne:
-			features[2] -= (j-board.midElement)**2
+			features[2] += (j-board.midElement)**2
 		'''variance of pieces distribution - position_1'''
 		for (i,j) in board.PositionOne:
 			for (k,l) in board.PositionOne:
-					features[3] -= (i-k)**2 + (j-l)**2
+					features[3] += (i-k)**2 + (j-l)**2
 		
 		'''total furthest moves - position_1'''
 		best_move = 0
@@ -143,14 +143,14 @@ def computeFeaturesFull(board, player):
 		### player1 weights
 		'''distance to the end - position_1'''
 		for (i,j) in board.PositionOne:
-			features[5] -= (board.height - 1 - i)**2
+			features[5] += (board.height - 1 - i)**2
 		'''distance to the center - position_1'''
 		for (i,j) in board.PositionOne:
-			features[6] -= (j-board.midElement)**2
+			features[6] += (j-board.midElement)**2
 		'''variance of pieces distribution - position_1'''
 		for (i,j) in board.PositionOne:
 			for (k,l) in board.PositionOne:
-					features[7] -= (i-k)**2 + (j-l)**2
+					features[7] += (i-k)**2 + (j-l)**2
 
 		'''total furthest moves - position_1'''
 		best_move = 0
