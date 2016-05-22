@@ -83,10 +83,6 @@ class boardState:
     '''
 	def printBoard(self):
 		for i in range(self.height):
-			if i < 10:
-				print str(i) + " ",
-			else:
-				print i,
 			for j in range(self.mid_width_max):
 				if self.board[i,j] == 0:
 					print "o",
@@ -97,17 +93,22 @@ class boardState:
 				else:
 					print " ",
 			print "\n"
+<<<<<<< HEAD
 
 		print "  ",
 		for j in range(self.mid_width_max):
 			print j%10,
 		print "\n"
+=======
+>>>>>>> parent of b74086b... new printBoard
 	
 	'''
 	Public
 	check if the game has ended
     '''
 	def isEnd(self):
+		print self.isEndTwo()
+		print self.isEndOne()
 		if self.isEndTwo():
 			return -1
 		if self.isEndOne():
