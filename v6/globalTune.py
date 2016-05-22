@@ -87,9 +87,9 @@ while gameCount < 10:
 	print ('RSquare = {}'.format(RSquare))
 	weights = weights.reshape((5,))
 
-print（'\n\n')
+print('\n\n')
 print('The SSR of all games are\n {}'.format(SSRVec))
-print（'\n\n')
+print('\n\n')
 print('The RSquare of all games are\n {}'.format(RSquareVec)) 
 
 
