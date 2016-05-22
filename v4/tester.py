@@ -1,19 +1,10 @@
 from boardState import *
-from computeLegalMove import * 
+from computeLegalMove import *
+from computeFeatures import * 
 
-board1 = boardState(options = 'smallGame')
+board1 = boardState(options = 'fullGame')
 print "Orginal Board"
+
 board1.printBoard()
-
-possibleMoveBoard = computeLegalMove(board1, 1)
-for move in possibleMoveBoard:
-	print move
-
-
-print possibleMoveBoard[2]
-move = possibleMoveBoard[2]
-board2 = board1.takeMove(move)
-board2.printBoard()
-twoSteps = computeLegalMove(board2, 2)
-for twoStep in twoSteps:
-	print twoStep
+print computeFeaturesFull(board1, 1)
+print computeFeaturesFull(board1, 2)
