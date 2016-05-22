@@ -101,6 +101,7 @@ class boardState:
 		print "  ",
 		for j in range(self.mid_width_max):
 			print j%10,
+		print "\n"
 	
 	'''
 	Public
