@@ -11,7 +11,7 @@ import time
 weights = np.ones(5)
 weights[1] = 10
 weights = weights / np.linalg.norm(weights)
-stplength = 1
+stplength = 0.1
 
 
 boardStart = boardState(options = 'smallGame') # fullGame, smallGame
@@ -35,7 +35,6 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	print('player = {}'.format(player))
 	print('features = {}'.format(features))
 	print('weights = {}'.format(weights))
-	print('scoreRaw = {}'.format(scoreRaw))
 	boardNow.printBoard()
 	
 	if (player == 1) :
@@ -52,11 +51,13 @@ while ((not boardNow.isEnd()) and turn < 100) :
 			cantGo2.pop(0)
 
 	timeEnd = time.time()	
-	error = (scoreRaw - scoreMiniMax) / scoreMiniMax
-	weights = weights - error * stplength / np.linalg.norm(features) * features ## weights update
-	weights = weights / np.linalg.norm(weights)
+	error = (scoreRaw - scoreMiniMax)
+	if (abs(error) < 10000) :
+		weights = weights - error * stplength / np.linalg.norm(features) * features ## weights update
+		weights = weights / np.linalg.norm(weights)
 	error = abs(error)
 	errors.append(error)
+	print('scoreRaw = {}'.format(scoreRaw))
 	print('scoreMiniMax = {}'.format(scoreMiniMax))
 	print('move = {}'.format(move))
 	print('recursions = {}'.format(recursions))
