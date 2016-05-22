@@ -117,7 +117,8 @@ Outputs: score(minimax score), moveList(list of moves that lead to the minimax-s
 def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 	recursions = 0;
 	if (depth == 0) :
-		score = computeScoreRawFull(board, weights, player)
+		features = computeFeaturesFull(board, player)
+		score = np.inner(weights, features)
 		moveList = []
 		recursions = 1
 	else :
@@ -133,7 +134,8 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 					recursions = 1
 					return (score, moveList, recursions)
 				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
-					scoreRaw = computeScoreRaw(board, weights, player)
+					features = computeFeatures(board, player)
+					scoreRaw = np.inner(weights, features)
 					PQofMoves.put((-scoreRaw, move))
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
@@ -161,7 +163,8 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 					recursions = 1
 					return (score, moveList, recursions)
 				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
-					scoreRaw = computeScoreRaw(board, weights, player)
+					features = computeFeatures(board, player)
+					scoreRaw = np.inner(weights, features)
 					PQofMoves.put((scoreRaw, move))
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
@@ -188,62 +191,64 @@ Find Minimax score without using alpha-beta pruning;
 Inputs: board, player, weights, depth;
 Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
 '''	
-def computeMinimax_wo(board, player, weights, depth):
-	# recursions = recursions + 1
-	recursions = 0;
-	if (depth == 0) :
-		features = computeFeaturesFull(board)
-		score = np.inner(features, weights)
-		moveList = []
-		recursions = 1
-	else :
-		if (player == 1) :
-			score = - 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
-				recursions = recursions + recursionsNext
-				if (scoreNext > score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-		else :
-			score = 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
-			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
-				recursions = recursions + recursionsNext
-				if (scoreNext < score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+# def computeMinimax_wo(board, player, weights, depth):
+# 	# recursions = recursions + 1
+# 	recursions = 0;
+# 	if (depth == 0) :
+# 		features = computeFeaturesFull(board)
+# 		score = np.inner(features, weights)
+# 		moveList = []
+# 		recursions = 1
+# 	else :
+# 		if (player == 1) :
+# 			score = - 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			for move in allPossibleMoves :
+# 				boardNext = board.takeMove(move)
+# 				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
+# 				recursions = recursions + recursionsNext
+# 				if (scoreNext > score) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
+# 		else :
+# 			score = 10 ** 10
+# 			allPossibleMoves = computeLegalMove(board, player)
+# 			for move in allPossibleMoves :
+# 				boardNext = board.takeMove(move)
+# 				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
+# 				recursions = recursions + recursionsNext
+# 				if (scoreNext < score) :
+# 					score = scoreNext
+# 					moveList = [move]
+# 					moveList.extend(MLNext)
 
-	return (score, moveList, recursions)
+# 	return (score, moveList, recursions)
 
-def computeScoreRaw(board, weights, player) :
-	features = computeFeatures(board)
-	features1 = features[1:5]
-	features2 = features[5:9]
-	weightsSelf = weights[1:5]
-	weightsOppo = weights[5:9]
-	if (player == 1) :
-		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features1) + np.inner(weightsOppo, features2)
-	else :
-		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features2) + np.inner(weightsOppo, features1)
-	return scoreRaw
 
-def computeScoreRawFull(board, weights, player) :
-	features = computeFeaturesFull(board)
-	features1 = features[1:5]
-	features2 = features[5:9]
-	weightsSelf = weights[1:5]
-	weightsOppo = weights[5:9]
-	if (player == 1) :
-		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features1) + np.inner(weightsOppo, features2)
-	else :
-		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features2) + np.inner(weightsOppo, features1)
-	return scoreRaw
+
+# def computeScoreRaw(board, weights, player) :
+# 	features = computeFeatures(board)
+# 	features1 = features[1:5]
+# 	features2 = features[5:9]
+# 	weightsSelf = weights[1:5]
+# 	weightsOppo = weights[5:9]
+# 	if (player == 1) :
+# 		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features1) + np.inner(weightsOppo, features2)
+# 	else :
+# 		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features2) + np.inner(weightsOppo, features1)
+# 	return scoreRaw
+
+# def computeScoreRawFull(board, weights, player) :
+# 	features = computeFeaturesFull(board)
+# 	features1 = features[1:5]
+# 	features2 = features[5:9]
+# 	weightsSelf = weights[1:5]
+# 	weightsOppo = weights[5:9]
+# 	if (player == 1) :
+# 		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features1) + np.inner(weightsOppo, features2)
+# 	else :
+# 		scoreRaw = features[0] * weights[0] + np.inner(weightsSelf, features2) + np.inner(weightsOppo, features1)
+# 	return scoreRaw
 
 
