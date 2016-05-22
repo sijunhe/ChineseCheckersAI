@@ -8,11 +8,9 @@ import numpy as np
 import copy
 import time
 
-weights = np.ones(9)
+weights = np.ones(5)
 weights[1] = 10
-weights[2] = 10
 weights = weights / np.linalg.norm(weights)
-depth = 2
 stplength = 1
 
 
@@ -25,52 +23,49 @@ boardNow = boardStart
 player = 1
 turn = 0
 weights1 = weights
-weights2 = weights
 cantGo1 = []
 cantGo2 = []
 while ((not boardNow.isEnd()) and turn < 100) :
 	turn = turn + 1
 	timeStart = time.time()
-	features = computeFeatures(boardNow)
+	features = computeFeaturesFull(boardNow)
+	scoreRaw = np.inner(features, weights)
+	print('\n\n')
+	print('turn = {}'.format(turn))
+	print('player = {}'.format(player))
+	print('features = {}'.format(features))
+	print('weights = {}'.format(weights))
+	print('scoreRaw = {}'.format(scoreRaw))
+	boardNow.printBoard()
 	
 	if (player == 1) :
-		scoreRaw = np.inner(features, weights1)
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights1, 4, cantGo1)
-		error = (scoreRaw - scoreMiniMax) / scoreMiniMax
-		weights1 = weights1 - error * stplength / np.linalg.norm(features) * features ## weights update
-		weights1[:9] = weights1[:9] / np.linalg.norm(weights1[:9])
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo1)
 		move = moveList[0]
 		cantGo1.append(move)
 		if (len(cantGo1) >= 5) :
 			cantGo1.pop(0)
 	else :
-		scoreRaw = np.inner(features, weights2)
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights2, 4, cantGo2)
-		error = (scoreRaw - scoreMiniMax) / scoreMiniMax
-		weights2 = weights2 - error * stplength / np.linalg.norm(features) * features ## weights update
-		weights2[:9] = weights2[:9] / np.linalg.norm(weights2[:9])
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo2)
 		move = moveList[0]
 		cantGo2.append(move)
 		if (len(cantGo2) >= 5) :
 			cantGo2.pop(0)
 
 	timeEnd = time.time()	
-	
-
+	error = (scoreRaw - scoreMiniMax) / scoreMiniMax
+	weights = weights - error * stplength / np.linalg.norm(features) * features ## weights update
+	weights = weights / np.linalg.norm(weights)
 	error = abs(error)
 	errors.append(error)
-	print('turn = {}'.format(turn))
-	print('player = {}'.format(player))
+	print('scoreMiniMax = {}'.format(scoreMiniMax))
 	print('move = {}'.format(move))
 	print('recursions = {}'.format(recursions))
 	print('error = {}'.format(error))
 	print 'time used = ' + str(timeEnd - timeStart)
-	if player == 1:
-		print('weights1 = {}'.format(weights1))
-	else:
-		print('weights2 = {}'.format(weights2))
+	print('weightsNew = {}'.format(weights))
 	boardNow = boardNow.takeMove(move)
-	boardNow.printBoard()
 	player = 3 - player
 
+print('\n\n')
+boardNow.printBoard()
 print errors

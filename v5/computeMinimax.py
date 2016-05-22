@@ -133,7 +133,7 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 					moveList = [move]
 					recursions = 1
 					return (score, moveList, recursions)
-				if (move not in cantGo) :
+				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
 					features = computeFeatures(boardNext)
 					scoreRaw = np.inner(features, weights)
 					PQofMoves.put((-scoreRaw, move))
@@ -162,7 +162,7 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 					moveList = [move]
 					recursions = 1
 					return (score, moveList, recursions)
-				if (move not in cantGo) :
+				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
 					features = computeFeatures(boardNext)
 					scoreRaw = np.inner(features, weights)
 					PQofMoves.put((scoreRaw, move))
