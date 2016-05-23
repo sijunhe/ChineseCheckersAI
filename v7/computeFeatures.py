@@ -12,6 +12,8 @@ def computeFeatures(board):
 	'''distance to the end - position_2'''
 	for (i,j) in board.PositionTwo:
 		features[0] += i**2
+	features[0] = features[0]/board.numPieces
+
 
 	'''distance to the center - position_1'''
 	for (i,j) in board.PositionOne:
@@ -19,15 +21,17 @@ def computeFeatures(board):
 	'''distance to the center - position_2'''
 	for (i,j) in board.PositionTwo:
 		features[1] += (j-board.midElement)**2
+	features[1] = features[1]/board.numPieces
 
 	'''variance of pieces distribution - position_1'''
 	for (i,j) in board.PositionOne:
 		for (k,l) in board.PositionOne:
-				features[2] -= (i-k)**2 + (j-l)**2
+				features[2] -= (j-l)**2
 	'''variance of pieces distribution - position_2'''
 	for (i,j) in board.PositionTwo:
 		for (k,l) in board.PositionTwo:
-				features[2] += (i-k)**2 + (j-l)**2
+				features[2] += (j-l)**2
+	features[2] = features[2]/(board.numPieces)**2
 
 	return features
 
@@ -43,6 +47,7 @@ def computeFeaturesFull(board):
 	'''distance to the end - position_2'''
 	for (i,j) in board.PositionTwo:
 		features[0] += i**2
+	features[0] = features[0]/board.numPieces
 
 	'''distance to the center - position_1'''
 	for (i,j) in board.PositionOne:
@@ -50,15 +55,17 @@ def computeFeaturesFull(board):
 	'''distance to the center - position_2'''
 	for (i,j) in board.PositionTwo:
 		features[1] += (j-board.midElement)**2
+	features[1] = features[1]/board.numPieces
 
 	'''variance of pieces distribution - position_1'''
 	for (i,j) in board.PositionOne:
 		for (k,l) in board.PositionOne:
-				features[2] -= (i-k)**2 + (j-l)**2
+				features[2] -= (j-l)**2
 	'''variance of pieces distribution - position_2'''
 	for (i,j) in board.PositionTwo:
 		for (k,l) in board.PositionTwo:
-				features[2] += (i-k)**2 + (j-l)**2
+				features[2] += (j-l)**2
+	features[2] = features[2]/(board.numPieces)**2
 
 	'''total furthest moves - position_1'''
 	best_move = 0
@@ -71,7 +78,7 @@ def computeFeaturesFull(board):
 
 	'''total furthest moves - position_2'''
 	best_move = 0
-	#print 'possible moves for player 2:'
+	# print 'possible moves for player 2:'
 	for (i1,j1, i2,j2) in computeLegalMove(board,2):
 		#print (i1,j1), (i2,j2)
 		if i1 - i2 > best_move:
