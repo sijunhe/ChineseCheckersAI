@@ -15,15 +15,10 @@ import numpy as np
 import copy
 import time
 
-weights = np.ones(10)
-weights[1] = 10
-weights[2] = 10
-weights[9] = 10 ** 5
-weights = weights / np.linalg.norm(weights)
+weights = np.ones(4)
+weights[0] = 10
 depth = 4
 stplength = 0.1
-
-
 boardStart = boardState(options = 'fullGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
@@ -54,9 +49,8 @@ boardStart.printBoard()
 
 #### To test the code computeMinimax()
 print('\n\n')
-depth = 4
 timeStart = time.time()
-(scoreMiniMax, moveList, recursions) = computeMinimax(boardStart, 1, weights, depth)
+(scoreMiniMax, moveList, recursions) = computeMinimax_wo(boardStart, 1, weights, depth, [])
 timeEnd = time.time()
 timeUsed = timeEnd - timeStart
 print('scoreMiniMax = {}'.format(scoreMiniMax))
@@ -67,7 +61,7 @@ print('time used = {}'.format(timeUsed))
 board2 = copy.deepcopy(boardStart)
 for move in moveList :
 	board2 = board2.takeMove(move)
-# board2.printBoard()
+board2.printBoard()
 
 
 

@@ -191,7 +191,7 @@ Find Minimax score without using alpha-beta pruning;
 Inputs: board, player, weights, depth;
 Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
 '''	
-def computeMinimax_wo(board, player, weights, depth):
+def computeMinimax_wo(board, player, weights, depth, cantGo):
 	# recursions = recursions + 1
 	recursions = 0;
 	if (depth == 0) :
@@ -204,23 +204,25 @@ def computeMinimax_wo(board, player, weights, depth):
 			score = - 10 ** 10
 			allPossibleMoves = computeLegalMove(board, player)
 			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
-				recursions = recursions + recursionsNext
-				if (scoreNext > score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+				if (move not in cantGo) :
+					boardNext = board.takeMove(move)
+					(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
+					recursions = recursions + recursionsNext
+					if (scoreNext > score) :
+						score = scoreNext
+						moveList = [move]
+						moveList.extend(MLNext)
 		else :
 			score = 10 ** 10
 			allPossibleMoves = computeLegalMove(board, player)
 			for move in allPossibleMoves :
-				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1)
-				recursions = recursions + recursionsNext
-				if (scoreNext < score) :
-					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+				if (move not in cantGo) :
+					boardNext = board.takeMove(move)
+					(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
+					recursions = recursions + recursionsNext
+					if (scoreNext < score) :
+						score = scoreNext
+						moveList = [move]
+						moveList.extend(MLNext)
 
 	return (score, moveList, recursions)
