@@ -1,7 +1,4 @@
-# This file is used to test a weight. To be specific, both players play the game with this weights, and this file will keep track of each step
-
-print('\n\n\n\n\n\n\n\n')
-print "################################################################################"
+print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 
 from boardState import *
 from computeLegalMove import * 
@@ -11,13 +8,21 @@ import numpy as np
 import copy
 import time
 
+weights = np.ones(4)
+weights[0] = 10
+weights = weights / np.linalg.norm(weights)
+stplength = 0.1
+
+
 boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
+
+errors = []
 boardNow = boardStart
 player = 1
 turn = 0
-weights = np.array([ 0.17405501, -0.83843032,  0.4651167, -0.22451248])
+weights1 = weights
 cantGo1 = []
 cantGo2 = []
 while ((not boardNow.isEnd()) and turn < 100) :
@@ -28,11 +33,10 @@ while ((not boardNow.isEnd()) and turn < 100) :
 	print('\n\n')
 	print('turn = {}'.format(turn))
 	print('player = {}'.format(player))
-	print('\n')
-	boardNow.printBoard()
 	print('features = {}'.format(features))
 	print('weights = {}'.format(weights))
-
+	boardNow.printBoard()
+	
 	if (player == 1) :
 		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo1)
 		move = moveList[0]
@@ -45,38 +49,24 @@ while ((not boardNow.isEnd()) and turn < 100) :
 		cantGo2.append(move)
 		if (len(cantGo2) >= 5) :
 			cantGo2.pop(0)
-	
-	if turn == 1:
-		if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
-			featureMatrix = features
-			scoreVector = np.array([scoreMiniMax])
-	else:
-		if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
-			featureMatrix = np.vstack((featureMatrix,features))
-			score = np.array([scoreMiniMax])
-			scoreVector = np.vstack((scoreVector, score))
 
 	timeEnd = time.time()	
+	error = (scoreRaw - scoreMiniMax)
+	if (abs(error) < 10000) :
+		weights = weights - error * stplength / np.linalg.norm(features) * features ## weights update
+		weights = weights / np.linalg.norm(weights)
+	error = abs(error)
+	errors.append(error)
 	print('scoreRaw = {}'.format(scoreRaw))
 	print('scoreMiniMax = {}'.format(scoreMiniMax))
 	print('move = {}'.format(move))
 	print('recursions = {}'.format(recursions))
+	print('error = {}'.format(error))
 	print 'time used = ' + str(timeEnd - timeStart)
+	print('weightsNew = {}'.format(weights))
 	boardNow = boardNow.takeMove(move)
 	player = 3 - player
 
 print('\n\n')
 boardNow.printBoard()
-result = np.linalg.lstsq(featureMatrix, scoreVector)
-weightsNew = result[0]
-residuals = np.dot(featureMatrix, weightsNew) - scoreVector
-SSR = result[1][0]
-SST = np.linalg.norm(scoreVector - np.average(scoreVector)) ** 2
-RSquare = 1 - SSR / SST
-weightsNew = weightsNew.reshape((4,))
-weightsNew = weightsNew / np.linalg.norm(weightsNew)
-
-print ('Number of turns = {}'.format(turn))
-print ('weightsNew = {}'.format(weightsNew))
-print ('SSR = {}'.format(SSR))
-print ('RSquare = {}'.format(RSquare))
+print errors

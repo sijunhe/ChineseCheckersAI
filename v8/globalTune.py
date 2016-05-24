@@ -14,12 +14,13 @@ import matplotlib.pyplot as plt
 weights = np.ones(4)
 # weights[0] = 10
 weights = weights / np.linalg.norm(weights)
+weightsSum = np.zeros(4)
 
 # Learn the weights using linear regression
 gameCount = 0
 SSRVec = []
 RSquareVec = []
-totalGames = 100
+totalGames = 30
 while gameCount < totalGames:
 	print "################################################################################"
 	gameCount += 1
@@ -33,6 +34,7 @@ while gameCount < totalGames:
 	turn = 0
 	cantGo1 = []
 	cantGo2 = []
+	print ('weightsNow = {}'.format(weights))
 	while ((not boardNow.isEnd()) and turn < 100) :
 		turn = turn + 1
 		timeStart = time.time()
@@ -74,20 +76,26 @@ while gameCount < totalGames:
 		#boardNow.printBoard()
 		player = 3 - player
 	result = np.linalg.lstsq(featureMatrix, scoreVector)
-	weights = result[0]
-	residuals = np.dot(featureMatrix, weights) - scoreVector
+	weightsNew = result[0]
+	residuals = np.dot(featureMatrix, weightsNew) - scoreVector
 	SSR = result[1][0]
 	SST = np.linalg.norm(scoreVector - np.average(scoreVector)) ** 2
 	RSquare = 1 - SSR / SST
 	SSRVec.append(SSR)
 	RSquareVec.append(RSquare)
-	weights = weights.reshape((4,))
-	weights = weights / np.linalg.norm(weights)
+	weightsNew = weightsNew.reshape((4,))
+	weightsNew = weightsNew / np.linalg.norm(weightsNew)
 
 	print ('Number of turns = {}'.format(turn))
-	print ('weights = {}'.format(weights))
+	print ('weightsNew = {}'.format(weightsNew))
 	print ('SSR = {}'.format(SSR))
 	print ('RSquare = {}'.format(RSquare))
+	if (gameCount <= 6) :
+		weights = weightsNew
+	else :
+		weightsSum = weightsSum + weightsNew
+		weights = weightsSum / (gameCount - 6)
+		weights = weights / np.linalg.norm(weights)
 	
 
 print('\n')
