@@ -1,8 +1,3 @@
-# This file is used to test a weight. To be specific, both players play the game with this weights, and this file will keep track of each step
-
-print('\n\n\n\n\n\n\n\n')
-print "################################################################################"
-
 from boardState import *
 from computeLegalMove import * 
 from computeFeatures import *
@@ -11,13 +6,18 @@ import numpy as np
 import copy
 import time
 
+print "################################################################################"
 boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 boardNow = boardStart
 player = 1
 turn = 0
-weights = np.array([ 0.17405501, -0.83843032,  0.4651167, -0.22451248])
+weights = np.ones(4)
+weights[0] = -1.69853196 
+weights[1] =  0.06633986
+weights[2] = 0.09230491 
+weights[3] = -0.01052756
 cantGo1 = []
 cantGo2 = []
 while ((not boardNow.isEnd()) and turn < 100) :
@@ -67,16 +67,3 @@ while ((not boardNow.isEnd()) and turn < 100) :
 
 print('\n\n')
 boardNow.printBoard()
-result = np.linalg.lstsq(featureMatrix, scoreVector)
-weightsNew = result[0]
-residuals = np.dot(featureMatrix, weightsNew) - scoreVector
-SSR = result[1][0]
-SST = np.linalg.norm(scoreVector - np.average(scoreVector)) ** 2
-RSquare = 1 - SSR / SST
-weightsNew = weightsNew.reshape((4,))
-weightsNew = weightsNew / np.linalg.norm(weightsNew)
-
-print ('Number of turns = {}'.format(turn))
-print ('weightsNew = {}'.format(weightsNew))
-print ('SSR = {}'.format(SSR))
-print ('RSquare = {}'.format(RSquare))
