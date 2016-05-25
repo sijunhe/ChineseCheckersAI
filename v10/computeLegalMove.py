@@ -22,6 +22,37 @@ def computeLegalMoveSpecify(board, player, i, j):
 
 	return possibleMoveBoard
 
+'''
+Public Method
+Find all legal moves forward that only allows for backing n in height
+'''	
+def computeLegalMoveForward(board, player, maxBackwardDistance = 1):
+	possibleMoveBoard = []
+	if player == 1:
+		myPosition = board.PositionOne
+		for (i, j) in myPosition:
+		## current piece x and y position
+			rollMoves = findLegalRoll(board, i,j)
+			for (nexti, nextj) in rollMoves:
+				if (nexti - i >= -maxBackwardDistance):
+					possibleMoveBoard.append((i,j,nexti, nextj))
+		possibleHops = computeRepetitiveHop(board, i,j)
+		for (i, j,nexti, nextj) in possibleHops:
+			if (nexti - i >= -maxBackwardDistance):
+				possibleMoveBoard.append((i,j,nexti, nextj))
+	elif player == 2:
+		myPosition = board.PositionTwo
+		for (i, j) in myPosition:
+		## current piece x and y position
+			rollMoves = findLegalRoll(board, i,j)
+			for (nexti, nextj) in rollMoves:
+				if (nexti - i <= maxBackwardDistance):
+					possibleMoveBoard.append((i,j,nexti, nextj))
+		possibleHops = computeRepetitiveHop(board, i,j)
+		for (i, j,nexti, nextj) in possibleHops:
+			if (nexti - i <= maxBackwardDistance):
+				possibleMoveBoard.append((i,j,nexti, nextj))
+	return possibleMoveBoard
 
 '''
 Public Method
