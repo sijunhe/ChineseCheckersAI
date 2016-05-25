@@ -9,18 +9,21 @@ import numpy as np
 import copy
 import time
 import matplotlib.pyplot as plt
+import math
 
 ## initialize weights
-weights = np.ones(4)
+weights = np.ones(3)
 # weights[0] = 10
 weights = weights / np.linalg.norm(weights)
-weightsSum = np.zeros(4)
+weightsSum = np.zeros(3)
 
 # Learn the weights using linear regression
 gameCount = 0
-SSRVec = []
+AARVec = []
 RSquareVec = []
-totalGames = 30
+weightsGradVec = []
+predErrorVec = []
+totalGames = 100
 while gameCount < totalGames:
 	print "################################################################################"
 	gameCount += 1
@@ -34,10 +37,10 @@ while gameCount < totalGames:
 	turn = 0
 	cantGo1 = []
 	cantGo2 = []
+	timeStart = time.time()
 	print ('weightsNow = {}'.format(weights))
 	while ((not boardNow.isEnd()) and turn < 100) :
 		turn = turn + 1
-		timeStart = time.time()
 		features = computeFeaturesFull(boardNow)
 		scoreRaw = np.inner(features, weights)
 		if (player == 1) :
@@ -57,56 +60,79 @@ while gameCount < totalGames:
 			if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
 				featureMatrix = features
 				scoreVector = np.array([scoreMiniMax])
+				predError = (scoreMiniMax - scoreRaw) ** 2
 		else:
 			if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
 				featureMatrix = np.vstack((featureMatrix,features))
 				score = np.array([scoreMiniMax])
 				scoreVector = np.vstack((scoreVector, score))
-
-		timeEnd = time.time()	
+				predError += (scoreMiniMax - scoreRaw) ** 2
 		
-		# print('game = {}'.format(gameCount))
-		# print('turn = {}'.format(turn))
-		# print('player = {}'.format(player))
-		# print('move = {}'.format(move))
-		# print('recursions = {}'.format(recursions))
-		# #print('error = {}'.format(error))
-		# print 'time used = ' + str(timeEnd - timeStart)
 		boardNow = boardNow.takeMove(move)
-		#boardNow.printBoard()
 		player = 3 - player
+	
+	timeEnd = time.time()
 	result = np.linalg.lstsq(featureMatrix, scoreVector)
 	weightsNew = result[0]
-	residuals = np.dot(featureMatrix, weightsNew) - scoreVector
+	weightsNew = weightsNew.reshape((3,))
+	weightsNew = weightsNew / np.linalg.norm(weightsNew)
 	SSR = result[1][0]
 	SST = np.linalg.norm(scoreVector - np.average(scoreVector)) ** 2
 	RSquare = 1 - SSR / SST
-	SSRVec.append(SSR)
+	AARVec.append(SSR / turn)
 	RSquareVec.append(RSquare)
-	weightsNew = weightsNew.reshape((4,))
-	weightsNew = weightsNew / np.linalg.norm(weightsNew)
+	weightsGrad = np.linalg.norm(weights - weightsNew)
+	weightsGradVec.append(weightsGrad)
+	predError = math.sqrt(predError / turn)
+	predErrorVec.append(predError)
+	AAR = math.sqrt(SSR / turn)
 
 	print ('Number of turns = {}'.format(turn))
+	print ('Time used = {}'.format(timeEnd - timeStart))
 	print ('weightsNew = {}'.format(weightsNew))
-	print ('SSR = {}'.format(SSR))
 	print ('RSquare = {}'.format(RSquare))
-	if (gameCount <= 6) :
+	print ('AAR = {}'.format(AAR))
+	print ('predError = {}'.format(predError))
+	print ('weightsGrad = {}'.format(weightsGrad))
+
+	if (gameCount <= 5) :
 		weights = weightsNew
 	else :
 		weightsSum = weightsSum + weightsNew
-		weights = weightsSum / (gameCount - 6)
+		weights = weightsSum / (gameCount - 5)
 		weights = weights / np.linalg.norm(weights)
 	
-
-print('\n')
-print('The SSR of all games are\n {}'.format(SSRVec))
 print('\n')
 print('The RSquare of all games are\n {}'.format(RSquareVec)) 
+print('\n')
+print('The AAR of all games are\n {}'.format(AARVec))
+print('\n')
+print('The average prediction error of all games are\n {}'.format(predErrorVec)) 
+print('\n')
+print('The gradient of weights of all games are\n {}'.format(weightsGradVec))
 
 plt.plot(range(1, totalGames+1), RSquareVec, 'bo-')
 plt.ylabel('R^2 of each linear regression')
 plt.xlabel('Game')
-plt.savefig('RSquare.eps')
+plt.savefig('RSquare.pdf')
+plt.show()
+
+plt.plot(range(1, totalGames+1), AARVec, 'bo-')
+plt.ylabel('AAR of each linear regression')
+plt.xlabel('Game')
+plt.savefig('AAR.pdf')
+plt.show()
+
+plt.plot(range(1, totalGames+1), predErrorVec, 'bo-')
+plt.ylabel('The average prediction error of the weights of each game')
+plt.xlabel('Game')
+plt.savefig('predError.pdf')
+plt.show()
+
+plt.plot(range(1, totalGames+1), weightsGradVec, 'bo-')
+plt.ylabel('Norm of gradient of the weights')
+plt.xlabel('Game')
+plt.savefig('weightsGrad.pdf')
 plt.show()
 
 

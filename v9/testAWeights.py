@@ -1,6 +1,6 @@
 # This file is used to test a weight. To be specific, both players play the game with this weights, and this file will keep track of each step
 
-print('\n\n\n\n\n\n\n\n')
+#print('\n\n\n\n\n\n\n\n')
 print "################################################################################"
 
 from boardState import *

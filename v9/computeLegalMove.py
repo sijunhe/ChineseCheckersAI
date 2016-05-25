@@ -17,14 +17,10 @@ def computeLegalMoveSpecify(board, player, i, j):
 
 	rollMoves = findLegalRoll(board, i,j)
 	for (nexti, nextj) in rollMoves:
-		possibleMoveBoard.append(((i,j),(nexti, nextj)))
+		possibleMoveBoard.append((i,j, nexti, nextj))
 	possibleMoveBoard += computeRepetitiveHop(board, i,j)
 
-	allPossibleMove = []
-	for ((oldi, oldj),(newi, newj)) in possibleMoveBoard:
-		move = (oldi, oldj, newi, newj)
-		allPossibleMove.append(move)
-	return allPossibleMove
+	return possibleMoveBoard
 
 
 '''
