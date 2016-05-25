@@ -13,7 +13,7 @@ import math
 
 ## initialize weights
 weights = np.ones(3)
-# weights[0] = 10
+# weights[2] = 6
 weights = weights / np.linalg.norm(weights)
 weightsSum = np.zeros(3)
 

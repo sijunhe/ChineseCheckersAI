@@ -95,6 +95,7 @@ def computeFeaturesFull(board):
 					# print (moves)
 		k = k + 1
 	features[2] -= np.sum(np.square(moves))
+	features[2] = features[2] / board.numPieces
 
 
 	return features
