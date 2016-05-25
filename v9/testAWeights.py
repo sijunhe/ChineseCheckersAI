@@ -17,8 +17,9 @@ boardStart.printBoard()
 boardNow = boardStart
 player = 1
 turn = 0
-aaaaa = [0.20060055, -0.64809949,  0.724341,  0.12270526]
+aaaaa = [10, 1, 1]
 weights = np.array(aaaaa)
+weights = weights / np.linalg.norm(weights)
 cantGo1 = []
 cantGo2 = []
 while ((not boardNow.isEnd()) and turn < 100) :

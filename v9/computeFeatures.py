@@ -74,12 +74,9 @@ def computeFeaturesFull(board):
 	for (i,j) in board.PositionOne:
 		# print (i,j)
 		# print 'k = {}'.format(k)
-		for (i1,j1, i2,j2) in computeLegalMove(board,1):
-			# print (i1,j1, i2,j2)
-			if (i,j) == (i1,j1):
-				# print (i1,j1)
-				if i2 - i1 > moves[k]:
-					moves[k] = i2 - i1
+		for (i1,j1, i2,j2) in computeLegalMoveSpecify(board,1, i, j):
+			if i2 - i1 > moves[k]:
+				moves[k] = i2 - i1
 					# print (moves)
 		k = k + 1
 	features[2] += np.sum(np.square(moves))
@@ -91,12 +88,10 @@ def computeFeaturesFull(board):
 	for (i,j) in board.PositionTwo:
 		# print (i,j)
 		# print 'k = {}'.format(k)
-		for (i1,j1, i2,j2) in computeLegalMove(board,2):
+		for (i1,j1, i2,j2) in computeLegalMoveSpecify(board,2, i, j):
 			# print (i1,j1, i2,j2)
-			if (i,j) == (i1,j1):
-				# print (i1,j1)
-				if i1 - i2 > moves[k]:
-					moves[k] = i1 - i2
+			if i1 - i2 > moves[k]:
+				moves[k] = i1 - i2
 					# print (moves)
 		k = k + 1
 	features[2] -= np.sum(np.square(moves))
