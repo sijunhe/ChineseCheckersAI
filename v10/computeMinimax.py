@@ -5,6 +5,39 @@ import numpy as np
 import Queue
 
 
+def findMoveGreedy(board, player, depth) :
+	if (depth == 0) :
+		score = computeScoreEndgame(board, player)
+		return (score, [], 1)
+	else :
+		allPossibleMoves = computeLegalMoveForward(board, player, 1)
+		score = -10 ** 5
+		recursions = 1
+		for move in allPossibleMoves :
+			boardNext = board.takeMove(move)
+			(scoreNext, MLNext, recursionsNext) = findMoveGreedy(boardNext, player, depth - 1)
+			recursions += recursionsNext
+			if (scoreNext > score) :
+				score = scoreNext
+				moveList = [move]
+				moveList.extend(MLNext)
+		return (score, moveList, recursions)
+
+	
+
+
+def computeScoreEndgame(board, player) :
+	score = 0
+	if (player == 1) :
+		for (i, j) in board.PositionOne :
+			score += i ** 2
+	else :
+		for (i, j) in board.PositionTwo :
+			score += (board.height - i - 1) ** 2
+	return score
+
+
+
 
 '''
 Public Method
