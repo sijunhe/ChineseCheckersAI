@@ -15,14 +15,9 @@ def computeLegalMove(board, player):
 		## current piece x and y position
 		rollMoves = findLegalRoll(board, i,j)
 		for (nexti, nextj) in rollMoves:
-			possibleMoveBoard.append(((i,j),(nexti, nextj)))
+			possibleMoveBoard.append((i,j,nexti, nextj))
 		possibleMoveBoard += computeRepetitiveHop(board, i,j)
-
-	allPossibleMove = []
-	for ((oldi, oldj),(newi, newj)) in possibleMoveBoard:
-		move = (oldi, oldj, newi, newj)
-		allPossibleMove.append(move)
-	return allPossibleMove
+	return possibleMoveBoard
 
 '''
 Private Method
@@ -72,7 +67,7 @@ def computeRepetitiveHop(board, hopi, hopj):
 				futureBoard = copy.deepcopy(board.board)
 				futureBoard[hopi][hopj] = 0
 				futureBoard[nexti][nextj] = 1
-				possibleMoveBoard.append(((hopi, hopj),(nexti, nextj)))	
+				possibleMoveBoard.append((hopi, hopj,nexti, nextj))	
 				if board.fullGame == 0:
 					futureboard = boardState(options = 'smallGame', inputBoard = futureBoard)
 				else:
@@ -98,7 +93,7 @@ def computeRepetitiveHopRecursion(board, origini, originj, hopi, hopj, pastPosit
 				futureBoard = copy.deepcopy(board.board)
 				futureBoard[hopi][hopj] = 0
 				futureBoard[nexti][nextj] = 1
-				possibleMoveBoard.append(((origini, originj),(nexti, nextj)))	
+				possibleMoveBoard.append((origini, originj,nexti, nextj))	
 				if board.fullGame == 0:
 					futureboard = boardState(options = 'smallGame', inputBoard = futureBoard)
 				else:
