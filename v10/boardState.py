@@ -33,7 +33,6 @@ class boardState:
 			self.starting = 4
 			self.midElement = 8
 
-		
 		self.mid_width = (self.height + 1) / 2
 
 		## max y coorindate for center line
@@ -65,8 +64,25 @@ class boardState:
 						self.PositionOne.append((i,j))
 					if self.board[i,j] == 2:
 						self.PositionTwo.append((i,j))
+		## determine last piece position
+		self.PositionTwoLastElement = self.height
+		self.PositionOneLastElement = 0
+		for (i,j) in self.PositionOne:
+			if i < self.PositionOneLastElement:
+				self.PositionOneLastElement = i
+		for (i,j) in self.PositionTwo:
+			if i < self.PositionTwoLastElement:
+				self.PositionTwoLastElement = i
 		self.allPosition = self.PositionOne + self.PositionTwo
 	
+	'''
+	Public
+	print the current board
+    '''
+	def isEndGame(self):
+		if self.PositionTwoLastElement < self.PositionOneLastElement:
+			return True
+		return False
 
 	'''
 	Public
