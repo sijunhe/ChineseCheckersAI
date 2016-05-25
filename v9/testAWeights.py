@@ -11,7 +11,7 @@ import numpy as np
 import copy
 import time
 
-boardStart = boardState(options = 'smallGame') # fullGame, smallGame
+boardStart = boardState(options = 'fullGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 boardNow = boardStart
@@ -22,7 +22,7 @@ weights = np.array(aaaaa)
 weights = weights / np.linalg.norm(weights)
 cantGo1 = []
 cantGo2 = []
-while ((not boardNow.isEnd()) and turn < 100) :
+while ((not boardNow.isEnd()) and turn < 1000) :
 	turn = turn + 1
 	timeStart = time.time()
 	features = computeFeaturesFull(boardNow)
@@ -75,7 +75,7 @@ residuals = np.dot(featureMatrix, weightsNew) - scoreVector
 SSR = result[1][0]
 SST = np.linalg.norm(scoreVector - np.average(scoreVector)) ** 2
 RSquare = 1 - SSR / SST
-weightsNew = weightsNew.reshape((4,))
+weightsNew = weightsNew.reshape((3,))
 weightsNew = weightsNew / np.linalg.norm(weightsNew)
 
 print ('Number of turns = {}'.format(turn))
