@@ -1,6 +1,32 @@
 from boardState import *
 import copy 
 
+
+'''
+Public Method
+Find all legal moves of a specific  (i, j), including 1 roll and repetitive hops
+'''	
+def computeLegalMoveSpecify(board, player, i, j):
+	possibleMoveBoard = []
+	if player == 1:
+		myPosition = board.PositionOne
+	elif player == 2:
+		myPosition = board.PositionTwo
+	if (i, j) not in myPosition :
+		return possibleMoveBoard
+
+	rollMoves = findLegalRoll(board, i,j)
+	for (nexti, nextj) in rollMoves:
+		possibleMoveBoard.append(((i,j),(nexti, nextj)))
+	possibleMoveBoard += computeRepetitiveHop(board, i,j)
+
+	allPossibleMove = []
+	for ((oldi, oldj),(newi, newj)) in possibleMoveBoard:
+		move = (oldi, oldj, newi, newj)
+		allPossibleMove.append(move)
+	return allPossibleMove
+
+
 '''
 Public Method
 Find all legal moves, including 1 roll and repetitive hops
