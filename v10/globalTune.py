@@ -35,10 +35,10 @@ while gameCount < totalGames:
 	turn = 0
 	cantGo1 = []
 	cantGo2 = []
-	timeStart = time.time()
 	print ('weightsNow = {}'.format(weights))
 	while ((not boardNow.isEnd()) and turn < 250) :
 		turn = turn + 1
+		timeStart = time.time()
 		features = computeFeaturesFull(boardNow)
 		scoreRaw = np.inner(features, weights)
 		if (player == 1) :
@@ -98,7 +98,6 @@ while gameCount < totalGames:
 	AAR = math.sqrt(SSR / turn)
 
 	print ('Number of turns = {}'.format(turn))
-	print ('Time used = {}'.format(timeEnd - timeStart))
 	print ('weightsNew = {}'.format(weightsNew))
 	print ('RSquare = {}'.format(RSquare))
 	print ('AAR = {}'.format(AAR))
@@ -114,17 +113,14 @@ while gameCount < totalGames:
 		weights = weights / np.linalg.norm(weights)
 
 	print('\n ##################### \n Endgame Begins!!!! \n #####################')
-	while ((not boardNow.isEnd()) and turn < 50) :
+	while ((not boardNow.isEnd()) and turn < 300) :
 		turn = turn + 1
 		print('\n\n')
 		print('turn = {}'.format(turn))
 		print('player = {}'.format(player))
 		print('\n')
 		boardNow.printBoard()
-
 		timeStart = time.time()
-		print ('All possible moves = {}'.format(computeLegalMove(boardNow, player)))
-		print ('legal move forward = {}'.format(computeLegalMoveForward(boardNow, player, 0)))
 		(scoreGreedy, moveList, recursions) = findMoveGreedy(boardNow, player, 3)
 		timeEnd = time.time()
 		print('scoreGreedy = {}'.format(scoreGreedy))
