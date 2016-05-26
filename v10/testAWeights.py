@@ -11,7 +11,7 @@ import numpy as np
 import copy
 import time
 
-boardStart = boardState(options = 'smallGame') # fullGame, smallGame
+boardStart = boardState(options = 'fullGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 boardNow = boardStart
@@ -22,7 +22,7 @@ weights = np.array(aaaaa)
 weights = weights / np.linalg.norm(weights)
 cantGo1 = []
 cantGo2 = []
-while ((not boardNow.isEnd()) and turn < 1000) :
+while ((not boardNow.isEnd()) and turn < 200) :
 	turn = turn + 1
 	timeStart = time.time()
 	features = computeFeaturesFull(boardNow)
@@ -37,13 +37,13 @@ while ((not boardNow.isEnd()) and turn < 1000) :
 	print('weights = {}'.format(weights))
 
 	if (player == 1) :
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo1)
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo1)
 		move = moveList[0]
 		cantGo1.append(move)
 		if (len(cantGo1) >= 5) :
 			cantGo1.pop(0)
 	else :
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo2)
+		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo2)
 		move = moveList[0]
 		cantGo2.append(move)
 		if (len(cantGo2) >= 5) :

@@ -1,0 +1,6653 @@
+################################################################################
+Orginal Board
+                1                 
+
+              1   1               
+
+            1   1   1             
+
+          1   1   1   1           
+
+        o   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   o   o         
+
+          2   2   2   2           
+
+            2   2   2             
+
+              2   2               
+
+                2                 
+
+
+
+
+
+
+turn = 1
+player = 1
+
+
+                1                 
+
+              1   1               
+
+            1   1   1             
+
+          1   1   1   1           
+
+        o   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   o   o         
+
+          2   2   2   2           
+
+            2   2   2             
+
+              2   2               
+
+                2                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (2, 6, 4, 8)
+recursions = 27
+time used = 1.44471502304
+Positon One 0
+Positon Two 16
+
+
+
+turn = 2
+player = 2
+
+
+                1                 
+
+              1   1               
+
+            o   1   1             
+
+          1   1   1   1           
+
+        o   o   1   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   o   o         
+
+          2   2   2   2           
+
+            2   2   2             
+
+              2   2               
+
+                2                 
+
+
+
+features = [ 5.2  0.4  2. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.38640263379
+scoreMiniMax = 10.8124111693
+move = (14, 6, 12, 8)
+recursions = 36
+time used = 2.12709617615
+Positon One 0
+Positon Two 16
+
+
+
+turn = 3
+player = 1
+
+
+                1                 
+
+              1   1               
+
+            o   1   1             
+
+          1   1   1   1           
+
+        o   o   1   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   2   o   o         
+
+          2   2   2   2           
+
+            o   2   2             
+
+              2   2               
+
+                2                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (0, 8, 4, 4)
+recursions = 45
+time used = 3.00004911423
+Positon One 1
+Positon Two 16
+
+
+
+turn = 4
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   1   1             
+
+          1   1   1   1           
+
+        1   o   1   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   2   o   o         
+
+          2   2   2   2           
+
+            o   2   2             
+
+              2   2               
+
+                2                 
+
+
+
+features = [ 11.2  -1.6  -1.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 10.8124111693
+scoreMiniMax = 5.11906279719
+move = (16, 8, 12, 4)
+recursions = 50
+time used = 3.48746180534
+Positon One 1
+Positon Two 15
+
+
+
+turn = 5
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   1   1             
+
+          1   1   1   1           
+
+        1   o   1   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   o   o         
+
+          2   2   2   2           
+
+            o   2   2             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (2, 8, 4, 10)
+recursions = 82
+time used = 5.26828193665
+Positon One 1
+Positon Two 15
+
+
+
+turn = 6
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   1             
+
+          1   1   1   1           
+
+        1   o   1   1   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   o   o         
+
+          2   2   2   2           
+
+            o   2   2             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 5.2 -0.4  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.11906279719
+scoreMiniMax = 5.00024509203
+move = (14, 8, 12, 10)
+recursions = 96
+time used = 7.25641012192
+Positon One 1
+Positon Two 15
+
+
+
+turn = 7
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   1             
+
+          1   1   1   1           
+
+        1   o   1   1   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   2   o         
+
+          2   2   2   2           
+
+            o   o   2             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (2, 10, 4, 12)
+recursions = 69
+time used = 7.50199198723
+Positon One 1
+Positon Two 15
+
+
+
+turn = 8
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   1   1           
+
+        1   o   1   1   1         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   2   o         
+
+          2   2   2   2           
+
+            o   o   2             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 5.2 -1.2 -0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.00024509203
+scoreMiniMax = 4.86162443602
+move = (14, 10, 12, 12)
+recursions = 74
+time used = 7.998472929
+Positon One 1
+Positon Two 15
+
+
+
+turn = 9
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   1   1           
+
+        1   o   1   1   1         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   2   2         
+
+          2   2   2   2           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (3, 11, 5, 9)
+recursions = 79
+time used = 8.39890384674
+Positon One 1
+Positon Two 15
+
+
+
+turn = 10
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   1   o           
+
+        1   o   1   1   1         
+
+      o   o   o   1   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        2   o   2   2   2         
+
+          2   2   2   2           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.8  0.8  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.86162443602
+scoreMiniMax = 4.69329935371
+move = (13, 11, 11, 9)
+recursions = 82
+time used = 8.40785503387
+Positon One 1
+Positon Two 15
+
+
+
+turn = 11
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   1   o           
+
+        1   o   1   1   1         
+
+      o   o   o   1   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   2   o   o       
+
+        2   o   2   2   2         
+
+          2   2   2   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (3, 9, 5, 7)
+recursions = 85
+time used = 9.07621216774
+Positon One 1
+Positon Two 15
+
+
+
+turn = 12
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   o   o           
+
+        1   o   1   1   1         
+
+      o   o   1   1   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   2   o   o       
+
+        2   o   2   2   2         
+
+          2   2   2   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.8  0.  -0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.69329935371
+scoreMiniMax = 4.75270820629
+move = (13, 9, 11, 7)
+recursions = 89
+time used = 9.68501996994
+Positon One 1
+Positon Two 15
+
+
+
+turn = 13
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          1   1   o   o           
+
+        1   o   1   1   1         
+
+      o   o   1   1   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   2   2   o   o       
+
+        2   o   2   2   2         
+
+          2   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (3, 5, 5, 11)
+recursions = 93
+time used = 11.0474970341
+Positon One 1
+Positon Two 15
+
+
+
+turn = 14
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   1   1         
+
+      o   o   1   1   1   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   2   2   o   o       
+
+        2   o   2   2   2         
+
+          2   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.8  0.   0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.75270820629
+scoreMiniMax = 4.50517132054
+move = (13, 5, 11, 11)
+recursions = 92
+time used = 11.8266010284
+Positon One 1
+Positon Two 15
+
+
+
+turn = 15
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   1   1         
+
+      o   o   1   1   1   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   2   2         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (4, 12, 6, 10)
+recursions = 91
+time used = 11.7107000351
+Positon One 1
+Positon Two 15
+
+
+
+turn = 16
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   1   o         
+
+      o   o   1   1   1   o       
+
+    o   o   o   o   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   2   2         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.4  1.2  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.50517132054
+scoreMiniMax = 4.39625509082
+move = (12, 12, 10, 10)
+recursions = 94
+time used = 10.7717301846
+Positon One 1
+Positon Two 15
+
+
+
+turn = 17
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   1   o         
+
+      o   o   1   1   1   o       
+
+    o   o   o   o   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   2   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (4, 10, 6, 8)
+recursions = 97
+time used = 11.7918310165
+Positon One 1
+Positon Two 15
+
+
+
+turn = 18
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   o   o         
+
+      o   o   1   1   1   o       
+
+    o   o   o   1   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   2   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.4  0.4  0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.39625509082
+scoreMiniMax = 4.28733886109
+move = (12, 10, 10, 8)
+recursions = 95
+time used = 11.1607627869
+Positon One 1
+Positon Two 15
+
+
+
+turn = 19
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   1   o   o         
+
+      o   o   1   1   1   o       
+
+    o   o   o   1   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   2   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (4, 8, 6, 6)
+recursions = 93
+time used = 10.7320990562
+Positon One 1
+Positon Two 15
+
+
+
+turn = 20
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   1   1   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   2   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   2   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.4 -0.4 -0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.28733886109
+scoreMiniMax = 4.06950640163
+move = (12, 8, 10, 6)
+recursions = 98
+time used = 13.2268109322
+Positon One 1
+Positon Two 15
+
+
+
+turn = 21
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   1   1   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (5, 11, 7, 9)
+recursions = 103
+time used = 12.7225379944
+Positon One 1
+Positon Two 15
+
+
+
+turn = 22
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   1   o   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   2   2   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.   0.8  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.06950640163
+scoreMiniMax = 3.96059017191
+move = (11, 11, 9, 9)
+recursions = 102
+time used = 12.4423818588
+Positon One 1
+Positon Two 15
+
+
+
+turn = 23
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   1   o   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   2   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = 0.0
+move = (5, 9, 7, 7)
+recursions = 101
+time used = 12.4812278748
+Positon One 1
+Positon Two 15
+
+
+
+turn = 24
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   o   o   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   2   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 4.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.96059017191
+scoreMiniMax = 3.73285623702
+move = (11, 9, 9, 7)
+recursions = 98
+time used = 11.6031990051
+Positon One 1
+Positon Two 15
+
+
+
+turn = 25
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   o   o   o       
+
+    o   o   1   1   1   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 0.  0.  0.]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0
+scoreMiniMax = -0.168325082306
+move = (6, 10, 8, 8)
+recursions = 182
+time used = 16.8869929314
+Positon One 1
+Positon Two 15
+
+
+
+turn = 26
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   o   o   o       
+
+    o   o   1   1   o   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   o   o   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              2   2               
+
+                o                 
+
+
+
+features = [ 3.6  0.4 -0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.59423558101
+scoreMiniMax = 4.29724033652
+move = (15, 9, 14, 8)
+recursions = 171
+time used = 14.1243929863
+Positon One 1
+Positon Two 15
+
+
+
+turn = 27
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   1   o   o   o       
+
+    o   o   1   1   o   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   o   o   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   2   o             
+
+              2   o               
+
+                o                 
+
+
+
+features = [ 0.7  0.3 -1.9]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.534679673207
+scoreMiniMax = -5.64384099497
+move = (5, 7, 7, 5)
+recursions = 90
+time used = 9.85533213615
+Positon One 1
+Positon Two 15
+
+
+
+turn = 28
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   1   1   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   o   o   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      o   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   2   o             
+
+              2   o               
+
+                o                 
+
+
+
+features = [ 4.7 -0.5 -3.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.29724033652
+scoreMiniMax = -2.0298024631
+move = (15, 7, 11, 3)
+recursions = 87
+time used = 9.88153004646
+Positon One 1
+Positon Two 14
+
+
+
+turn = 29
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   1   1   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   o   o   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   2   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-5.7  1.9 -1.9]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -5.64384099497
+scoreMiniMax = -8.58457919761
+move = (6, 8, 8, 6)
+recursions = 86
+time used = 10.2530810833
+Positon One 1
+Positon Two 14
+
+
+
+turn = 30
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   1   o   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   o   1   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   o   o   o   o         
+
+          o   2   o   o           
+
+            o   2   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.1  1.5 -1.8]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.10901426654
+scoreMiniMax = -4.03980197534
+move = (14, 8, 12, 6)
+recursions = 124
+time used = 12.4671730995
+Positon One 1
+Positon Two 13
+
+
+
+turn = 31
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   1   o   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   o   1   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-7.3  1.9 -3. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -7.33699329346
+scoreMiniMax = -12.5253664187
+move = (6, 6, 8, 4)
+recursions = 85
+time used = 9.37358403206
+Positon One 1
+Positon Two 13
+
+
+
+turn = 32
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   o   o   2   2   o   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   2   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-3.7  0.7 -4.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -4.03980197534
+scoreMiniMax = -9.29748542855
+move = (13, 7, 9, 11)
+recursions = 87
+time used = 9.5954079628
+Positon One 1
+Positon Two 12
+
+
+
+turn = 33
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   1   1   1   o   o   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   o   o   2   2   2   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-12.5   1.5  -3. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -12.5253664187
+scoreMiniMax = -15.7631488842
+move = (7, 7, 9, 5)
+recursions = 82
+time used = 9.60619807243
+Positon One 1
+Positon Two 12
+
+
+
+turn = 34
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   1   o   1   o   o   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   o   1   2   2   2   o   o   
+
+    o   o   2   2   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-9.3  0.7 -1.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -9.29748542855
+scoreMiniMax = -12.7035929764
+move = (10, 8, 6, 8)
+recursions = 85
+time used = 9.78846001625
+Positon One 1
+Positon Two 12
+
+
+
+turn = 35
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   1   o   1   o   o   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   o   1   2   2   2   o   o   
+
+    o   o   2   o   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-15.7   0.7  -2.9]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -15.7631488842
+scoreMiniMax = -18.3771383976
+move = (8, 6, 10, 8)
+recursions = 201
+time used = 19.6907188892
+Positon One 1
+Positon Two 12
+
+
+
+turn = 36
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   2   2   2   o   o   
+
+    o   o   2   1   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-12.9   1.1  -1.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -12.832312157
+scoreMiniMax = -15.3175824898
+move = (9, 9, 5, 9)
+recursions = 108
+time used = 13.1765391827
+Positon One 1
+Positon Two 12
+
+
+
+turn = 37
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   2   o   2   o   o   
+
+    o   o   2   1   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-18.5   1.1  -1.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -18.3771383976
+scoreMiniMax = -22.2189108644
+move = (7, 5, 7, 7)
+recursions = 287
+time used = 31.8856348991
+Positon One 1
+Positon Two 12
+
+
+
+turn = 38
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   2   o   2   o   o   
+
+    o   o   2   1   2   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-18.5   1.9   0.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -18.0602911839
+scoreMiniMax = -18.4761531519
+move = (10, 10, 8, 12)
+recursions = 203
+time used = 21.211616993
+Positon One 1
+Positon Two 12
+
+
+
+turn = 39
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   1   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  o   o   1   2   o   2   o   o   
+
+    o   o   2   1   o   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-22.1   3.1  -2. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -21.7733444701
+scoreMiniMax = -22.6347728324
+move = (7, 7, 9, 9)
+recursions = 104
+time used = 14.5681219101
+Positon One 1
+Positon Two 12
+
+
+
+turn = 40
+player = 2
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  o   o   1   2   1   2   o   o   
+
+    o   o   2   1   o   o   o     
+
+      2   o   2   o   o   o       
+
+        2   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-18.9   3.1  -0.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -18.4761531519
+scoreMiniMax = -19.5752169246
+move = (12, 4, 10, 2)
+recursions = 99
+time used = 12.2982809544
+Positon One 1
+Positon Two 12
+
+
+
+turn = 41
+player = 1
+
+
+                o                 
+
+              1   1               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  o   o   1   2   1   2   o   o   
+
+    2   o   2   1   o   o   o     
+
+      2   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-23.3   5.1  -0.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -22.6347728324
+scoreMiniMax = -23.2981716862
+move = (1, 9, 2, 8)
+recursions = 153
+time used = 18.0130500793
+Positon One 1
+Positon Two 12
+
+
+
+turn = 42
+player = 2
+
+
+                o                 
+
+              1   o               
+
+            o   1   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  o   o   1   2   1   2   o   o   
+
+    2   o   2   1   o   o   o     
+
+      2   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-20.4   5.2   1.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -19.5752169246
+scoreMiniMax = -13.3570903548
+move = (11, 3, 9, 1)
+recursions = 105
+time used = 15.679721117
+Positon One 1
+Positon Two 12
+
+
+
+turn = 43
+player = 1
+
+
+                o                 
+
+              1   o               
+
+            o   1   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   2   o   o   
+
+    2   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-24.4   7.6   1.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -23.2981716862
+scoreMiniMax = -16.6146757711
+move = (1, 7, 5, 3)
+recursions = 104
+time used = 14.6072402
+Positon One 2
+Positon Two 12
+
+
+
+turn = 44
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   1   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      1   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   2   o   o   
+
+    2   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-14.    5.2  -0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -13.3570903548
+scoreMiniMax = -11.5055144494
+move = (10, 2, 8, 0)
+recursions = 104
+time used = 14.3897590637
+Positon One 2
+Positon Two 12
+
+
+
+turn = 45
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   1   o             
+
+          o   1   o   o           
+
+        1   o   o   o   o         
+
+      1   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+2   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   2   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-17.6   8.    0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -16.6146757711
+scoreMiniMax = -14.51556298
+move = (2, 8, 4, 6)
+recursions = 102
+time used = 15.0092000961
+Positon One 3
+Positon Two 12
+
+
+
+turn = 46
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   1   o   o   o         
+
+      1   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+2   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   2   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-12.4   7.6   0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -11.5055144494
+scoreMiniMax = -9.84206657719
+move = (9, 11, 7, 13)
+recursions = 182
+time used = 23.5611310005
+Positon One 3
+Positon Two 12
+
+
+
+turn = 47
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   1   o   o           
+
+        1   1   o   o   o         
+
+      1   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-15.6   9.2   0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -14.51556298
+scoreMiniMax = -12.3867457626
+move = (3, 7, 5, 5)
+recursions = 111
+time used = 17.6275780201
+Positon One 4
+Positon Two 12
+
+
+
+turn = 48
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        1   1   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   2   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-10.8   8.4   0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -9.84206657719
+scoreMiniMax = -7.94098329467
+move = (8, 12, 6, 14)
+recursions = 177
+time used = 24.8683240414
+Positon One 4
+Positon Two 12
+
+
+
+turn = 49
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        1   1   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   o   o   2   o   o   2     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-13.6  10.4   0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -12.3867457626
+scoreMiniMax = -10.3470418241
+move = (4, 4, 6, 10)
+recursions = 147
+time used = 17.7286300659
+Positon One 4
+Positon Two 12
+
+
+
+turn = 50
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   1   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   o   o   2   1   o   2     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   2   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -9.2  11.6   0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -7.94098329467
+scoreMiniMax = -5.75275722469
+move = (12, 6, 11, 5)
+recursions = 170
+time used = 19.8376700878
+Positon One 4
+Positon Two 11
+
+
+
+turn = 51
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   1   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   o   o   2   1   o   2     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   2   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-11.5  12.1   0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -10.1391108401
+scoreMiniMax = -8.50536739417
+move = (4, 6, 6, 4)
+recursions = 97
+time used = 13.6243691444
+Positon One 5
+Positon Two 11
+
+
+
+turn = 52
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  2   o   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   2   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -7.1  10.9   2. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -5.75275722469
+scoreMiniMax = -1.61394049505
+move = (9, 1, 9, 3)
+recursions = 217
+time used = 24.2267990112
+Positon One 5
+Positon Two 11
+
+
+
+turn = 53
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      1   1   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   o   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   2   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-7.1  8.5  1.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -6.07950591388
+scoreMiniMax = -3.94078722105
+move = (5, 3, 7, 5)
+recursions = 94
+time used = 14.4301068783
+Positon One 5
+Positon Two 11
+
+
+
+turn = 54
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      o   1   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   1   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   2   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -3.1  10.1   4.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.61394049505
+scoreMiniMax = 0.0693103280084
+move = (11, 5, 10, 4)
+recursions = 109
+time used = 18.4022800922
+Positon One 5
+Positon Two 11
+
+
+
+turn = 55
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      o   1   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   1   o   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   2   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -5.2  10.8   1.4]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -3.94078722105
+scoreMiniMax = -3.64374295815
+move = (5, 5, 7, 7)
+recursions = 107
+time used = 16.7702960968
+Positon One 6
+Positon Two 11
+
+
+
+turn = 56
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   1   1   1   o   2   o   
+
+2   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   2   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -1.2  11.6   1.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.0693103280084
+scoreMiniMax = -1.03965492013
+move = (10, 4, 8, 6)
+recursions = 85
+time used = 11.7831721306
+Positon One 6
+Positon Two 11
+
+
+
+turn = 57
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   1   1   1   o   2   o   
+
+2   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -4.8  10.4   0.8]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -3.64374295815
+scoreMiniMax = -3.72295476159
+move = (10, 8, 12, 6)
+recursions = 124
+time used = 13.3988308907
+Positon One 6
+Positon Two 11
+
+
+
+turn = 58
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   2   1   o   2     
+
+  o   o   1   1   1   o   2   o   
+
+2   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -2.8  10.    0.4]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.74265967564
+scoreMiniMax = -1.11886672356
+move = (6, 8, 4, 10)
+recursions = 139
+time used = 16.4280779362
+Positon One 6
+Positon Two 11
+
+
+
+turn = 59
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   1   o   2     
+
+  o   o   1   1   1   o   2   o   
+
+2   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ -4.8  10.4   0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -3.72295476159
+scoreMiniMax = -4.54477722226
+move = (6, 10, 7, 11)
+recursions = 159
+time used = 20.4998428822
+Positon One 6
+Positon Two 11
+
+
+
+turn = 60
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   o   o   2     
+
+  o   o   1   1   1   1   2   o   
+
+2   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.9  9.9 -0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.92088623337
+scoreMiniMax = -1.65354639677
+move = (6, 14, 4, 8)
+recursions = 165
+time used = 20.8136339188
+Positon One 6
+Positon Two 11
+
+
+
+turn = 61
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   o   o   o     
+
+  o   o   1   1   1   1   2   o   
+
+2   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-4.9  6.3  0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -4.22793000851
+scoreMiniMax = -5.05965394461
+move = (7, 11, 8, 10)
+recursions = 214
+time used = 25.5855600834
+Positon One 6
+Positon Two 11
+
+
+
+turn = 62
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   o   o   o     
+
+  o   o   1   1   1   o   2   o   
+
+2   o   1   2   1   1   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-3.2  6.8  0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.43576295572
+scoreMiniMax = -1.04955639556
+move = (8, 0, 7, 1)
+recursions = 199
+time used = 20.901736021
+Positon One 6
+Positon Two 11
+
+
+
+turn = 63
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   o   o   o     
+
+  2   o   1   1   1   o   2   o   
+
+o   o   1   2   1   1   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-4.7  5.3  0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -4.06950640163
+scoreMiniMax = -3.93088574562
+move = (8, 10, 10, 8)
+recursions = 138
+time used = 15.7520828247
+Positon One 6
+Positon Two 11
+
+
+
+turn = 64
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   o   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   2   o   o       
+
+    o   1   o   o   o   o   o     
+
+  2   o   1   1   1   o   2   o   
+
+o   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.9  5.7  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.30699475673
+scoreMiniMax = -0.346551640042
+move = (5, 9, 3, 7)
+recursions = 140
+time used = 15.2912969589
+Positon One 6
+Positon Two 11
+
+
+
+turn = 65
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    o   1   o   o   o   o   o     
+
+  2   o   1   1   1   o   2   o   
+
+o   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-3.5  5.7 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.92093525178
+scoreMiniMax = -3.90118131933
+move = (6, 4, 7, 3)
+recursions = 138
+time used = 15.9885411263
+Positon One 7
+Positon Two 11
+
+
+
+turn = 66
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  2   1   1   1   1   o   2   o   
+
+o   o   1   2   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.6  4.8 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.12876819899
+scoreMiniMax = -1.32679770759
+move = (8, 6, 6, 8)
+recursions = 90
+time used = 10.7141861916
+Positon One 7
+Positon Two 11
+
+
+
+turn = 67
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  2   1   1   1   1   o   2   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-4.4  4.4  0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -3.90118131933
+scoreMiniMax = -3.78236361417
+move = (7, 7, 8, 6)
+recursions = 191
+time used = 19.6665580273
+Positon One 7
+Positon Two 11
+
+
+
+turn = 68
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  2   1   1   o   1   o   2   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.7  4.1  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.21793049627
+scoreMiniMax = -0.980246067547
+move = (7, 1, 6, 2)
+recursions = 159
+time used = 20.0286819935
+Positon One 7
+Positon Two 11
+
+
+
+turn = 69
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   2   o   
+
+o   o   1   1   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-4.   2.8  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -3.63384148272
+scoreMiniMax = -2.38625557857
+move = (8, 6, 10, 4)
+recursions = 161
+time used = 20.5215759277
+Positon One 7
+Positon Two 11
+
+
+
+turn = 70
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   2   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   1   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.2  1.6  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -0.980246067547
+scoreMiniMax = 0.217832459455
+move = (7, 13, 6, 12)
+recursions = 236
+time used = 28.9578809738
+Positon One 7
+Positon Two 11
+
+
+
+turn = 71
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   2   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   1   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.5  0.7  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.35655115228
+scoreMiniMax = -2.92093525178
+move = (10, 4, 11, 5)
+recursions = 225
+time used = 28.2287449837
+Positon One 7
+Positon Two 11
+
+
+
+turn = 72
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   2   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   1   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.4  1.4  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.198078527
+scoreMiniMax = -0.00990147542977
+move = (6, 12, 5, 11)
+recursions = 299
+time used = 37.5065848827
+Positon One 7
+Positon Two 11
+
+
+
+turn = 73
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   2   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   1   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.5  0.7  0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.38625557857
+scoreMiniMax = -2.44566443115
+move = (11, 5, 13, 7)
+recursions = 227
+time used = 30.7944059372
+Positon One 7
+Positon Two 11
+
+
+
+turn = 74
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   o   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   2   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-0.9  1.5  0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -0.722807706373
+scoreMiniMax = 0.217832459455
+move = (5, 11, 3, 9)
+recursions = 109
+time used = 17.2350740433
+Positon One 7
+Positon Two 11
+
+
+
+turn = 75
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   2   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   o   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.5  0.7  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.35655115228
+scoreMiniMax = -2.82192049748
+move = (12, 6, 14, 8)
+recursions = 153
+time used = 19.1746189594
+Positon One 7
+Positon Two 11
+
+
+
+turn = 76
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   o   o             
+
+          o   2   2   o           
+
+        o   o   2   2   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.3  1.1  0.8]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.0990637727
+scoreMiniMax = 0.217832459455
+move = (4, 10, 2, 8)
+recursions = 216
+time used = 25.2783579826
+Positon One 7
+Positon Two 11
+
+
+
+turn = 77
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   1   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   o   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-2.5  0.7  0.5]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -2.35655115228
+scoreMiniMax = -2.17832459455
+move = (10, 8, 12, 6)
+recursions = 154
+time used = 18.6933550835
+Positon One 7
+Positon Two 11
+
+
+
+turn = 78
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      o   o   o   o   o   o       
+
+    2   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-0.5  0.3  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -0.455467869769
+scoreMiniMax = 0.920837214968
+move = (6, 2, 5, 3)
+recursions = 215
+time used = 25.8021128178
+Positon One 7
+Positon Two 11
+
+
+
+turn = 79
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   1   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-1.6 -0.8  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -1.65354639677
+scoreMiniMax = -1.88128033166
+move = (9, 9, 10, 10)
+recursions = 291
+time used = 34.0036940575
+Positon One 7
+Positon Two 11
+
+
+
+turn = 80
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   1   1   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   1   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [-0.3 -1.1  1.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -0.247536885744
+scoreMiniMax = 3.26748689182
+move = (6, 8, 7, 7)
+recursions = 301
+time used = 40.3788318634
+Positon One 7
+Positon Two 11
+
+
+
+turn = 81
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   1   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 1.  -1.   0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.901034264109
+scoreMiniMax = 0.0990147542977
+move = (10, 10, 11, 9)
+recursions = 267
+time used = 27.6748800278
+Positon One 7
+Positon Two 11
+
+
+
+turn = 82
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            o   2   o             
+
+          o   2   2   o           
+
+        o   o   2   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   1   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 2.1 -0.7 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.99019656138
+scoreMiniMax = 3.08926033409
+move = (4, 8, 2, 6)
+recursions = 193
+time used = 20.5697410107
+Positon One 7
+Positon Two 11
+
+
+
+turn = 83
+player = 1
+
+
+                o                 
+
+              o   o               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        o   o   o   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   1   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 0.9 -0.3  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.871329837819
+scoreMiniMax = -0.0891132788679
+move = (11, 9, 12, 8)
+recursions = 291
+time used = 27.4204978943
+Positon One 7
+Positon Two 11
+
+
+
+turn = 84
+player = 2
+
+
+                o                 
+
+              o   o               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        o   o   o   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   1   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 1.8 -0.2  0.4]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.80206852822
+scoreMiniMax = 3.2278809901
+move = (3, 7, 1, 9)
+recursions = 186
+time used = 17.9733569622
+Positon One 7
+Positon Two 11
+
+
+
+turn = 85
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        o   o   o   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   1   o   o         
+
+          o   1   o   o           
+
+            o   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 1.  -0.2  0.4]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.00995049384
+scoreMiniMax = 0.237635410314
+move = (12, 8, 14, 6)
+recursions = 278
+time used = 24.3273451328
+Positon One 7
+Positon Two 11
+
+
+
+turn = 86
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        o   o   o   o   o         
+
+      2   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 2.2 -0.6  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 2.1288172174
+scoreMiniMax = 3.56453115472
+move = (5, 3, 4, 4)
+recursions = 184
+time used = 18.058588028
+Positon One 7
+Positon Two 11
+
+
+
+turn = 87
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   o               
+
+                o                 
+
+
+
+features = [ 1.3 -1.5  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.14857114985
+scoreMiniMax = 0.0495073771488
+move = (13, 7, 15, 9)
+recursions = 293
+time used = 25.3172600269
+Positon One 7
+Positon Two 11
+
+
+
+turn = 88
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   2   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 2.1 -1.5  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.94068918423
+scoreMiniMax = 3.37640312155
+move = (9, 3, 8, 2)
+recursions = 140
+time used = 14.7992770672
+Positon One 7
+Positon Two 11
+
+
+
+turn = 89
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   1   2   1   o   o   o   
+
+o   2   1   o   1   o   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 0.4 -0.4 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.336650164612
+scoreMiniMax = 0.217832459455
+move = (7, 5, 9, 3)
+recursions = 102
+time used = 13.8671021461
+Positon One 7
+Positon Two 11
+
+
+
+turn = 90
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   1   o   2   1   o   o   o   
+
+o   2   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 3.6 -2.   0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.37640312155
+scoreMiniMax = 2.63379246432
+move = (8, 2, 6, 8)
+recursions = 105
+time used = 13.9649121761
+Positon One 7
+Positon Two 11
+
+
+
+turn = 91
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   1   o   2   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 0.8 -5.6 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.217832459455
+scoreMiniMax = -0.554482624067
+move = (7, 3, 8, 2)
+recursions = 159
+time used = 18.8392491341
+Positon One 7
+Positon Two 11
+
+
+
+turn = 92
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   2   1   o   o   o   
+
+o   1   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 2.5 -6.7  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.82187147908
+scoreMiniMax = 2.56448213631
+move = (7, 7, 5, 9)
+recursions = 111
+time used = 15.3164260387
+Positon One 7
+Positon Two 11
+
+
+
+turn = 93
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   1   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 0.1 -6.7  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = -0.554482624067
+scoreMiniMax = 0.623792952075
+move = (8, 2, 10, 4)
+recursions = 175
+time used = 23.0386779308
+Positon One 7
+Positon Two 11
+
+
+
+turn = 94
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   o   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 2.9 -4.7  1.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 2.56448213631
+scoreMiniMax = 4.60418607484
+move = (6, 8, 4, 10)
+recursions = 172
+time used = 25.5185890198
+Positon One 7
+Positon Two 11
+
+
+
+turn = 95
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   1   1   2   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   o   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 0.9 -4.3  1.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 0.623792952075
+scoreMiniMax = 1.68325082306
+move = (9, 3, 13, 7)
+recursions = 117
+time used = 20.1460740566
+Positon One 7
+Positon Two 11
+
+
+
+turn = 96
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   o   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 4.9 -1.9 -0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.60418607484
+scoreMiniMax = 5.0893583709
+move = (5, 9, 3, 7)
+recursions = 166
+time used = 21.4505591393
+Positon One 7
+Positon Two 11
+
+
+
+turn = 97
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   1   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 3.3 -1.9 -0.2]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.0595559078
+scoreMiniMax = 1.5644331179
+move = (7, 9, 8, 10)
+recursions = 153
+time used = 18.1950860023
+Positon One 8
+Positon Two 11
+
+
+
+turn = 98
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   1   1   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 5.  -2.2  0.1]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.74280673086
+scoreMiniMax = 3.60413705644
+move = (9, 7, 7, 9)
+recursions = 97
+time used = 14.2067368031
+Positon One 8
+Positon Two 11
+
+
+
+turn = 99
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   2   o   o   o   
+
+o   o   1   o   1   1   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 1.8 -2.2  0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.5644331179
+scoreMiniMax = 1.43571393732
+move = (8, 10, 9, 9)
+recursions = 153
+time used = 16.6443879604
+Positon One 8
+Positon Two 11
+
+
+
+turn = 100
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   2   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   o   1   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 3.3 -1.9  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.10906328495
+scoreMiniMax = 4.54477722226
+move = (7, 9, 6, 8)
+recursions = 161
+time used = 17.8464651108
+Positon One 8
+Positon Two 11
+
+
+
+turn = 101
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   1   o   o   o   o 
+
+  o   o   1   o   1   o   o   o   
+
+    o   1   2   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 2.  -2.   0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 1.81197000365
+scoreMiniMax = 2.78231459576
+move = (8, 8, 10, 10)
+recursions = 102
+time used = 12.9312889576
+Positon One 8
+Positon Two 11
+
+
+
+turn = 102
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   2   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   1   o   o   o   
+
+    o   1   2   o   1   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 4.8 -2.4  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.54477722226
+scoreMiniMax = 5.76265870012
+move = (6, 8, 5, 9)
+recursions = 200
+time used = 18.8043251038
+Positon One 8
+Positon Two 11
+
+
+
+turn = 103
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   1   o   o   o   
+
+    o   1   2   o   1   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 3.7 -2.3  0. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 3.43581197413
+scoreMiniMax = 3.97049164734
+move = (9, 9, 11, 11)
+recursions = 98
+time used = 12.0524599552
+Positon One 8
+Positon Two 11
+
+
+
+turn = 104
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   o           
+
+        2   o   o   2   o         
+
+      o   o   o   2   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   1   2   o   1   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 6.1 -3.1  0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.76265870012
+scoreMiniMax = 6.4854664065
+move = (5, 9, 3, 11)
+recursions = 154
+time used = 15.8773431778
+Positon One 8
+Positon Two 11
+
+
+
+turn = 105
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   2           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   1   2   o   1   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   o   o   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 4.5 -2.3  0.7]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 4.29724033652
+scoreMiniMax = 4.69329935371
+move = (10, 4, 12, 10)
+recursions = 135
+time used = 14.826595068
+Positon One 8
+Positon Two 11
+
+
+
+turn = 106
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          o   2   2   2           
+
+        2   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   2   o   1   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   o   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 6.5 -1.1  1.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 6.4854664065
+scoreMiniMax = 7.93108181924
+move = (4, 4, 3, 5)
+recursions = 219
+time used = 20.3193128109
+Positon One 8
+Positon Two 11
+
+
+
+turn = 107
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   2   o   1   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   o   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 5.8 -1.8  1.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.69334837212
+scoreMiniMax = 5.77256017555
+move = (10, 10, 12, 8)
+recursions = 132
+time used = 13.5893719196
+Positon One 8
+Positon Two 11
+
+
+
+turn = 108
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   2   o   o   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 7.8 -1.4  1. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 7.6835449335
+scoreMiniMax = 8.66379100105
+move = (10, 6, 9, 7)
+recursions = 135
+time used = 11.8485100269
+Positon One 8
+Positon Two 11
+
+
+
+turn = 109
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   1   o   o   o   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 5.9 -1.7  1. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 5.77256017555
+scoreMiniMax = 6.92113132541
+move = (8, 4, 10, 6)
+recursions = 89
+time used = 10.6114099026
+Positon One 9
+Positon Two 11
+
+
+
+turn = 110
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   1   2   o   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 8.7 -0.5  1. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 8.66379100105
+scoreMiniMax = 9.26778100226
+move = (9, 7, 8, 8)
+recursions = 137
+time used = 11.996710062
+Positon One 9
+Positon Two 11
+
+
+
+turn = 111
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   o   2   o   1   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              o   1               
+
+                o                 
+
+
+
+features = [ 7.  -0.6  1. ]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 6.97063870256
+scoreMiniMax = 7.29738739174
+move = (11, 11, 15, 7)
+recursions = 83
+time used = 8.60939002037
+Positon One 9
+Positon Two 11
+
+
+
+turn = 112
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+features = [ 9.4  0.2 -0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 9.26778100226
+scoreMiniMax = 8.9806382148
+move = (8, 8, 7, 7)
+recursions = 123
+time used = 9.941177845
+Positon One 9
+Positon Two 11
+
+
+
+turn = 113
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   o   2   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+features = [ 7.9  0.3 -0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 7.79246116323
+scoreMiniMax = 6.74290476767
+move = (10, 6, 11, 5)
+recursions = 114
+time used = 8.91633296013
+Positon One 9
+Positon Two 11
+
+
+
+turn = 114
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   1   2   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+features = [ 9.  -0.2 -0.3]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 8.86182050964
+scoreMiniMax = 8.13901280327
+move = (11, 7, 10, 8)
+recursions = 83
+time used = 7.62419199944
+Positon One 9
+Positon Two 10
+
+
+
+turn = 115
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   1   o   o   o   o   o   
+
+    o   o   o   2   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+features = [ 6.9 -0.3 -0.6]
+weights = [ 0.99014754  0.09901475  0.09901475]
+scoreRaw = 6.74290476767
+scoreMiniMax = 6.23792952075
+move = (9, 5, 10, 6)
+recursions = 82
+time used = 8.02214479446
+Positon One 10
+Positon Two 10
+
+ ##################### 
+ Endgame Begins!!!! 
+ #####################
+
+
+
+turn = 116
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   1   2   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+All possible moves = [(1, 9, 2, 10), (1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 4, 12), (2, 6, 4, 8), (2, 6, 0, 8), (2, 6, 4, 4), (2, 8, 1, 7), (2, 8, 2, 10), (2, 8, 4, 6), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 1, 7), (3, 7, 4, 8), (3, 7, 4, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 9, 1, 7), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (7, 7, 8, 8), (7, 7, 8, 6), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (10, 8, 11, 9), (10, 8, 11, 7), (10, 8, 9, 9), (10, 8, 9, 7), (10, 8, 10, 10), (10, 8, 10, 4)]
+legal move forward = [(1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 0, 8), (2, 8, 1, 7), (2, 8, 2, 10), (3, 5, 1, 7), (3, 9, 2, 10), (3, 9, 1, 7), (3, 11, 2, 10), (4, 10, 4, 12), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (10, 8, 9, 9), (10, 8, 9, 7), (10, 8, 10, 10), (10, 8, 10, 4)]
+scoreGreedy = -97
+move = (10, 8, 9, 9)
+recursions = 86175
+time used = 216.068898201
+
+
+
+turn = 117
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   2   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   1   1   o         
+
+          o   1   o   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+All possible moves = [(10, 6, 11, 7), (10, 6, 9, 7), (10, 6, 9, 5), (10, 6, 10, 8), (10, 6, 12, 4), (11, 5, 12, 4), (11, 5, 10, 4), (11, 5, 11, 7), (11, 5, 9, 7), (11, 5, 9, 11), (12, 6, 13, 5), (12, 6, 11, 7), (12, 6, 10, 4), (12, 6, 10, 8), (12, 6, 8, 10), (12, 8, 13, 9), (12, 8, 11, 9), (12, 8, 11, 7), (12, 8, 12, 12), (12, 8, 12, 4), (12, 10, 13, 11), (12, 10, 13, 9), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 7, 13, 9), (13, 7, 11, 9), (13, 7, 13, 11), (14, 6, 13, 5), (14, 6, 14, 10), (14, 6, 16, 8), (14, 8, 13, 9), (14, 8, 14, 10), (15, 7, 16, 8), (15, 7, 13, 9), (15, 7, 11, 11), (15, 7, 13, 5), (15, 7, 11, 7), (15, 7, 11, 3), (15, 7, 9, 5), (15, 9, 16, 8), (15, 9, 14, 10)]
+legal move forward = [(10, 6, 11, 7), (10, 6, 10, 8), (10, 6, 12, 4), (11, 5, 12, 4), (11, 5, 11, 7), (12, 6, 13, 5), (12, 8, 13, 9), (12, 8, 12, 12), (12, 8, 12, 4), (12, 10, 13, 11), (12, 10, 13, 9), (12, 10, 12, 12), (13, 7, 13, 9), (13, 7, 13, 11), (14, 6, 14, 10), (14, 6, 16, 8), (14, 8, 14, 10), (15, 7, 16, 8), (15, 9, 16, 8)]
+scoreGreedy = -22
+move = (12, 8, 13, 9)
+recursions = 140198
+time used = 428.16524601
+
+
+
+turn = 118
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   2   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+All possible moves = [(1, 9, 2, 10), (1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 4, 12), (2, 6, 4, 8), (2, 6, 0, 8), (2, 6, 4, 4), (2, 8, 1, 7), (2, 8, 2, 10), (2, 8, 4, 6), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 1, 7), (3, 7, 4, 8), (3, 7, 4, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 9, 1, 7), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (7, 7, 8, 8), (7, 7, 8, 6), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (9, 9, 10, 10), (9, 9, 10, 8), (9, 9, 8, 10), (9, 9, 8, 8), (9, 9, 9, 11)]
+legal move forward = [(1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 0, 8), (2, 8, 1, 7), (2, 8, 2, 10), (3, 5, 1, 7), (3, 9, 2, 10), (3, 9, 1, 7), (3, 11, 2, 10), (4, 10, 4, 12), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (9, 9, 8, 10), (9, 9, 8, 8), (9, 9, 9, 11)]
+scoreGreedy = -77
+move = (9, 9, 8, 8)
+recursions = 72399
+time used = 183.531296015
+
+
+
+turn = 119
+player = 1
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   1   o   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                o                 
+
+
+
+All possible moves = [(10, 6, 11, 7), (10, 6, 9, 7), (10, 6, 9, 5), (10, 6, 10, 8), (10, 6, 12, 4), (10, 6, 12, 8), (10, 6, 12, 12), (10, 6, 14, 10), (10, 6, 16, 8), (11, 5, 12, 4), (11, 5, 10, 4), (11, 5, 11, 7), (11, 5, 9, 7), (11, 5, 7, 9), (11, 5, 7, 5), (12, 6, 13, 5), (12, 6, 11, 7), (12, 6, 12, 8), (12, 6, 10, 4), (12, 6, 10, 8), (12, 10, 13, 11), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 7, 12, 8), (13, 7, 13, 11), (13, 7, 11, 9), (13, 9, 14, 10), (13, 9, 12, 8), (13, 9, 13, 11), (13, 9, 11, 11), (13, 9, 13, 5), (13, 9, 11, 7), (13, 9, 11, 3), (13, 9, 9, 5), (14, 6, 13, 5), (14, 6, 12, 8), (14, 6, 12, 12), (14, 6, 14, 10), (14, 6, 16, 8), (14, 6, 12, 4), (14, 8, 14, 10), (15, 7, 16, 8), (15, 7, 13, 5), (15, 7, 11, 7), (15, 7, 11, 3), (15, 7, 9, 5), (15, 9, 16, 8), (15, 9, 14, 10)]
+legal move forward = [(10, 6, 11, 7), (10, 6, 10, 8), (10, 6, 12, 4), (10, 6, 12, 8), (10, 6, 12, 12), (10, 6, 14, 10), (10, 6, 16, 8), (11, 5, 12, 4), (11, 5, 11, 7), (12, 6, 13, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 12, 12), (13, 7, 13, 11), (13, 9, 14, 10), (13, 9, 13, 11), (13, 9, 13, 5), (14, 6, 14, 10), (14, 6, 16, 8), (14, 8, 14, 10), (15, 7, 16, 8), (15, 9, 16, 8)]
+scoreGreedy = -13
+move = (10, 6, 16, 8)
+recursions = 128527
+time used = 409.548654079
+
+
+
+turn = 120
+player = 2
+
+
+                o                 
+
+              o   2               
+
+            2   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(1, 9, 2, 10), (1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 4, 12), (2, 6, 4, 8), (2, 6, 0, 8), (2, 6, 4, 4), (2, 8, 1, 7), (2, 8, 2, 10), (2, 8, 4, 6), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 1, 7), (3, 7, 4, 8), (3, 7, 4, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 9, 1, 7), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (7, 7, 8, 6), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (7, 7, 9, 9), (8, 8, 9, 9), (8, 8, 9, 7), (8, 8, 7, 9), (8, 8, 8, 10), (8, 8, 6, 6)]
+legal move forward = [(1, 9, 0, 8), (2, 6, 1, 7), (2, 6, 2, 10), (2, 6, 0, 8), (2, 8, 1, 7), (2, 8, 2, 10), (3, 5, 1, 7), (3, 9, 2, 10), (3, 9, 1, 7), (3, 11, 2, 10), (4, 10, 4, 12), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (8, 8, 7, 9), (8, 8, 8, 10), (8, 8, 6, 6)]
+scoreGreedy = -47
+move = (2, 6, 1, 7)
+recursions = 73596
+time used = 194.749930859
+
+
+
+turn = 121
+player = 1
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   1   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(11, 5, 12, 4), (11, 5, 10, 6), (11, 5, 10, 4), (11, 5, 11, 7), (12, 6, 13, 5), (12, 6, 11, 7), (12, 6, 12, 8), (12, 6, 10, 4), (12, 10, 13, 11), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 7, 12, 8), (13, 7, 13, 11), (13, 7, 11, 9), (13, 9, 14, 10), (13, 9, 12, 8), (13, 9, 13, 11), (13, 9, 11, 11), (13, 9, 13, 5), (13, 9, 11, 7), (13, 9, 11, 3), (14, 6, 13, 5), (14, 6, 12, 8), (14, 6, 12, 12), (14, 6, 14, 10), (14, 6, 12, 4), (14, 6, 10, 6), (14, 8, 14, 10), (15, 7, 13, 5), (15, 7, 11, 7), (15, 7, 11, 3), (15, 9, 14, 10), (16, 8, 14, 10), (16, 8, 12, 8), (16, 8, 12, 12), (16, 8, 12, 4), (16, 8, 10, 6)]
+legal move forward = [(11, 5, 12, 4), (11, 5, 11, 7), (12, 6, 13, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 12, 12), (13, 7, 13, 11), (13, 9, 14, 10), (13, 9, 13, 11), (13, 9, 13, 5), (14, 6, 14, 10), (14, 8, 14, 10)]
+scoreGreedy = 100
+move = (11, 5, 12, 4)
+recursions = 15562
+time used = 58.0065181255
+
+
+
+turn = 122
+player = 2
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   o   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   2   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        1   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(1, 7, 2, 6), (1, 7, 0, 8), (1, 9, 2, 10), (1, 9, 0, 8), (2, 8, 2, 10), (2, 8, 4, 6), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 2, 6), (3, 7, 4, 8), (3, 7, 4, 6), (3, 7, 2, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (7, 7, 8, 6), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (7, 7, 9, 9), (8, 8, 9, 9), (8, 8, 9, 7), (8, 8, 7, 9), (8, 8, 8, 10), (8, 8, 6, 6)]
+legal move forward = [(1, 7, 0, 8), (1, 9, 0, 8), (2, 8, 2, 10), (3, 5, 2, 6), (3, 7, 2, 6), (3, 9, 2, 10), (3, 11, 2, 10), (4, 10, 4, 12), (7, 7, 6, 8), (7, 7, 6, 6), (7, 7, 7, 9), (8, 8, 7, 9), (8, 8, 8, 10), (8, 8, 6, 6)]
+scoreGreedy = -38
+move = (8, 8, 6, 6)
+recursions = 53111
+time used = 136.732555151
+
+
+
+turn = 123
+player = 1
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        1   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   o             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(12, 4, 13, 5), (12, 4, 11, 5), (12, 4, 11, 3), (12, 4, 12, 8), (12, 4, 12, 12), (12, 4, 14, 10), (12, 6, 13, 5), (12, 6, 11, 7), (12, 6, 11, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 7, 12, 8), (13, 7, 13, 11), (13, 7, 11, 9), (13, 7, 11, 5), (13, 9, 14, 10), (13, 9, 12, 8), (13, 9, 13, 11), (13, 9, 11, 11), (13, 9, 13, 5), (13, 9, 11, 7), (13, 9, 11, 3), (14, 6, 13, 5), (14, 6, 12, 8), (14, 6, 12, 12), (14, 6, 14, 10), (14, 8, 14, 10), (15, 7, 13, 5), (15, 7, 11, 7), (15, 7, 11, 3), (15, 9, 14, 10), (16, 8, 14, 10), (16, 8, 12, 8), (16, 8, 12, 12)]
+legal move forward = [(12, 4, 13, 5), (12, 4, 12, 8), (12, 4, 12, 12), (12, 4, 14, 10), (12, 6, 13, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 12, 12), (13, 7, 13, 11), (13, 9, 14, 10), (13, 9, 13, 11), (13, 9, 13, 5), (14, 6, 14, 10), (14, 8, 14, 10)]
+scoreGreedy = 10000
+move = (12, 4, 14, 10)
+recursions = 13808
+time used = 51.2023289204
+
+
+
+turn = 124
+player = 2
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   o   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   2   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   1             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(1, 7, 2, 6), (1, 7, 0, 8), (1, 9, 2, 10), (1, 9, 0, 8), (2, 8, 2, 10), (2, 8, 4, 6), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 2, 6), (3, 7, 4, 8), (3, 7, 4, 6), (3, 7, 2, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (6, 6, 7, 5), (6, 6, 5, 7), (6, 6, 5, 5), (6, 6, 6, 8), (6, 6, 8, 8), (7, 7, 8, 8), (7, 7, 8, 6), (7, 7, 6, 8), (7, 7, 7, 9), (7, 7, 5, 5)]
+legal move forward = [(1, 7, 0, 8), (1, 9, 0, 8), (2, 8, 2, 10), (3, 5, 2, 6), (3, 7, 2, 6), (3, 9, 2, 10), (3, 11, 2, 10), (4, 10, 4, 12), (6, 6, 5, 7), (6, 6, 5, 5), (6, 6, 6, 8), (7, 7, 6, 8), (7, 7, 7, 9), (7, 7, 5, 5)]
+scoreGreedy = -21
+move = (7, 7, 5, 5)
+recursions = 55507
+time used = 151.009763002
+
+
+
+turn = 125
+player = 1
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   2   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   1   o   1   o         
+
+          o   1   1   o           
+
+            1   1   1             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(12, 6, 13, 5), (12, 6, 11, 7), (12, 6, 11, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 7, 12, 8), (13, 7, 13, 11), (13, 7, 11, 9), (13, 7, 11, 5), (13, 9, 12, 8), (13, 9, 13, 11), (13, 9, 11, 11), (13, 9, 13, 5), (13, 9, 11, 7), (14, 6, 13, 5), (14, 6, 12, 8), (14, 6, 12, 12), (14, 6, 12, 4), (14, 10, 13, 11), (14, 10, 12, 8), (14, 10, 12, 12), (14, 10, 12, 4), (15, 7, 13, 5), (15, 7, 11, 7), (15, 9, 13, 11), (15, 9, 11, 9)]
+legal move forward = [(12, 6, 13, 5), (12, 6, 12, 8), (12, 10, 13, 11), (12, 10, 12, 12), (13, 7, 13, 11), (13, 9, 13, 11), (13, 9, 13, 5)]
+scoreGreedy = 1000000
+move = (12, 6, 13, 5)
+recursions = 629
+time used = 3.47111797333
+
+
+
+turn = 126
+player = 2
+
+
+                o                 
+
+              2   2               
+
+            o   2   o             
+
+          2   2   2   2           
+
+        o   o   o   2   o         
+
+      o   2   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   1   o         
+
+          1   1   1   o           
+
+            1   1   1             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(1, 7, 2, 6), (1, 7, 0, 8), (1, 9, 2, 10), (1, 9, 0, 8), (2, 8, 2, 10), (2, 8, 4, 6), (2, 8, 6, 4), (2, 8, 6, 8), (3, 5, 4, 6), (3, 5, 4, 4), (3, 5, 2, 6), (3, 7, 4, 8), (3, 7, 4, 6), (3, 7, 2, 6), (3, 9, 4, 8), (3, 9, 2, 10), (3, 9, 5, 11), (3, 11, 4, 12), (3, 11, 2, 10), (3, 11, 5, 9), (4, 10, 5, 11), (4, 10, 5, 9), (4, 10, 4, 12), (5, 5, 6, 4), (5, 5, 4, 6), (5, 5, 4, 4), (5, 5, 5, 7), (5, 5, 7, 7), (6, 6, 7, 7), (6, 6, 7, 5), (6, 6, 5, 7), (6, 6, 6, 8), (6, 6, 4, 4), (6, 6, 2, 6), (6, 6, 0, 8), (6, 6, 2, 10), (6, 6, 4, 12), (6, 6, 4, 8)]
+legal move forward = [(1, 7, 0, 8), (1, 9, 0, 8), (2, 8, 2, 10), (3, 5, 2, 6), (3, 7, 2, 6), (3, 9, 2, 10), (3, 11, 2, 10), (4, 10, 4, 12), (5, 5, 4, 6), (5, 5, 4, 4), (5, 5, 5, 7), (6, 6, 5, 7), (6, 6, 6, 8), (6, 6, 4, 4), (6, 6, 2, 6), (6, 6, 0, 8), (6, 6, 2, 10), (6, 6, 4, 12), (6, 6, 4, 8)]
+scoreGreedy = -13
+move = (3, 9, 2, 10)
+recursions = 71587
+time used = 214.733468056
+
+
+
+turn = 127
+player = 1
+
+
+                o                 
+
+              2   2               
+
+            o   2   2             
+
+          2   2   o   2           
+
+        o   o   o   2   o         
+
+      o   2   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   1   o         
+
+          1   1   1   o           
+
+            1   1   1             
+
+              1   1               
+
+                1                 
+
+
+
+All possible moves = [(12, 10, 13, 11), (12, 10, 11, 11), (12, 10, 11, 9), (12, 10, 12, 12), (13, 5, 12, 6), (13, 5, 12, 4), (13, 7, 12, 8), (13, 7, 12, 6), (13, 7, 13, 11), (13, 7, 11, 9), (13, 9, 12, 8), (13, 9, 13, 11), (13, 9, 11, 11), (14, 6, 12, 8), (14, 6, 12, 12), (14, 6, 12, 4), (14, 8, 12, 6), (14, 10, 13, 11), (14, 10, 12, 8), (14, 10, 12, 12), (15, 9, 13, 11), (15, 9, 11, 9)]
+legal move forward = [(12, 10, 13, 11), (12, 10, 12, 12), (13, 7, 13, 11), (13, 9, 13, 11)]
+scoreGreedy = 100000000
+move = (12, 10, 13, 11)
+recursions = 1
+time used = 0.05362200737
+
+
+
+                o                 
+
+              2   2               
+
+            o   2   2             
+
+          2   2   o   2           
+
+        o   o   o   2   o         
+
+      o   2   o   o   o   o       
+
+    o   o   2   o   o   o   o     
+
+  o   o   o   o   o   o   o   o   
+
+o   o   o   o   o   o   o   o   o 
+
+  o   o   o   o   o   o   o   o   
+
+    o   o   o   o   o   o   o     
+
+      o   o   o   o   o   o       
+
+        o   o   o   o   o         
+
+          1   1   1   1           
+
+            1   1   1             
+
+              1   1               
+
+                1                 
+
+
+
+Number of turns = 127
+weightsNew = [ 0.49975142  0.02862136  0.86569587]
+SSR = 172.091430748
+RSquare = 0.971857720863

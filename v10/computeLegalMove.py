@@ -107,6 +107,16 @@ def findLegalRoll(board, i, j):
 		## can go up left?
 				rollMoves.append((i-1, j-1))
 
+	if j + 2 < board.mid_width_max:
+		if board.board[i][j+2] == 0:
+			rollMoves.append((i, j+2))
+
+	if j - 2 >= 0:
+		if board.board[i][j-2] == 0:
+			rollMoves.append((i, j-2))
+
+
+
 	return rollMoves
 	
 '''
@@ -169,7 +179,7 @@ Find a legal hop moves, given the cooridnate of a piece and the base
 def findLegalHop(board, hopi, hopj):
 	hopMove = []
 	for i in range(1,7):
-		move = isMoveable(board, hopi, hopj, i, maxDistance = 1)
+		move = isMoveable(board, hopi, hopj, i, maxDistance = 10)
 		if move is not None:
 			hopMove.append(move)
 	return hopMove

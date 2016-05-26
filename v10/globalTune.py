@@ -6,14 +6,12 @@ from computeLegalMove import *
 from computeFeatures import *
 from computeMinimax import *
 import numpy as np 
-import copy
-import time
+import copy,time, math, sys
 import matplotlib.pyplot as plt
-import math
 
 ## initialize weights
 weights = np.ones(3)
-# weights[2] = 6
+weights[0] = 10
 weights = weights / np.linalg.norm(weights)
 weightsSum = np.zeros(3)
 
@@ -28,9 +26,9 @@ while gameCount < totalGames:
 	print "################################################################################"
 	gameCount += 1
 	print('Game = No. {}'.format(gameCount))
-	boardStart = boardState(options = 'smallGame') # fullGame, smallGame
-	#print "Orginal Board"
-	#boardStart.printBoard()
+	boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+	print "Orginal Board"
+	boardStart.printBoard()
 	error = 0
 	boardNow = boardStart
 	player = 1
@@ -39,18 +37,18 @@ while gameCount < totalGames:
 	cantGo2 = []
 	timeStart = time.time()
 	print ('weightsNow = {}'.format(weights))
-	while ((not boardNow.isEnd()) and turn < 100) :
+	while ((not boardNow.isEnd()) and turn < 250) :
 		turn = turn + 1
 		features = computeFeaturesFull(boardNow)
 		scoreRaw = np.inner(features, weights)
 		if (player == 1) :
-			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo1)
+			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo1)
 			move = moveList[0]
 			cantGo1.append(move)
 			if (len(cantGo1) >= 5) :
 				cantGo1.pop(0)
 		else :
-			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo2)
+			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo2)
 			move = moveList[0]
 			cantGo2.append(move)
 			if (len(cantGo2) >= 5) :
@@ -67,10 +65,22 @@ while gameCount < totalGames:
 				score = np.array([scoreMiniMax])
 				scoreVector = np.vstack((scoreVector, score))
 				predError += (scoreMiniMax - scoreRaw) ** 2
-		
+		timeEnd = time.time()
+		print('scoreRaw = {}'.format(scoreRaw))
+		print('scoreMiniMax = {}'.format(scoreMiniMax))
+		print('move = {}'.format(move))
+		print('recursions = {}'.format(recursions))
+		print 'time used = ' + str(timeEnd - timeStart)
 		boardNow = boardNow.takeMove(move)
+		boardNow.printBoard()
+		sys.stdout.flush()
 		player = 3 - player
-	
+		if (boardNow.isEndGame()):
+			break
+	if turn >= 250:
+		print "################################################################################"
+		print "################                STUCK                         ##################"
+		print "################################################################################"
 	timeEnd = time.time()
 	result = np.linalg.lstsq(featureMatrix, scoreVector)
 	weightsNew = result[0]
@@ -94,6 +104,7 @@ while gameCount < totalGames:
 	print ('AAR = {}'.format(AAR))
 	print ('predError = {}'.format(predError))
 	print ('weightsGrad = {}'.format(weightsGrad))
+	sys.stdout.flush()
 
 	if (gameCount <= 5) :
 		weights = weightsNew
@@ -101,6 +112,29 @@ while gameCount < totalGames:
 		weightsSum = weightsSum + weightsNew
 		weights = weightsSum / (gameCount - 5)
 		weights = weights / np.linalg.norm(weights)
+
+	print('\n ##################### \n Endgame Begins!!!! \n #####################')
+	while ((not boardNow.isEnd()) and turn < 50) :
+		turn = turn + 1
+		print('\n\n')
+		print('turn = {}'.format(turn))
+		print('player = {}'.format(player))
+		print('\n')
+		boardNow.printBoard()
+
+		timeStart = time.time()
+		print ('All possible moves = {}'.format(computeLegalMove(boardNow, player)))
+		print ('legal move forward = {}'.format(computeLegalMoveForward(boardNow, player, 0)))
+		(scoreGreedy, moveList, recursions) = findMoveGreedy(boardNow, player, 3)
+		timeEnd = time.time()
+		print('scoreGreedy = {}'.format(scoreGreedy))
+		move = moveList[0]
+		print('move = {}'.format(move))
+		print('recursions = {}'.format(recursions))
+		print 'time used = ' + str(timeEnd - timeStart)
+		sys.stdout.flush()
+		boardNow = boardNow.takeMove(move)
+		player = 3 - player
 	
 print('\n')
 print('The RSquare of all games are\n {}'.format(RSquareVec)) 
@@ -111,29 +145,29 @@ print('The average prediction error of all games are\n {}'.format(predErrorVec))
 print('\n')
 print('The gradient of weights of all games are\n {}'.format(weightsGradVec))
 
-plt.plot(range(1, totalGames+1), RSquareVec, 'bo-')
-plt.ylabel('R^2 of each linear regression')
-plt.xlabel('Game')
-plt.savefig('RSquare.pdf')
-plt.show()
+# plt.plot(range(1, totalGames+1), RSquareVec, 'bo-')
+# plt.ylabel('R^2 of each linear regression')
+# plt.xlabel('Game')
+# plt.savefig('RSquare.pdf')
+# plt.show()
 
-plt.plot(range(1, totalGames+1), AARVec, 'bo-')
-plt.ylabel('AAR of each linear regression')
-plt.xlabel('Game')
-plt.savefig('AAR.pdf')
-plt.show()
+# plt.plot(range(1, totalGames+1), AARVec, 'bo-')
+# plt.ylabel('AAR of each linear regression')
+# plt.xlabel('Game')
+# plt.savefig('AAR.pdf')
+# plt.show()
 
-plt.plot(range(1, totalGames+1), predErrorVec, 'bo-')
-plt.ylabel('The average prediction error of the weights of each game')
-plt.xlabel('Game')
-plt.savefig('predError.pdf')
-plt.show()
+# plt.plot(range(1, totalGames+1), predErrorVec, 'bo-')
+# plt.ylabel('The average prediction error of the weights of each game')
+# plt.xlabel('Game')
+# plt.savefig('predError.pdf')
+# plt.show()
 
-plt.plot(range(1, totalGames+1), weightsGradVec, 'bo-')
-plt.ylabel('Norm of gradient of the weights')
-plt.xlabel('Game')
-plt.savefig('weightsGrad.pdf')
-plt.show()
+# plt.plot(range(1, totalGames+1), weightsGradVec, 'bo-')
+# plt.ylabel('Norm of gradient of the weights')
+# plt.xlabel('Game')
+# plt.savefig('weightsGrad.pdf')
+# plt.show()
 
 
 ### Play A new game with weights learned before!

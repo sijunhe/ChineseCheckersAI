@@ -80,8 +80,6 @@ class boardState:
 	print the current board
     '''
 	def isEndGame(self, k = 0):
-		print "Positon One " + str(self.PositionOneLastElement)
-		print "Positon Two " + str(self.PositionTwoLastElement)
 		if self.PositionTwoLastElement <= self.PositionOneLastElement - k:
 			return True
 		return False
