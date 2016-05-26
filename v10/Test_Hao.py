@@ -15,11 +15,11 @@ import numpy as np
 import copy
 import time
 
-weights = np.ones(4)
-weights[0] = 10
+weights = np.ones(3)
+# weights[0] = 10
 depth = 4
 stplength = 0.1
-boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 
@@ -48,12 +48,28 @@ boardStart.printBoard()
 
 
 #### To test the code computeMinimax()
+# print('\n\n')
+# timeStart = time.time()
+# (scoreMiniMax, moveList, recursions) = computeMinimax_wo(boardStart, 1, weights, depth, [])
+# timeEnd = time.time()
+# timeUsed = timeEnd - timeStart
+# print('scoreMiniMax = {}'.format(scoreMiniMax))
+# print('moveList = {}'.format(moveList))
+# print('recursions = {}'.format(recursions))
+# print('time used = {}'.format(timeUsed))
+
+# board2 = copy.deepcopy(boardStart)
+# for move in moveList :
+# 	board2 = board2.takeMove(move)
+# board2.printBoard()
+
+
+#### To test the code findMoveGreedy()
 print('\n\n')
 timeStart = time.time()
-(scoreMiniMax, moveList, recursions) = computeMinimax_wo(boardStart, 1, weights, depth, [])
+(scoreGreedy, moveList, recursions) = findMoveGreedy(boardStart, 2, 4)
 timeEnd = time.time()
 timeUsed = timeEnd - timeStart
-print('scoreMiniMax = {}'.format(scoreMiniMax))
 print('moveList = {}'.format(moveList))
 print('recursions = {}'.format(recursions))
 print('time used = {}'.format(timeUsed))
@@ -61,8 +77,8 @@ print('time used = {}'.format(timeUsed))
 board2 = copy.deepcopy(boardStart)
 for move in moveList :
 	board2 = board2.takeMove(move)
-board2.printBoard()
-
+	board2.printBoard()
+	print str(computeScoreEndgame(board2, 2))
 
 
 
@@ -90,11 +106,11 @@ board2.printBoard()
 # scoreRaw = np.inner(weights, features)
 # print('scoreRaw = {}'.format(scoreRaw))
 
-# possibleMoveBoard = computeLegalMove(board2, 2)
+# possibleMoveBoard = computeLegalMoveForward(boardStart, 2, -2)
 # for move in possibleMoveBoard:
 # 	print('\n\n')
 # 	print move
-# 	boardNew = board2.takeMove(move)
+# 	boardNew = boardStart.takeMove(move)
 # 	boardNew.printBoard()
 # 	features = computeFeatures(boardNew)
 # 	print('features = {}'.format(features))

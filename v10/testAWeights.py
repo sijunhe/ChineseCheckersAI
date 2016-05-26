@@ -11,7 +11,7 @@ import numpy as np
 import copy
 import time
 
-boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 print "Orginal Board"
 boardStart.printBoard()
 boardNow = boardStart
@@ -27,6 +27,7 @@ while ((not boardNow.isEnd()) and turn < 1000) :
 	timeStart = time.time()
 	features = computeFeaturesFull(boardNow)
 	scoreRaw = np.inner(features, weights)
+
 	print('\n\n')
 	print('turn = {}'.format(turn))
 	print('player = {}'.format(player))
@@ -66,6 +67,33 @@ while ((not boardNow.isEnd()) and turn < 1000) :
 	print 'time used = ' + str(timeEnd - timeStart)
 	boardNow = boardNow.takeMove(move)
 	player = 3 - player
+	if (boardNow.isEndGame()) :
+		break
+
+print('\n ##################### \n Endgame Begins!!!! \n #####################')
+while ((not boardNow.isEnd()) and turn < 1000) :
+	turn = turn + 1
+	print('\n\n')
+	print('turn = {}'.format(turn))
+	print('player = {}'.format(player))
+	print('\n')
+	boardNow.printBoard()
+
+	timeStart = time.time()
+	print ('All possible moves = {}'.format(computeLegalMove(boardNow, player)))
+	print ('legal move forward = {}'.format(computeLegalMoveForward(boardNow, player, 0)))
+	(scoreGreedy, moveList, recursions) = findMoveGreedy(boardNow, player, 4)
+	timeEnd = time.time()
+	print('scoreGreedy = {}'.format(scoreGreedy))
+	move = moveList[0]
+	print('move = {}'.format(move))
+	print('recursions = {}'.format(recursions))
+	print 'time used = ' + str(timeEnd - timeStart)
+	boardNow = boardNow.takeMove(move)
+	player = 3 - player
+
+
+
 
 print('\n\n')
 boardNow.printBoard()

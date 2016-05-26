@@ -6,22 +6,30 @@ import Queue
 
 
 def findMoveGreedy(board, player, depth) :
+	# print 'findMoveGreedy'
+	# board.printBoard()
+	# print 'player = ' + str(player)
+	# print 'depth = ' + str(depth)
+	recursions = 1
+	moveList = []
 	if (depth == 0) :
 		score = computeScoreEndgame(board, player)
-		return (score, [], 1)
 	else :
-		allPossibleMoves = computeLegalMoveForward(board, player, 1)
+		allPossibleMoves = computeLegalMoveForward(board, player, 0)
 		score = -10 ** 5
-		recursions = 1
 		for move in allPossibleMoves :
 			boardNext = board.takeMove(move)
+			if (boardNext.isEnd() == -(-1) ** player) :
+				score = 100 ** depth
+				moveList = [move]
+				return (score, moveList, recursions)
 			(scoreNext, MLNext, recursionsNext) = findMoveGreedy(boardNext, player, depth - 1)
 			recursions += recursionsNext
 			if (scoreNext > score) :
 				score = scoreNext
 				moveList = [move]
 				moveList.extend(MLNext)
-		return (score, moveList, recursions)
+	return (score, moveList, recursions)
 
 	
 
@@ -30,10 +38,26 @@ def computeScoreEndgame(board, player) :
 	score = 0
 	if (player == 1) :
 		for (i, j) in board.PositionOne :
-			score += i ** 2
+			score -= (board.height - i - 1) ** 2
+			if (i == board.height - 1) :
+				score += 9
+			elif (i == board.height - 2) :
+				score += 7
+			elif (i == board.height - 3) :
+				score += 5
+			elif (i == board.height - 4) :
+				score += 2
 	else :
 		for (i, j) in board.PositionTwo :
-			score += (board.height - i - 1) ** 2
+			score -= i ** 2
+			if (i == 0) :
+				score += 9
+			elif (i == 1) :
+				score += 7
+			elif (i == 2) :
+				score += 5
+			elif (i == 3) :
+				score += 2
 	return score
 
 

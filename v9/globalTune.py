@@ -14,6 +14,8 @@ import math
 ## initialize weights
 weights = np.ones(3)
 # weights[2] = 6
+aaaa = [ 0.83361713,  0.48517023,  0.26399306]
+weights = np.array(aaaa)
 weights = weights / np.linalg.norm(weights)
 weightsSum = np.zeros(3)
 

@@ -65,13 +65,13 @@ class boardState:
 					if self.board[i,j] == 2:
 						self.PositionTwo.append((i,j))
 		## determine last piece position
-		self.PositionTwoLastElement = self.height
-		self.PositionOneLastElement = 0
+		self.PositionTwoLastElement = 0
+		self.PositionOneLastElement = self.height
 		for (i,j) in self.PositionOne:
 			if i < self.PositionOneLastElement:
 				self.PositionOneLastElement = i
 		for (i,j) in self.PositionTwo:
-			if i < self.PositionTwoLastElement:
+			if i > self.PositionTwoLastElement:
 				self.PositionTwoLastElement = i
 		self.allPosition = self.PositionOne + self.PositionTwo
 	
@@ -79,8 +79,10 @@ class boardState:
 	Public
 	print the current board
     '''
-	def isEndGame(self):
-		if self.PositionTwoLastElement < self.PositionOneLastElement:
+	def isEndGame(self, k = 0):
+		print "Positon One " + str(self.PositionOneLastElement)
+		print "Positon Two " + str(self.PositionTwoLastElement)
+		if self.PositionTwoLastElement <= self.PositionOneLastElement - k:
 			return True
 		return False
 
