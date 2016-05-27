@@ -207,8 +207,10 @@ class boardState:
 		newBoard[move[0]][move[1]] = 0
 		if self.fullGame == 1:
 			newBoardState = boardState(options = 'fullGame', inputBoard = newBoard)
-		else:
+		elif self.fullGame == 0:
 			newBoardState = boardState(options = 'smallGame', inputBoard = newBoard)
+		else:
+			newBoardState = boardState(options = 'midGame', inputBoard = newBoard)
 		return newBoardState
 
 
