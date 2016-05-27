@@ -210,23 +210,19 @@ def computeScoreEndgame(board, player) :
 		for (i, j) in board.PositionOne :
 			score -= (board.height - i - 1) ** 2
 			if (i == board.height - 1) :
-				score += 9
+				score += 12
 			elif (i == board.height - 2) :
-				score += 7
+				score += 6
 			elif (i == board.height - 3) :
-				score += 5
-			elif (i == board.height - 4) :
 				score += 2
 	else :
 		for (i, j) in board.PositionTwo :
 			score -= i ** 2
 			if (i == 0) :
-				score += 9
+				score += 12
 			elif (i == 1) :
-				score += 7
+				score += 6
 			elif (i == 2) :
-				score += 5
-			elif (i == 3) :
 				score += 2
 	return score
 
