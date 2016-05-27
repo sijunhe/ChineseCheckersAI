@@ -22,7 +22,7 @@ playerTwoWin = 0
 while gameCount < totalGames:
 	gameCount += 1
 	print('Game = No. {}'.format(gameCount))
-	boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+	boardStart = boardState(options = 'midGame') # fullGame, smallGame
 	#print "Orginal Board"
 	#boardStart.printBoard()
 	boardNow = boardStart
@@ -40,6 +40,7 @@ while gameCount < totalGames:
 
 		else :
 			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo1)
+			print moveList
 			move = moveList[0]
 			cantGo1.append(move)
 			if (len(cantGo1) >= 5) :
