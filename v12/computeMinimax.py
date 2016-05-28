@@ -6,12 +6,11 @@ import Queue
 
 
 def computeMaximax(board, player, weights, depth, cantGo):
-	recursions = 0;
+	recursions = 1;
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
 		score = np.inner(features, weights)
 		moveList = []
-		recursions = 1
 	else :
 		if (player == 1) :
 			score = - 10 ** 10

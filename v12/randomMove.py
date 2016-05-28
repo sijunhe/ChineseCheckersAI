@@ -37,4 +37,50 @@ def randomMove(board, player):
 
 
 
+'''
+A greedy player that takes the numSteps consecutive moves to achieve the maximal vertical advance after numSteps steps, and return the first move of this series of moves;
+If multiple such moves exist, take a random move among the best moves
+'''	
+def randomMoveMultistep(board, player, numSteps = 1):
+	if (numSteps == 0) :
+		maxAdvance = 0
+		possibleMove = []
+		optimalMoves = []
+		optimalMove = []
+	else :
+		maxAdvance = -100
+		optimalMoves = []
+		possibleMove = computeLegalMove(board, player)
+		if (player == 1) :
+			for (i1, j1, i2, j2) in possibleMove :
+				boardNext = board.takeMove((i1, j1, i2, j2))
+				(maxNext, moveNext) = randomMoveMultistep(boardNext, player, numSteps - 1)
+				advance = i2 - i1 + maxNext
+				if (advance > maxAdvance) :
+					maxAdvance = advance
+					optimalMoves = [(i1, j1, i2, j2)]
+				elif (advance == maxAdvance) :
+					optimalMoves.append((i1, j1, i2, j2))
+		else :
+			for (i1, j1, i2, j2) in possibleMove :
+				boardNext = board.takeMove((i1, j1, i2, j2))
+				(maxNext, moveNext) = randomMoveMultistep(boardNext, player, numSteps - 1)
+				advance = i1 - i2 + maxNext
+				if (advance > maxAdvance) :
+					maxAdvance = advance
+					optimalMoves = [(i1, j1, i2, j2)]
+				elif (advance == maxAdvance) :
+					optimalMoves.append((i1, j1, i2, j2))
+		numMoves = len(optimalMoves)
+		randNumber = random.randint(0, numMoves - 1)
+		optimalMove = optimalMoves[randNumber]
+		# print randNumber
+		# print possibleMove
+		# print optimalMoves
+		# print optimalMove
+
+	return (maxAdvance, optimalMove)
+
+
+
 	

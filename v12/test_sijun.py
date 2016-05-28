@@ -5,4 +5,8 @@ from computeMinimax import *
 from randomMove import * 
 
 board1 = boardState(options = 'fullGame')
-print randomMove(board1, 1)
+board1.printBoard()
+
+# print randomMove(board1, 2)
+
+print randomMoveMultistep(board1, 1, 2)
