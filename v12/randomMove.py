@@ -50,7 +50,7 @@ def randomMoveMultistep(board, player, numSteps = 1):
 	else :
 		maxAdvance = -100
 		optimalMoves = []
-		possibleMove = computeLegalMove(board, player)
+		possibleMove = computeLegalMoveForward(board, player)
 		if (player == 1) :
 			for (i1, j1, i2, j2) in possibleMove :
 				boardNext = board.takeMove((i1, j1, i2, j2))
@@ -81,6 +81,50 @@ def randomMoveMultistep(board, player, numSteps = 1):
 
 	return (maxAdvance, optimalMove)
 
+
+'''
+A greedy player that takes the numSteps consecutive moves to achieve the maximal vertical advance after numSteps steps, and return the first move of this series of moves;
+If multiple such moves exist, take a random move among the best moves
+'''	
+def randomMoveMultistepSquare(board, player, numSteps = 1):
+	if (numSteps == 0) :
+		maxAdvanceSq = 0
+		possibleMove = []
+		optimalMoves = []
+		optimalMove = []
+	else :
+		maxAdvanceSq = -100
+		optimalMoves = []
+		possibleMove = computeLegalMoveForward(board, player, 0)
+		if (player == 1) :
+			for (i1, j1, i2, j2) in possibleMove :
+				boardNext = board.takeMove((i1, j1, i2, j2))
+				(maxNextSq, moveNext) = randomMoveMultistep(boardNext, player, numSteps - 1)
+				advanceSq = maxNextSq + (board.height - i1)**2 - (board.height - i2)**2
+				if (advanceSq > maxAdvanceSq) :
+					maxAdvanceSq = advanceSq
+					optimalMoves = [(i1, j1, i2, j2)]
+				elif (advanceSq == maxAdvanceSq) :
+					optimalMoves.append((i1, j1, i2, j2))
+		else :
+			for (i1, j1, i2, j2) in possibleMove :
+				boardNext = board.takeMove((i1, j1, i2, j2))
+				(maxNextSq, moveNext) = randomMoveMultistep(boardNext, player, numSteps - 1)
+				advanceSq = maxNextSq + i1**2 - i2**2 
+				if (advanceSq > maxAdvanceSq) :
+					maxAdvanceSq = advanceSq
+					optimalMoves = [(i1, j1, i2, j2)]
+				elif (advanceSq == maxAdvanceSq) :
+					optimalMoves.append((i1, j1, i2, j2))
+		numMoves = len(optimalMoves)
+		randNumber = random.randint(0, numMoves - 1)
+		optimalMove = optimalMoves[randNumber]
+		# print randNumber
+		# print possibleMove
+		# print optimalMoves
+		# print optimalMove
+
+	return (maxAdvanceSq, optimalMove)
 
 
 	

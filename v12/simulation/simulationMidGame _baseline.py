@@ -19,14 +19,15 @@ cantGo2 = []
 # scoreVector = np.array([])
 gameCount = 0
 playerOneGameWon = playerTwoGameWon = 0
-playerOneExtraTurn = playerTwoExtraTurn = 0
-totalGames = 1
+playerOneExtraTurn = []
+playerTwoExtraTurn = []
+totalGames = 10
 while gameCount < totalGames:
 	print "################################################################################"
 	gameCount += 1
 ## Startgame begins!
 	turn = 0
-	boardStart = boardState(options = 'midGame') # fullGame, smallGame
+	boardStart = boardState(options = 'midGame') # fullGame, midGame, smallGame
 	#print "Orginal Board"
 	#boardStart.printBoard()
 	boardNow = boardStart
@@ -41,7 +42,7 @@ while gameCount < totalGames:
 		print('turn = {}'.format(turn))
 		
 		if (player == 1) :
-			move = randomMoveMultistep(boardNow, player, 2)[1]
+			move = randomMoveMultistepSquare(boardNow, player, 2)[1]
 		
 		else :
 			(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 2, cantGo2)
@@ -66,15 +67,17 @@ while gameCount < totalGames:
 		playerTwoGameWon += 1
 
 	sys.stdout.flush()
+
 	if boardNow.isEnd() == 1:
 		## player 1 won, player 2 finish the game with endGame moves
 		print "Player 1 finishes, player 2 starts endGame counting"
 		extraTurn = 0
 		player = 2
-		while (boardNow.isEnd() != 2):
+		while (not boardNow.isEndTwo()):
 			extraTurn += 1
 			print('extra turn = {}'.format(extraTurn))
-			numPossibleMoves = len(computeLegalMoveForward(boardNow, player, -1))
+			boardNow.printBoard()
+			numPossibleMoves = len(computeLegalMoveForward(boardNow, player, 0))
 			if (numPossibleMoves > 20) :
 				greedyDepth = 2
 			elif (numPossibleMoves > 12) :
@@ -85,7 +88,6 @@ while gameCount < totalGames:
 			move = moveList[0]
 			sys.stdout.flush()
 			boardNow = boardNow.takeMove(move)
-			boardNow.printBoard()
 		playerTwoExtraTurn.append(extraTurn)
 
 	elif boardNow.isEnd() == 2:
@@ -93,11 +95,11 @@ while gameCount < totalGames:
 		print "Player 2 finishes, player 1 starts endGame counting"
 		extraTurn = 0
 		player = 1
-		while (boardNow.isEnd() != 1):
+		while (not boardNow.isEndOne()):
 			extraTurn += 1
 			print('extra turn = {}'.format(extraTurn))
 			boardNow.printBoard()
-			numPossibleMoves = len(computeLegalMoveForward(boardNow, player, -1))
+			numPossibleMoves = len(computeLegalMoveForward(boardNow, player, 0))
 			if (numPossibleMoves > 20) :
 				greedyDepth = 2
 			elif (numPossibleMoves > 12) :
@@ -114,4 +116,8 @@ while gameCount < totalGames:
 	
 print "player one won " + str(playerOneGameWon) + " games"
 print "player two won " + str(playerTwoGameWon) + " games"
+print "Extra turns of Player 1 is:"
+print playerOneExtraTurn
+print "Extra turns of Player 2 is:"
+print playerTwoExtraTurn
 

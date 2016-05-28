@@ -175,7 +175,9 @@ def computeMinimax_wo(board, player, weights, depth, cantGo):
 
 	return (score, moveList, recursions)
 
-
+'''
+Method used in endgame
+'''
 def findMoveGreedy(board, player, depth) :
 	# print 'findMoveGreedy'
 	# board.printBoard()
@@ -189,8 +191,9 @@ def findMoveGreedy(board, player, depth) :
 		allPossibleMoves = computeLegalMoveForward(board, player, 0)
 		score = -10 ** 5
 		for move in allPossibleMoves :
+			# print 'move = ' + str(move)
 			boardNext = board.takeMove(move)
-			if (boardNext.isEnd() == player) :
+			if (boardNext.isEnd() == player or boardNext.isEnd() == 3) :
 				score = 100 ** depth
 				moveList = [move]
 				return (score, moveList, recursions)

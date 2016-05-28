@@ -151,15 +151,13 @@ class boardState:
 	check if the game has ended
     '''
 	def isEnd(self):
-		if self.isEndTwo():
-			return 2
-		if self.isEndOne():
-			return 1
-		return 0
+		end = self.isEndOne()	
+		end += 2 * self.isEndTwo()
+		return end
 
 	'''
 	Private
-	check if player two has won
+	check if player two has won.
     '''
 	def isEndTwo(self):
 		endPieceOne = 0
