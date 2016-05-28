@@ -10,3 +10,6 @@ board1.printBoard()
 # print randomMove(board1, 2)
 
 print randomMoveMultistep(board1, 1, 2)
+print randomMoveMultistep(board1, 1, 2)
+print randomMoveMultistep(board1, 1, 2)
+print randomMoveMultistep(board1, 1, 2)

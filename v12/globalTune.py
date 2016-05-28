@@ -26,7 +26,7 @@ while gameCount < totalGames:
 	print "################################################################################"
 	gameCount += 1
 	print('Game = No. {}'.format(gameCount))
-	boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+	boardStart = boardState(options = 'midGame') # fullGame, smallGame
 	print "Orginal Board"
 	boardStart.printBoard()
 	error = 0

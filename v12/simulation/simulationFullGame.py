@@ -2,14 +2,17 @@
 
 #print('\n\n\n\n\n\n\n\n')
 print "################################################################################"
+import copy, time, sys, os
 
-from boardState import *
-from computeLegalMove import * 
+sys.path.append(os.path.abspath(os.path.join('..', 'v12')))
+
+from v12.boardState import *
+from v12.computeLegalMove import * 
 from computeFeatures import *
 from computeMinimax import *
 from randomMove import *
 import numpy as np 
-import copy, time, sys
+
 
 
 aaaaa = [10, 1, 1]
@@ -22,12 +25,12 @@ cantGo2 = []
 gameCount = 0
 playerOneGameWon = 0
 playerTwoGameWon = 0
-totalGames = 5
+totalGames = 1
 while gameCount < totalGames:
 	gameCount += 1
 ## Startgame begins!
 	turn = 0
-	boardStart = boardState(options = 'fullGame') # fullGame, smallGame
+	boardStart = boardState(options = 'smallGame') # fullGame, smallGame
 	#print "Orginal Board"
 	#boardStart.printBoard()
 	boardNow = boardStart
@@ -101,15 +104,15 @@ while gameCount < totalGames:
 			if (len(cantGo2) >= 5) :
 				cantGo2.pop(0)
 		
-		if turn == turnAtBattleField:
-			if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
-				featureMatrix = features
-				scoreVector = np.array([scoreMiniMax])
-		else:
-			if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
-				featureMatrix = np.vstack((featureMatrix,features))
-				score = np.array([scoreMiniMax])
-				scoreVector = np.vstack((scoreVector, score))
+		# if turn == turnAtBattleField:
+		# 	if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
+		# 		featureMatrix = features
+		# 		scoreVector = np.array([scoreMiniMax])
+		# else:
+		# 	if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
+		# 		featureMatrix = np.vstack((featureMatrix,features))
+		# 		score = np.array([scoreMiniMax])
+		# 		scoreVector = np.vstack((scoreVector, score))
 
 
 		timeEnd = time.time()	
@@ -171,6 +174,7 @@ while gameCount < totalGames:
 	print('\n\n')
 	timeGameEnd = time.time()
 	print "game took" + str(timeGameEnd - timeGameStart)
+	print boardNow.isEnd()
 	if boardNow.isEnd() == 1:
 		print "player 1 won"
 		playerOneGameWon += 1
