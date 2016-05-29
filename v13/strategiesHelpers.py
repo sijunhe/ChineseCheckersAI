@@ -14,7 +14,7 @@ import random
 Public Method
 Find Minimax score using alpha-beta pruning;
 Inputs: board, player, weights, depth;
-Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
+Outputs: score(minimax score), optimal move for this step, recursions(total number of recursions).
 '''	
 def computeMinimax(board, player, weights, depth, cantGo):
 	if (player == 1) :
@@ -29,27 +29,27 @@ def computeMinimax(board, player, weights, depth, cantGo):
 '''
 Private helper function used in computeMinimax();
 Inputs: board, player, weights, depth, bound(if one branch is below/above this bound, apply pruning);
-Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
+Outputs: score(minimax score), optimal move for this step, recursions(total number of recursions).
 '''
 def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
-	recursions = 0;
+	recursions = 1;
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
 		score = np.inner(features, weights)
-		moveList = []
-		recursions = 1
+		moveOpt = []
 	else :
+		allPossibleMoves = computeLegalMoveForward(board, player, 2)
+		if (len(allPossibleMoves) == 0) :
+			print 'Player has no feasible moves here!!! Stuck!!!'
 		if (player == 1) :
 			score = - 10 ** 10
-			allPossibleMoves = computeLegalMoveForward(board, player, 2)
 			PQofMoves = Queue.PriorityQueue()
 			for move in allPossibleMoves :
 				boardNext = board.takeMove(move)
 				if (boardNext.isEnd() == player) :
-					score = 10 ** 5
-					moveList = [move]
-					recursions = 1
-					return (score, moveList, recursions)
+					score = 100 * 10 ** depth
+					moveOpt = move
+					return (score, moveOpt, recursions)
 				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
 					features = computeFeatures(boardNext)
 					scoreRaw = np.inner(features, weights)
@@ -57,28 +57,24 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
 				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
+				(scoreNext, moveOptNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
 				recursions = recursions + recursionsNext
 				if (scoreNext >= bound) :
 					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-					return (score, moveList, recursions)
+					moveOpt = move
+					return (score, moveOpt, recursions)
 				if (scoreNext > score) :
 					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+					moveOpt = move
 		else :
 			score = 10 ** 10
-			allPossibleMoves = computeLegalMoveForward(board, player, 2)
 			PQofMoves = Queue.PriorityQueue()
 			for move in allPossibleMoves :
 				boardNext = board.takeMove(move)
 				if (boardNext.isEnd() == player) :
-					score = - 10 ** 5
-					moveList = [move]
-					recursions = 1
-					return (score, moveList, recursions)
+					score = - 100 * 10 ** depth
+					moveOpt = move
+					return (score, moveOpt, recursions)
 				if ((move not in cantGo) and (boardNext.isEnd() == 0)) :
 					features = computeFeatures(boardNext)
 					scoreRaw = np.inner(features, weights)
@@ -86,19 +82,17 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 			while (not PQofMoves.empty()) :
 				(scoreRaw, move) = PQofMoves.get()
 				boardNext = board.takeMove(move)
-				(scoreNext, MLNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
+				(scoreNext, moveOptNext, recursionsNext) = computeMinimax_Helper(boardNext, 3 - player, weights, depth - 1, score, [])
 				recursions = recursions + recursionsNext
 				if (scoreNext <= bound) :
 					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
-					return (score, moveList, recursions)
+					moveOpt = move
+					return (score, moveOpt, recursions)
 				if (scoreNext < score) :
 					score = scoreNext
-					moveList = [move]
-					moveList.extend(MLNext)
+					moveOpt = move
 
-	return (score, moveList, recursions)
+	return (score, moveOpt, recursions)
 
 
 
@@ -106,81 +100,82 @@ def computeMinimax_Helper(board, player, weights, depth, bound, cantGo):
 Public Method
 Find Minimax score without using alpha-beta pruning;
 Inputs: board, player, weights, depth;
-Outputs: score(minimax score), moveList(list of moves that lead to the minimax-score note), recursions(total number of recursions).
+Outputs: score(minimax score), optimal move for this step, recursions(total number of recursions).
+
+Might be some bug in this function!!!!!
+
 '''	
 def computeMinimax_wo(board, player, weights, depth, cantGo):
 	recursions = 0;
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
 		score = np.inner(features, weights)
-		moveList = []
+		moveOpt = []
 		recursions = 1
 	else :
+		allPossibleMoves = computeLegalMove(board, player)
+		if (len(allPossibleMoves) == 0) :
+			print 'Player has no feasible moves here!!! Stuck!!!'
 		if (player == 1) :
 			score = - 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
 			for move in allPossibleMoves :
 				if (move not in cantGo) :
 					boardNext = board.takeMove(move)
-					(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
+					(scoreNext, moveOptNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
 					recursions = recursions + recursionsNext
 					if (scoreNext > score) :
 						score = scoreNext
-						moveList = [move]
-						moveList.extend(MLNext)
+						moveOpt = move
 		else :
 			score = 10 ** 10
-			allPossibleMoves = computeLegalMove(board, player)
 			for move in allPossibleMoves :
 				if (move not in cantGo) :
 					boardNext = board.takeMove(move)
-					(scoreNext, MLNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
+					(scoreNext, moveOptNext, recursionsNext) = computeMinimax_wo(boardNext, 3 - player, weights, depth - 1, [])
 					recursions = recursions + recursionsNext
 					if (scoreNext < score) :
 						score = scoreNext
-						moveList = [move]
-						moveList.extend(MLNext)
+						moveOpt = move
 
-	return (score, moveList, recursions)
+	return (score, moveOpt, recursions)
 
 
 
 '''
-One-side version of computeMinimax()
+One-side version of computeMinimax(), used at the beginning of a game
 '''
 def computeMaximax(board, player, weights, depth, cantGo):
 	recursions = 1;
 	if (depth == 0) :
 		features = computeFeaturesFull(board)
 		score = np.inner(features, weights)
-		moveList = []
+		moveOpt = []
 	else :
+		allPossibleMoves = computeLegalMoveForward(board, player, 1)
+		if (len(allPossibleMoves) == 0) :
+			print 'Player has no feasible moves here!!! Stuck!!!'
 		if (player == 1) :
 			score = - 10 ** 10
-			allPossibleMoves = computeLegalMoveForward(board, player, 1)
 			for move in allPossibleMoves :
 				if (move not in cantGo) :
 					boardNext = board.takeMove(move)
-					(scoreNext, MLNext, recursionsNext) = computeMaximax(boardNext, player, weights, depth - 1, [])
+					(scoreNext, moveOptNext, recursionsNext) = computeMaximax(boardNext, player, weights, depth - 1, [])
 					recursions = recursions + recursionsNext
 					if (scoreNext > score) :
 						score = scoreNext
-						moveList = [move]
-						moveList.extend(MLNext)
+						moveOpt = move
 		else :
 			score = 10 ** 10
-			allPossibleMoves = computeLegalMoveForward(board, player, 1)
 			for move in allPossibleMoves :
 				if (move not in cantGo) :
 					boardNext = board.takeMove(move)
-					(scoreNext, MLNext, recursionsNext) = computeMaximax(boardNext, player, weights, depth - 1, [])
+					(scoreNext, moveOptNext, recursionsNext) = computeMaximax(boardNext, player, weights, depth - 1, [])
 					recursions = recursions + recursionsNext
 					if (scoreNext < score) :
 						score = scoreNext
-						moveList = [move]
-						moveList.extend(MLNext)
+						moveOpt = move
 
-	return (score, moveList, recursions)
+	return (score, moveOpt, recursions)
 
 
 
@@ -191,25 +186,24 @@ def findMove_EndGame_Helper(board, player, depth) :
 	recursions = 1
 	if (depth == 0) :
 		score = computeScoreEndgame(board, player)
-		move = []
+		moveOpt = []
 	else :
 		allPossibleMoves = computeLegalMoveForward(board, player, 0)
 		if (len(allPossibleMoves) == 0) :
 			print 'Player has no feasible moves here!!! Stuck!!!'
-		else :
-			score = -10 ** 5
-			for moveOption in allPossibleMoves :
-				boardNext = board.takeMove(moveOption)
-				if (boardNext.isEnd() == player or boardNext.isEnd() == 3) :
-					score = 100 ** depth
-					move = moveOption
-					return (score, move, recursions)
-				(scoreNext, moveNext, recursionsNext) = findMove_EndGame_Helper(boardNext, player, depth - 1)
-				recursions += recursionsNext
-				if (scoreNext > score) :
-					score = scoreNext
-					move = moveOption
-	return (score, move, recursions)
+		score = -10 ** 5
+		for move in allPossibleMoves :
+			boardNext = board.takeMove(move)
+			if (boardNext.isEnd() == player or boardNext.isEnd() == 3) :
+				score = 100 ** depth
+				moveOpt = move
+				return (score, moveOpt, recursions)
+			(scoreNext, moveNext, recursionsNext) = findMove_EndGame_Helper(boardNext, player, depth - 1)
+			recursions += recursionsNext
+			if (scoreNext > score) :
+				score = scoreNext
+				moveOpt = move
+	return (score, moveOpt, recursions)
 
 
 
@@ -277,10 +271,6 @@ def randomMoveMultistepSquare(board, player, numSteps = 1):
 		numMoves = len(optimalMoves)
 		randNumber = random.randint(0, numMoves - 1)
 		optimalMove = optimalMoves[randNumber]
-		# print randNumber
-		# print possibleMove
-		# print optimalMoves
-		# print optimalMove
 
 	return (maxAdvanceSq, optimalMove)
 

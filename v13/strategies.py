@@ -26,7 +26,14 @@ def findMove_MiniMax(board, player, weights, depth, cantGo) :
 	return move
 
 
-
+def findMove_Advanced(board, player, weights, depth, cantGo) :
+	if (board.isBattleField(2)) :
+		move = computeMinimax(board, player, weights, depth, cantGo)[1]
+	elif (board.isEndGame(0)) :
+		move = findMove_EndGame(board, player)
+	else :
+		move = computeMaximax(board, player, weights, depth / 2, cantGo)[1]
+	return move
 
 
 

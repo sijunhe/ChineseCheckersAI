@@ -99,7 +99,8 @@ class boardState:
     '''
 	def isBattleField(self, k = 2):
 		if self.PositionOneFirstElement >= self.PositionTwoFirstElement - k:
-			return True
+			if not self.isEndGame() :
+				return True
 		return False
 
 

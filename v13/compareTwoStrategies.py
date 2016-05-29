@@ -7,7 +7,7 @@ import numpy as np
 from strategies import *
 
 
-totalGames = 30
+totalGames = 10
 gameCount = [0, 0, 0]	# The 0-th element denotes the number of games played so far, i-th denotes the number of games player i wins, i = 1, 2.
 cantGo1 = []			# The set of moves player 1 can't make
 cantGo2 = []			# The set of moves player 2 can't make
@@ -34,12 +34,14 @@ while gameCount[0] < totalGames:
 		timeTurnStart = time.time()
 		print('\nGame No. ' + str(gameCount[0]) + ', turn No. ' + str(turn))
 		if (player == 1) :
-			move = findMove_GreedyRandom(boardNow, player, 2)
+			move = findMove_GreedyRandom(boardNow, player, 2)		## This can be too strong ...
+			# move = findMove_GreedyRandom(boardNow, player, 1)
 			cantGo1.append(move)
 			if (len(cantGo1) >= 5) :
 				cantGo1.pop(0)
 		else :
-			move = findMove_MiniMax(boardNow, player, weights, 2, cantGo2)
+			# move = findMove_MiniMax(boardNow, player, weights, 2, cantGo2)	## Minimax strategy throughout
+			move = findMove_Advanced(boardNow, player, weights, 2, cantGo2)		## Most advanced strategy
 			cantGo2.append(move)
 			if (len(cantGo2) >= 5) :
 				cantGo2.pop(0)

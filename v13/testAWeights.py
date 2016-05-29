@@ -1,20 +1,17 @@
 # This file is used to test a weight. To be specific, both players play the game with this weights, and this file will keep track of each step
 
-#print('\n\n\n\n\n\n\n\n')
 print "################################################################################"
 
 from boardState import *
 from computeLegalMove import * 
 from computeFeatures import *
-from computeMinimax import *
+from strategies import *
+from strategiesHelpers import *
 import numpy as np 
 import copy
 import time
 
-boardStart = boardState(options = 'fullGame') # fullGame, smallGame
-print "Orginal Board"
-boardStart.printBoard()
-boardNow = boardStart
+boardNow = boardState(options = 'smallGame') # fullGame, smallGame, midGame
 player = 1
 turn = 0
 aaaaa = [10, 1, 1]
@@ -22,8 +19,8 @@ weights = np.array(aaaaa)
 weights = weights / np.linalg.norm(weights)
 cantGo1 = []
 cantGo2 = []
-# featureMatrix = np.array([[]])
-# scoreVector = np.array([])
+depth = 2 #Can only be even numbers: 2, 4, 6, ...
+
 
 ## Startgame begins!
 while (turn < 249) :
@@ -38,14 +35,12 @@ while (turn < 249) :
 
 	timeStart = time.time()
 	if (player == 1) :
-		(scoreMaxiMax, moveList, recursions) = computeMaximax(boardNow, player, weights, 2, cantGo1)
-		move = moveList[0]
+		(scoreMaxiMax, move, recursions) = computeMaximax(boardNow, player, weights, depth/2, cantGo1)
 		cantGo1.append(move)
 		if (len(cantGo1) >= 5) :
 			cantGo1.pop(0)
 	else :
-		(scoreMaxiMax, moveList, recursions) = computeMaximax(boardNow, player, weights, 2, cantGo2)
-		move = moveList[0]
+		(scoreMaxiMax, move, recursions) = computeMaximax(boardNow, player, weights, depth/2, cantGo2)
 		cantGo2.append(move)
 		if (len(cantGo2) >= 5) :
 			cantGo2.pop(0)
@@ -62,9 +57,11 @@ while (turn < 249) :
 		print('####################################################################')
 		break
 
-turnAtBattleField = turn + 1
+firstBattleFieldTurn = turn + 1
 
+'''
 ### Battlefield begins!
+'''
 while ((not boardNow.isEnd()) and turn < 250) :
 	turn = turn + 1
 	timeStart = time.time()
@@ -80,19 +77,17 @@ while ((not boardNow.isEnd()) and turn < 250) :
 	print('weights = {}'.format(weights))
 
 	if (player == 1) :
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo1)
-		move = moveList[0]
+		(scoreMiniMax, move, recursions) = computeMinimax(boardNow, player, weights, depth, cantGo1)
 		cantGo1.append(move)
 		if (len(cantGo1) >= 5) :
 			cantGo1.pop(0)
 	else :
-		(scoreMiniMax, moveList, recursions) = computeMinimax(boardNow, player, weights, 4, cantGo2)
-		move = moveList[0]
+		(scoreMiniMax, move, recursions) = computeMinimax(boardNow, player, weights, depth, cantGo2)
 		cantGo2.append(move)
 		if (len(cantGo2) >= 5) :
 			cantGo2.pop(0)
 	
-	if turn == turnAtBattleField:
+	if turn == firstBattleFieldTurn:
 		if scoreMiniMax != 10 ** 5 and scoreMiniMax != -10 ** 5:
 			featureMatrix = features
 			scoreVector = np.array([scoreMiniMax])
@@ -111,14 +106,16 @@ while ((not boardNow.isEnd()) and turn < 250) :
 	print 'time used = ' + str(timeEnd - timeStart)
 	boardNow = boardNow.takeMove(move)
 	player = 3 - player
-	if (boardNow.isEndGame(1)) :
+	if (boardNow.isEndGame(0)) :
 		print('\n################################################################')
 		print('#####################  Endgame Begins!!!!  #####################')
 		print('#####################  Let\'s go go go!!!!  #####################')
 		print('################################################################')
 		break
 
-### Endgame playing
+'''
+### Endgame begins!
+'''
 while ((not boardNow.isEnd()) and turn < 250) :
 	turn = turn + 1
 	print('\n\n')
@@ -128,22 +125,9 @@ while ((not boardNow.isEnd()) and turn < 250) :
 	boardNow.printBoard()
 
 	timeStart = time.time()
-	print ('All possible moves = {}'.format(computeLegalMove(boardNow, player)))
-	print ('All forward moves = {}'.format(computeLegalMoveForward(boardNow, player, -1)))
-	numPossibleMoves = len(computeLegalMoveForward(boardNow, player, -1))
-	if (numPossibleMoves > 20) :
-		greedyDepth = 2
-	elif (numPossibleMoves > 12) :
-		greedyDepth = 3
-	else :
-		greedyDepth = 4
-	print ('greedyDepth = {}'.format(greedyDepth))
-	(scoreGreedy, moveList, recursions) = findMoveGreedy(boardNow, player, greedyDepth)
+	move = findMove_EndGame(boardNow, player)
 	timeEnd = time.time()
-	print('scoreGreedy = {}'.format(scoreGreedy))
-	move = moveList[0]
 	print('move = {}'.format(move))
-	print('recursions = {}'.format(recursions))
 	print 'time used = ' + str(timeEnd - timeStart)
 	boardNow = boardNow.takeMove(move)
 	player = 3 - player
