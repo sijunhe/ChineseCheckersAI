@@ -41,9 +41,9 @@ while gameCount[0] < totalGames:
 		print('\nGame No. ' + str(gameCount[0]) + ', turn No. ' + str(turn))
 		if (player == 1) :
 			# move = findMove_GreedyRandom(boardNow, player, 1)
-			# move = findMove_GreedyRandom(boardNow, player, 2)
+			move = findMove_GreedyRandom(boardNow, player, 2)
 			# move = findMove_MiniMax(boardNow, player, weights1, 2, cantGo1)	## Minimax strategy throughout
-			move = findMove_Advanced(boardNow, player, weights1, 2, cantGo2)		## Most advanced strategy
+			#move = findMove_Advanced(boardNow, player, weights1, 2, cantGo2)		## Most advanced strategy
 			cantGo1.append(move)
 			if (len(cantGo1) >= 5) :
 				cantGo1.pop(0)
