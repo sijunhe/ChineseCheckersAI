@@ -21,8 +21,7 @@ def findMove_EndGame(board, player) :
 	return move
 
 def findMove_MiniMax(board, player, weights, depth, cantGo) :
-	(scoreMiniMax, moveList, recursions) = computeMinimax(board, player, weights, depth, cantGo)
-	move = moveList[0]
+	move = computeMinimax(board, player, weights, depth, cantGo)[1]
 	return move
 
 
@@ -32,7 +31,7 @@ def findMove_Advanced(board, player, weights, depth, cantGo) :
 	elif (board.isEndGame(0)) :
 		move = findMove_EndGame(board, player)
 	else :
-		move = computeMaximax(board, player, weights, depth / 2, cantGo)[1]
+		move = computeMaximax(board, player, weights, depth / 2 + 1, cantGo)[1]
 	return move
 
 
