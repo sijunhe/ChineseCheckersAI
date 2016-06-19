@@ -122,7 +122,7 @@ def computeRepetitiveHop(board, hopi, hopj):
 					futureboard = boardState(options = 'fullGame', inputBoard = futureBoard)
 				else:
 					futureboard = boardState(options = 'midGame', inputBoard = futureBoard)
-				computeRepetitiveHopRecursion(board, hopi, hopj, nexti, nextj, pastPosition, possibleMoveBoard)
+				computeRepetitiveHopRecursion(futureboard, hopi, hopj, nexti, nextj, pastPosition, possibleMoveBoard)
 	return possibleMoveBoard
 
 

@@ -154,18 +154,20 @@ class ChineseCheckerUI(Frame):
                     elif self.turn == 2:
                         moves = computeLegalMoveSpecify(self.game, 2, self.row, self.col)
                     self.possibleMoves = [(newi, newj) for (oldi, oldj, newi, newj) in moves]
+                    print self.possibleMoves
                     self.__draw_possible_moves(self.possibleMoves)
 
             else:
                 self.game = self.game.takeMove((self.oldi, self.oldj, self.row, self.col))
-                self.__repaint()
                 self.row, self.col = -1, -1
                 self.possibleMoves = []
                 self.turn = 3 - self.turn
+                msg = 'Computing'
+                self.msgWindow.delete(0, END)
+                self.msgWindow.insert(0, msg)
+                self.__repaint()
+                time.sleep(1)
                 if self.turn == 2:
-                    msg = 'Your turn'
-                    self.msgWindow.delete(0, END)
-                    self.msgWindow.insert(0, msg)
                     move = findMove_Advanced(self.game, self.turn, self.weights, self.depth, self.cantGo)
                     print move
                     self.cantGo.append(move)
@@ -177,6 +179,8 @@ class ChineseCheckerUI(Frame):
                         msg = 'You won!'
                     elif self.game.isEnd() == 2:
                         msg = 'You lost!'
+                    else:
+                        msg = 'Your Turn!'
                     self.msgWindow.delete(0, END)
                     self.msgWindow.insert(0, msg)
                     self.row, self.col = -1, -1
